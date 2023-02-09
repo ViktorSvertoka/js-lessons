@@ -51,3 +51,19 @@
 
 // //3. Віведення результату
 // console.log('Result ', resultNumbers);
+
+// Задача № 1
+
+// //1. Введення необхідних данних
+let a = 20;
+let b = 100;
+
+// //2. Обчіслення результату
+let resultSum = a + b;
+let resultProd = a * b;
+let resultProc = ((a + b) / 6) * 1;
+
+// //3. Віведення результату
+console.log('Result ', resultSum);
+console.log('Result ', resultProd);
+console.log('Result ', resultProc);

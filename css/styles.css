@@ -1,26 +1,7 @@
-/* Обнуление
-*,
-*:before,
-*:after {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
+a {
+  text-decoration: none;
 }
 
-html,
-body {
-  height: 100%;
-  background-color: grey;
-  font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-  color: #fff;
-  font-size: 16px;
-  padding: 30px;
+ul {
+  text-decoration: none;
 }
-
-h1 {
-  margin: 0px 0px 20px 0px;
-}
-h2 {
-  margin: 0px 0px 15px 0px;
-} */

@@ -1,7 +1,37 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  padding: 50px;
+  background: rgb(0, 212, 255);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(9, 9, 121, 1) 100%,
+    rgba(2, 0, 36, 1) 100%
+  );
+}
+
 a {
   text-decoration: none;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 10px;
+  margin-right: 10px;
+  background-color: white;
+  text-transform: uppercase;
+  color: black;
+}
+
+a:hover {
+  border: 1px solid white;
+  background-color: black;
+  color: white;
 }
 
 ul {
-  text-decoration: none;
+  list-style: none;
+  display: flex;
+}
+
+h1 {
+  margin-bottom: 30px;
 }

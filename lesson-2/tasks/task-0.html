@@ -12,19 +12,20 @@
     <ol>
       <li>Приклад - S1 = a + 12 + b</li>
       <li>Приклад - S2 = (a + b) / (2 * a)</li>
-      <li>Приклад - S3 = (a + b) * 3</li>
+      <li>Приклад - S3 = (a + b) * c</li>
       <li>Приклад - S4 = sin⁡(a / (- b))</li>
     </ol>
     <script>
       //1. Введення необхідних данних
       let a = parseInt(prompt('Введіть a', '0'));
       let b = parseInt(prompt('Введіть b', '0'));
+      let c = parseInt(prompt('Введіть c', '0'));
 
       //2. Обчіслення результату
       let s1 = a + 12 + b;
-      let s2 = (a + b) / (2 * a);
-      let s3 = (a + b) * 3;
-      let s4 = Math.sin(a / -b);
+      let s2 = Math.sqrt((a + b) / (2 * a)).toFixed(2);
+      let s3 = Math.cbrt((a + b) * c).toFixed(2);
+      let s4 = Math.sin(a / -b).toFixed(2);
 
       //3. Виведення результату
       document.write(`Результат обчіслення S1 = ${s1} <br>`);

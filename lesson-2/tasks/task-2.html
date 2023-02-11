@@ -14,14 +14,14 @@
     </p>
     <script>
       //1. Введення необхідних данних
-      let yearBorn = parseInt(prompt('Введіть ваш рік народження', '0'));
-      let yearCurrent = parseInt(prompt('Введіть поточний рік', '0'));
+      let year = new Date(prompt('Введіть рік народження'));
 
       //2. Обчіслення результату
-      let resultYears = yearCurrent - yearBorn;
+      let currentYear = new Date();
+      let age = currentYear.getFullYear() - year.getFullYear();
 
       //3. Виведення результату
-      document.write(`Вам : ${resultYears} років`);
+      document.write(`Ваш вік: ${age}`);
     </script>
   </body>
 </html>

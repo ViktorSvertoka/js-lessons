@@ -16,14 +16,15 @@
       //1. Введення необхідних данних
       let itemCost = parseInt(prompt('Введіть вартість товару', '0'));
       let itemNumber = parseInt(prompt('Введіть кількість товару', '0'));
+      let itemPercent = 0.05;
 
       //2. Обчіслення результату
       let itemSum = itemCost * itemNumber;
-      let itemPercent = itemSum * 0.05;
+      let totalPercent = itemSum * itemPercent;
 
       //3. Виведення результату
       document.write(`Загальна вартість товару ${itemSum} грн. <br>`);
-      document.write(`Сумма ПДВ ${itemPercent} грн. <br>`);
+      document.write(`Сумма ПДВ ${totalPercent} грн. <br>`);
     </script>
   </body>
 </html>

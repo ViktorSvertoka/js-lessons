@@ -14,26 +14,34 @@
     </p>
     <script>
       //1. Обчіслення результату
-      function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       }
+
+      let month = getRandomInt(1, 12);
+      let day = getRandomInt(0, 6);
+      let sum = month + day;
 
       //2. Виведення результату
       document.write(`
-        <table border="1px">
-          <tr>
-              <th colspan="2">ОНОВЛЮЙ СТОРІНКУ ДЛЯ ОТРИМАННЯ РЕЗУЛЬТАТУ</th>
-          </tr>
-          <tr>
-              <td>Випадковий номер місяця</td>
-              <td>${getRandomInt(12)}</td>
-          </tr>
-          <tr>
-              <td>Випадковий номер дня</td>
-              <td>${getRandomInt(6)}</td>
-          </tr>
-        </table>
-      `);
+              <table border="1px">
+                <tr>
+                    <th colspan="2">ОНОВЛЮЙ СТОРІНКУ ДЛЯ ОТРИМАННЯ РЕЗУЛЬТАТУ</th>
+                </tr>
+                <tr>
+                    <td>Випадковий номер місяця</td>
+                    <td>${month}</td>
+                </tr>
+                <tr>
+                    <td>Випадковий номер дня</td>
+                    <td>${day}</td>
+                </tr>
+                <tr>
+                    <td>Сумма місяця і дня.</td>
+                    <td>${sum}</td>
+                </tr>
+              </table>
+            `);
     </script>
   </body>
 </html>

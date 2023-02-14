@@ -9,40 +9,26 @@
   <body>
     <h1>Задача № 1</h1>
     <p>
-      Знайти суму, добуток та частку двох дійсних чисел. Результат вивести у
-      формі таблиці.
+      З клавіатури вводяться імена двох дітей та кількість у них цукерок.
+      Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або
+      вивести, що кількість однакова.
     </p>
     <script>
       //1. Введення необхідних данних
-      let a = parseInt(prompt('Введіть число для розрахунку сумми', '0'));
-      let b = parseInt(prompt('Введіть число для розрахунку сумми', '0'));
+      let firstChildName = prompt('Введіть імя дитини');
+      let secondChildName = prompt('Введіть імя дитини');
 
-      //2. Обчіслення результату
-      let resultSum = a + b;
-      let resultProd = a * b;
-      let resultProc = ((a + b) / 6) * 1;
+      let candyNum1 = parseInt(prompt('Введіть кількість цукерок'));
+      let candyNum2 = parseInt(prompt('Введіть кількість цукерок'));
 
-      //3. Виведення результату
-      document.write(`
-        <table border="2px">
-          <tr>
-              <th>Шуканий результат</th>
-              <th>Отримане значення</th>
-          </tr>
-          <tr>
-              <th>Сума</th>
-              <td>${resultSum}</td>
-          </tr>
-          <tr>
-              <th>Добуток</th>
-              <td>${resultProd}</td>
-          </tr>
-          <tr>
-              <th>Частка</th>
-              <td>${resultProc.toFixed(2)}</td>
-          </tr>
-        </table>
-      `);
+      //2. Обчіслення результату і виведення результату
+      if (candyNum1 > candyNum2) {
+        document.write(`У ${firstChildName} більше цукерок`);
+      } else if (candyNum1 < candyNum2) {
+        document.write(`У ${secondChildName} більше цукерок`);
+      } else {
+        document.write('У дітей однакова кількість цукерок');
+      }
     </script>
   </body>
 </html>

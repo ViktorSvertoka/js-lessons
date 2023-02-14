@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Задача № 6</h1>
+    <p>
+      З клавіатури вводяться вартість товару та кількість одиниць 3 товарів.
+      Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек
+      (як у супермаркеті) використовуючи елементи розмітки.
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let price1 = parseFloat(prompt('Ведіть вартість товару.', '0'));
+      let quantity1 = parseInt(
+        prompt('Введіть кількість одініць товарую', '0'),
+      );
+      let price2 = parseFloat(prompt('Ведіть вартість товару.', '0'));
+      let quantity2 = parseInt(
+        prompt('Введіть кількість одініць товарую', '0'),
+      );
+      let price3 = parseFloat(prompt('Ведіть вартість товару.', '0'));
+      let quantity3 = parseInt(
+        prompt('Введіть кількість одініць товарую', '0'),
+      );
+
+      //2. Обчіслення результату
+      let total1 = price1 * quantity1;
+      let total2 = price2 * quantity2;
+      let total3 = price3 * quantity3;
+      let totalAmount = total1 + total2 + total3;
+
+      //3. Виведення результату
+      document.write(`
+        <table border="2px">
+          <tr>
+              <th colspan="3">Фіскальний чек</th>
+          </tr>
+          <tr>
+              <th>Вартість товару</th>
+              <th>Кількість товара</th>
+              <th>Сумма</th>
+          </tr>
+          <tr>
+              <td>${price1}</td>
+              <td>${quantity1}</td>
+              <td>${total1}</td>
+          </tr>
+          <tr>
+              <td>${price2}</td>
+              <td>${quantity2}</td>
+              <td>${total2}</td>
+          </tr>
+          <tr>
+              <td>${price3}</td>
+              <td>${quantity3}</td>
+              <td>${total3}</td>
+          </tr>
+          <tr>
+              <th colspan="2">Загальна сумма</th>
+              <td>${totalAmount}</td>
+          </tr>
+        </table>
+      `);
+    </script>
+  </body>
+</html>

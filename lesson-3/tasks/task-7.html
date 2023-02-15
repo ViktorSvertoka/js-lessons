@@ -11,39 +11,8 @@
     <p><a href="../index-3.html">Go back</a></p>
     <h1>Задача № 7</h1>
     <p>
-      Знайти суму випадкового номера місяця (від 1 до 12) та випадкового номера
-      дня (від 0 до 6).
+      З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
     </p>
-    <script>
-      //1. Обчіслення результату
-      function getRandomInt(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-
-      let month = getRandomInt(1, 12);
-      let day = getRandomInt(0, 6);
-      let sum = month + day;
-
-      //2. Виведення результату
-      document.write(`
-              <table border="1px">
-                <tr>
-                    <th colspan="2">ОНОВЛЮЙ СТОРІНКУ ДЛЯ ОТРИМАННЯ РЕЗУЛЬТАТУ</th>
-                </tr>
-                <tr>
-                    <td>Випадковий номер місяця</td>
-                    <td>${month}</td>
-                </tr>
-                <tr>
-                    <td>Випадковий номер дня</td>
-                    <td>${day}</td>
-                </tr>
-                <tr>
-                    <td>Сумма місяця і дня.</td>
-                    <td>${sum}</td>
-                </tr>
-              </table>
-            `);
-    </script>
+    <script></script>
   </body>
 </html>

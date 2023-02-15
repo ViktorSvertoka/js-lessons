@@ -18,7 +18,7 @@
       let monthNumber = parseInt(prompt('Введіть номер місяця.'));
 
       //2. Обчіслення результату і виведення результату
-      if (monthNumber < 3) {
+      if (monthNumber < 3 || monthNumber === 12) {
         document.write('Зараз Зима!');
       } else if (monthNumber < 6) {
         document.write('Зараз Весна!');
@@ -26,8 +26,6 @@
         document.write('Зараз Літо!');
       } else if (monthNumber < 12) {
         document.write('Зараз Осінь!');
-      } else if (monthNumber < 13) {
-        document.write('Зараз Зима!');
       } else {
         alert('Не вірно введенні дані');
       }

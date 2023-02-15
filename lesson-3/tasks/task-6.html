@@ -10,64 +10,29 @@
   <body>
     <p><a href="../index-3.html">Go back</a></p>
     <h1>Задача № 6</h1>
-    <p>
-      З клавіатури вводяться вартість товару та кількість одиниць 3 товарів.
-      Обчислити вартість кожного товару окремо та загальну вартість. Вивести чек
-      (як у супермаркеті) використовуючи елементи розмітки.
-    </p>
+    <p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.</p>
     <script>
       //1. Введення необхідних данних
-      let price1 = parseFloat(prompt('Ведіть вартість товару.', '0'));
-      let quantity1 = parseInt(
-        prompt('Введіть кількість одініць товарую', '0'),
-      );
-      let price2 = parseFloat(prompt('Ведіть вартість товару.', '0'));
-      let quantity2 = parseInt(
-        prompt('Введіть кількість одініць товарую', '0'),
-      );
-      let price3 = parseFloat(prompt('Ведіть вартість товару.', '0'));
-      let quantity3 = parseInt(
-        prompt('Введіть кількість одініць товарую', '0'),
-      );
+      let dayNumber = parseInt(prompt('Введіть номер дня тижня.'));
 
-      //2. Обчіслення результату
-      let total1 = price1 * quantity1;
-      let total2 = price2 * quantity2;
-      let total3 = price3 * quantity3;
-      let totalAmount = total1 + total2 + total3;
-
-      //3. Виведення результату
-      document.write(`
-        <table border="2px">
-          <tr>
-              <th colspan="3">Фіскальний чек</th>
-          </tr>
-          <tr>
-              <th>Вартість товару</th>
-              <th>Кількість товара</th>
-              <th>Сумма</th>
-          </tr>
-          <tr>
-              <td>${price1}</td>
-              <td>${quantity1}</td>
-              <td>${total1}</td>
-          </tr>
-          <tr>
-              <td>${price2}</td>
-              <td>${quantity2}</td>
-              <td>${total2}</td>
-          </tr>
-          <tr>
-              <td>${price3}</td>
-              <td>${quantity3}</td>
-              <td>${total3}</td>
-          </tr>
-          <tr>
-              <th colspan="2">Загальна сумма</th>
-              <td>${totalAmount}</td>
-          </tr>
-        </table>
-      `);
+      //2. Обчіслення результату і виведення результату
+      if (dayNumber === 1) {
+        document.write('Сьогодні Понеділок!');
+      } else if (dayNumber === 2) {
+        document.write('Сьогодні Вівторок!');
+      } else if (dayNumber === 3) {
+        document.write('Сьогодні Середа!');
+      } else if (dayNumber === 4) {
+        document.write('Сьогодні Четверг!');
+      } else if (dayNumber === 5) {
+        document.write('Сьогодні Пятниця!');
+      } else if (dayNumber === 6) {
+        document.write('Сьогодні Субота!');
+      } else if (dayNumber === 7) {
+        document.write('Сьогодні Неділя!');
+      } else {
+        alert('Не вірно введенні дані');
+      }
     </script>
   </body>
 </html>

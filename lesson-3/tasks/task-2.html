@@ -21,12 +21,14 @@
       let amountMoney = parseFloat(prompt('Введіть кількість грошей'));
 
       //2. Обчіслення результату і виведення результату
-      if (goodsPrice > amountMoney) {
-        document.write('На жаль у вас не вистачає коштів.');
-      } else {
+      if (amountMoney === goodsPrice) {
+        document.write('Дякуємо за покупку!');
+      } else if (amountMoney > goodsPrice) {
         document.write(
           'У вас залишилась решта, пропонуємо купити лотерею за 4 грн.',
         );
+      } else if (amountMoney < goodsPrice) {
+        document.write('На жаль у вас не вистачає коштів...');
       }
     </script>
   </body>

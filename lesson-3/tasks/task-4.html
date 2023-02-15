@@ -10,16 +10,27 @@
   <body>
     <p><a href="../index-3.html">Go back</a></p>
     <h1>Задача № 4</h1>
-    <p>Дано довжину у сантиметрах. Визначати скільки це метрів і кілометрів.</p>
+    <p>
+      З клавіатури вводиться вік людини. <br />
+      Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
+      працівником, пенсіонером).
+    </p>
     <script>
-      //1. Обчіслення результату
-      let centimeter = parseInt(prompt('Введіть довжену в см.', '0'));
-      let meter = centimeter / 100;
-      let kilometer = centimeter / 100000;
+      //1. Введення необхідних данних
+      let humanAge = parseInt(prompt('Введіть ваш вік.'));
 
-      //2. Виведення результату
-      document.write(`Довжина ${meter} метрів. <br>`);
-      document.write(`Довжина ${kilometer} кілометрів. <br>`);
+      //2. Обчіслення результату і виведення результату
+      if (humanAge < 7) {
+        document.write('Ви дитина у садочку');
+      } else if (humanAge < 18) {
+        document.write('Ви школяр');
+      } else if (humanAge < 23) {
+        document.write('Ви студент');
+      } else if (humanAge < 65) {
+        document.write('Ви працівник');
+      } else {
+        document.write('Ви пенсіонер');
+      }
     </script>
   </body>
 </html>

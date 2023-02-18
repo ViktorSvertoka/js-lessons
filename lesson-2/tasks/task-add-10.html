@@ -17,13 +17,16 @@
     </p>
     <script>
       // 1. Введення необхідних данних
-
+      let money = parseInt(
+        prompt('Введіть кількість монет номіналом 1 копійка.'),
+      );
 
       // 2. Обчіслення результату
-
+      let hryvnia = Math.floor(money / 100);
+      let kopeyka = money % 100;
 
       // 3. Виведення результату
-      document.write(` ${} `);
+      document.write(`${hryvnia} грн ${kopeyka} коп`);
     </script>
   </body>
 </html>

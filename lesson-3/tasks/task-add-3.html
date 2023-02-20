@@ -24,41 +24,30 @@
     </p>
     <script>
       //1. Введення необхідних данних
-      let price1 = parseFloat(prompt('Ведіть вартість товару.', '0'));
-      let quantity1 = parseInt(
-        prompt('Введіть кількість одініць товарую', '0'),
-      );
-      let price2 = parseFloat(prompt('Ведіть вартість товару.', '0'));
-      let quantity2 = parseInt(
-        prompt('Введіть кількість одініць товарую', '0'),
-      );
+      const number = Math.floor(Math.random() * 10) + 1;
+      const user1 = Number(prompt('Введіть число від 1 до 10'));
+      const user2 = Number(prompt('Введіть число від 1 до 10'));
 
       //2. Обчіслення результату і виведення результату
-      let sum1 = price1 * quantity1;
-      let sum2 = price2 * quantity2;
-      let totalSum = sum1 + sum2;
-
-      //3. Виведення результату
-      document.write(`
-        <table border="2px">
-          <tr>
-              <th>Шуканий результат</th>
-              <th>Отримане значення</th>
-          </tr>
-          <tr>
-              <th>Вартість першого товару</th>
-              <td>${sum1.toFixed(2)}</td>
-          </tr>
-          <tr>
-              <th>Вартість другого товару</th>
-              <td>${sum2.toFixed(2)}</td>
-          </tr>
-          <tr>
-              <th>Загальна сума</th>
-              <td>${totalSum.toFixed(2)}</td>
-          </tr>
-        </table>
-      `);
+      switch (true) {
+        case user1 === user2:
+          alert('Ви оба програли');
+          break;
+        case user1 === number:
+          alert('Переміг перший гравець');
+          break;
+        case user2 === number:
+          alert('Переміг другий гравець');
+          break;
+        case Math.abs(user1 - number) < Math.abs(user2 - number):
+          alert('Переміг перший гравець');
+          break;
+        case Math.abs(user1 - number) > Math.abs(user2 - number):
+          alert('Переміг другий гравець');
+          break;
+        default:
+          alert('Нічия');
+      }
     </script>
   </body>
 </html>

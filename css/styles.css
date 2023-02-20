@@ -134,4 +134,11 @@ h1 {
 .btn-go-back {
   width: 100px;
   height: 40px;
+  margin: 10px;
+}
+
+.btn-nav {
+  width: 100px;
+  height: 40px;
+  margin: 10px;
 }

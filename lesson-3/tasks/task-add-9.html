@@ -24,13 +24,38 @@
     </p>
     <script>
       // 1. Введення необхідних данних
+      const extensionName = prompt('Введіть першу літеру розширення файлу');
 
+      const html = 'h';
+      const doc = 'd';
+      const jpeg = 'j';
+      const mp3 = 'm';
+      const xls = 'x';
 
       // 2. Обчіслення результату
-
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      if (extensionName === html) {
+        document.write(
+          'Файл з розширенням html відчіняється через - Internet Browser',
+        );
+      } else if (extensionName === doc) {
+        document.write(
+          'Файл з розширенням doc відчіняється через - Microsoft Word',
+        );
+      } else if (extensionName === jpeg) {
+        document.write(
+          'Файл з розширенням jpeg відчіняється через - Photo Viewer',
+        );
+      } else if (extensionName === mp3) {
+        document.write(
+          'Файл з розширенням mp3 відчіняється через - Audio Player',
+        );
+      } else if (extensionName === xls) {
+        document.write(
+          'Файл з розширенням xls відчіняється через - Microsoft Excel',
+        );
+      } else {
+        alert('Невідомий формат файла');
+      }
     </script>
   </body>
 </html>

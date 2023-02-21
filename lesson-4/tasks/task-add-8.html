@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 8</h1>
+    <p>
+      З клавіатури вводиться кількість сторін багатокутника. Необхідно вивести
+      назву фігури («трикутник», «чотирикутник», «п’ятикутинк», «шестикутник»).
+    </p>
+    <script>
+      // 1. Введення необхідних данних
+      let totalSide = parseInt(
+        prompt('Введіть кількість сторін багатокутника'),
+      );
+
+      const triangle = 3;
+      const quadruple = 4;
+      const pentagon = 5;
+      const hexagon = 6;
+
+      // 2. Обчіслення результату
+
+      if (totalSide === triangle) {
+        document.write('Трикутник');
+      } else if (totalSide === quadruple) {
+        document.write('Чотирикутник');
+      } else if (totalSide === pentagon) {
+        document.write('П’ятикутинк');
+      } else if (totalSide === hexagon) {
+        document.write('Шестикутник');
+      } else {
+        document.write('Такої фігури не існує');
+      }
+    </script>
+  </body>
+</html>

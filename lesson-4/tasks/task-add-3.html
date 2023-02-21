@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 3</h1>
+    <p>
+      Комп’ютер загадує число від 1 до 10. Двоє користувачів надають свої
+      відповіді. Виграє той, у кого число знаходиться ближче до загаданого
+      комп’ютером числа
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      const number = Math.floor(Math.random() * 10) + 1;
+      const user1 = Number(prompt('Введіть число від 1 до 10'));
+      const user2 = Number(prompt('Введіть число від 1 до 10'));
+
+      //2. Обчіслення результату і виведення результату
+      switch (true) {
+        case user1 === user2:
+          alert('Ви оба програли');
+          break;
+        case user1 === number:
+          alert('Переміг перший гравець');
+          break;
+        case user2 === number:
+          alert('Переміг другий гравець');
+          break;
+        case Math.abs(user1 - number) < Math.abs(user2 - number):
+          alert('Переміг перший гравець');
+          break;
+        case Math.abs(user1 - number) > Math.abs(user2 - number):
+          alert('Переміг другий гравець');
+          break;
+        default:
+          alert('Нічия');
+      }
+    </script>
+  </body>
+</html>

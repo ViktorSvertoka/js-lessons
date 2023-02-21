@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      З клавіатури вводяться імена двох дітей та кількість у них цукерок.
+      Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або
+      вивести, що кількість однакова.
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let firstChildName = prompt('Введіть імя дитини');
+      let secondChildName = prompt('Введіть імя дитини');
+
+      let candyNum1 = parseInt(prompt('Введіть кількість цукерок'));
+      let candyNum2 = parseInt(prompt('Введіть кількість цукерок'));
+
+      //2. Обчіслення результату і виведення результату
+      if (candyNum1 > candyNum2) {
+        document.write(`У ${firstChildName} більше цукерок`);
+      } else if (candyNum1 < candyNum2) {
+        document.write(`У ${secondChildName} більше цукерок`);
+      } else {
+        document.write('У дітей однакова кількість цукерок');
+      }
+    </script>
+  </body>
+</html>

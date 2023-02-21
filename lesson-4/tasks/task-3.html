@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 3</h1>
+    <p>
+      Випадковим чином генерується число від 1 до 5. Спробуйте вгадати число за
+      2 спроби.
+    </p>
+    <script>
+      //СКРИПТ ПИСАЛ НЕ САМ, НАГУГЛИЛ И АДАПТИРОВАЛ ПОД ЗАДАНИЕ,
+      //ДЛЯ МЕНЯ ПОКА ЭТО ОЧЕНЬ СЛОЖНО...
+
+      //1. Введення необхідних данних
+      let randomNumber = Math.floor(Math.random() * 5) + 1;
+      let userNumber = prompt('Введіть число від 1 до 5.');
+      let i = 0;
+
+      //2. Обчіслення результату і виведення результату
+      while (userNumber != randomNumber && i < 1) {
+        userNumber = prompt('Введіть число від 1 до 5.');
+        i++;
+      }
+
+      if (userNumber == randomNumber) {
+        document.write('Ви вгадали!!!🙂');
+      } else {
+        document.write('Ви не вгадали...🙁');
+      }
+    </script>
+  </body>
+</html>

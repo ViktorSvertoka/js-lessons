@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 2</h1>
+    <p>
+      Комп’ютер випадковим чином вибирає початок і кінець проміжку (проміжок
+      повинен знаходитися в межах від 1 до 100). Користувач вводить число і
+      виграє, якщо число знаходиться у цьому проміжку, або розташоване від нього
+      (від лівого або правого краю) не більше ніж на 10.
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let salaryAmount = prompt('Введіть розмір заробітної плати');
+      let livingWage = prompt('Введіть розмір прожиткового мінімуму');
+      let salaryTotal = livingWage - salaryAmount;
+
+      //2. Обчіслення результату і виведення результату
+      if (salaryAmount < livingWage) {
+        document.write(
+          `Розмір соціальної допомоги ${salaryTotal.toFixed(2)} грн.`,
+        );
+      } else {
+        document.write('Ваша заробітна плата більше прожіткового мінімуму!');
+      }
+    </script>
+  </body>
+</html>

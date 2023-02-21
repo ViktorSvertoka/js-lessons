@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-3.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 9</h1>
+    <p>
+      З клавіатури вводиться перша літера розширення файлу («html», «doc»,
+      «jpeg», «mp3», «xls»). Вивести на екран назву програми, яка може відкрити
+      цей тип файлу.
+    </p>
+    <script>
+      // 1. Введення необхідних данних
+      const extensionName = prompt('Введіть першу літеру розширення файлу');
+
+      const html = 'h';
+      const doc = 'd';
+      const jpeg = 'j';
+      const mp3 = 'm';
+      const xls = 'x';
+
+      // 2. Обчіслення результату
+      if (extensionName === html) {
+        document.write(
+          'Файл з розширенням html відчіняється через - Internet Browser',
+        );
+      } else if (extensionName === doc) {
+        document.write(
+          'Файл з розширенням doc відчіняється через - Microsoft Word',
+        );
+      } else if (extensionName === jpeg) {
+        document.write(
+          'Файл з розширенням jpeg відчіняється через - Photo Viewer',
+        );
+      } else if (extensionName === mp3) {
+        document.write(
+          'Файл з розширенням mp3 відчіняється через - Audio Player',
+        );
+      } else if (extensionName === xls) {
+        document.write(
+          'Файл з розширенням xls відчіняється через - Microsoft Excel',
+        );
+      } else {
+        alert('Невідомий формат файла');
+      }
+    </script>
+  </body>
+</html>

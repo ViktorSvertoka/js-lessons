@@ -17,27 +17,31 @@
       >
     </p>
     <h1>Задача № 4</h1>
-    <p>
-      З клавіатури вводиться вік людини. <br />
-      Вивести на екран ким він є (дитиною у садочку, школярем, студентом,
-      працівником, пенсіонером).
-    </p>
+    <p>Вивести таблицю з 3 рядків і 7 стовпців</p>
+
     <script>
       //1. Введення необхідних данних
-      let humanAge = Number(prompt('Введіть ваш вік.'));
+      let tableItem = '';
 
-      //2. Обчіслення результату і виведення результату
-      if (humanAge < 7) {
-        document.write('Ви дитина у садочку');
-      } else if (humanAge < 18) {
-        document.write('Ви школяр');
-      } else if (humanAge < 23) {
-        document.write('Ви студент');
-      } else if (humanAge < 65) {
-        document.write('Ви працівник');
-      } else {
-        document.write('Ви пенсіонер');
+      //2. Обчіслення результату
+      for (let num = 1; num <= 7; num++) {
+        tableItem += `<td>${num}</td>`;
       }
+
+      //3. Виведення результату
+      document.write(`
+<table border="2px">
+<tr>
+${tableItem}
+</tr>
+<tr>
+${tableItem}
+</tr>
+<tr>
+${tableItem}
+</tr>
+</table>
+`);
     </script>
   </body>
 </html>

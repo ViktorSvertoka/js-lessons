@@ -17,24 +17,19 @@
       >
     </p>
     <h1>Задача № 2</h1>
-    <p>Вивести таблицю з одним рядком і 7 стовпцями.</p>
+    <p>Створити 10 елементів для введення цін продуктів</p>
     <script>
       //1. Введення необхідних данних
       let tableItem = '';
 
       //2. Обчіслення результату
-      for (let num = 1; num <= 7; num++) {
-        tableItem += `<td>${num}</td>`;
+      for (let num = 1; num <= 10; num++) {
+        document.write(
+          `<div style= "display: inlaineFlex; margin: 10px 0;"><label>Product # ${num}</label><input></input><div>`,
+        );
       }
 
       //3. Виведення результату
-      document.write(`
-  <table border="2px">
-    <tr>
-      ${tableItem}
-    </tr>
-  </table>
-`);
     </script>
   </body>
 </html>

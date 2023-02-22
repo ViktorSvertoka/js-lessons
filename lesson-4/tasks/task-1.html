@@ -18,26 +18,25 @@
     </p>
     <h1>Задача № 1</h1>
     <p>
-      З клавіатури вводяться імена двох дітей та кількість у них цукерок.
-      Вивести не екран ім’я тієї дитини, у якої кількість цукерок є більшою, або
-      вивести, що кількість однакова.
+      Вивести з використанням циклів маркований список з випадковими числами
+      (1-100). Кількість випадкових чисел вводиться користувачем. Приклад:
     </p>
     <script>
       //1. Введення необхідних данних
-      let firstChildName = prompt('Введіть імя дитини');
-      let secondChildName = prompt('Введіть імя дитини');
+      let randomNumber = parseInt(prompt('Введіть кількість чисел'));
+      let listItem = '';
 
-      let candyNum1 = parseInt(prompt('Введіть кількість цукерок'));
-      let candyNum2 = parseInt(prompt('Введіть кількість цукерок'));
-
-      //2. Обчіслення результату і виведення результату
-      if (candyNum1 > candyNum2) {
-        document.write(`У ${firstChildName} більше цукерок`);
-      } else if (candyNum1 < candyNum2) {
-        document.write(`У ${secondChildName} більше цукерок`);
-      } else {
-        document.write('У дітей однакова кількість цукерок');
+      //2. Обчіслення результату
+      for (let num = 0; num < randomNumber; num++) {
+        listItem += `<li>${Math.floor(Math.random() * 100)}</li>`;
       }
+
+      //3. Виведення результату
+      document.write(`
+        <ul>
+          ${listItem}
+        </ul>
+      `);
     </script>
   </body>
 </html>

@@ -17,24 +17,34 @@
       >
     </p>
     <h1>Задача № 5</h1>
-    <p>Вивести таблицю</p>
+    <p>
+      Вивести таблицю: <br />
+      123 <br />
+      456 <br />
+      789 <br />
+    </p>
     <script>
       //1. Введення необхідних данних
       let tableItem = '';
 
       //2. Обчіслення результату
-      for (let num = 1; num <= 7; num++) {
-        tableItem += `<td>${num}</td>`;
+      for (let num = 1; num <= 3; num++) {
+        tableItem += `<td>${num + 1}</td>`;
       }
-
       //3. Виведення результату
       document.write(`
-  <table border="2px">
-    <tr>
-      ${tableItem}
-    </tr>
-  </table>
-`);
+         <table border="2px">
+         <tr>
+         ${tableItem}
+         </tr>
+         <tr>
+         ${tableItem}
+         </tr>
+         <tr>
+         ${tableItem}
+         </tr>
+         </table>
+         `);
     </script>
   </body>
 </html>

@@ -21,6 +21,39 @@
       Знайти суму 5 непарних чисел, що знаходяться між заданими користувачем
       числами.
     </p>
-    <script></script>
+    <script>
+      //1. Введення необхідних данних
+      let minNumber = parseInt(
+        prompt('Введіть перше число, воно повинно бути меньше за друге число'),
+      );
+      let maxNumber = parseInt(
+        prompt('Введіть друге число, воно повинно бути більше за перше число'),
+      );
+
+      if (minNumber > maxNumber) {
+        const temp = minNumber;
+        minNumber = maxNumber;
+        maxNumber = temp;
+      }
+
+      let oddNumberCounter = 0;
+      let totalSumNumber = 0;
+
+      //2. Обчіслення результату
+      for (
+        let currentNum = minNumber;
+        currentNum <= maxNumber && oddNumberCounter < 5;
+        currentNum++
+      ) {
+        if (currentNum % 2 !== 0) {
+          totalSumNumber += currentNum;
+          oddNumberCounter++;
+        }
+      }
+      //3. Виведення результату
+      document.write(
+        `Сума всіх непарних чісел у проміжку від ${minNumber} до ${maxNumber} дорівнює ${totalSumNumber}.`,
+      );
+    </script>
   </body>
 </html>

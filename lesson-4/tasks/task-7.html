@@ -17,25 +17,24 @@
       >
     </p>
     <h1>Задача № 7</h1>
-    <p>
-      З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
-    </p>
+    <p>Вивести на екран N абзаців (N вводиться користувачем) за зразком:</p>
     <script>
       //1. Введення необхідних данних
-      let monthNumber = parseInt(prompt('Введіть номер місяця.'));
+      const paragraph = parseInt(prompt('Введіть кількість абзаців'));
 
-      //2. Обчіслення результату і виведення результату
-      if (monthNumber < 3 || monthNumber === 12) {
-        document.write('Зараз Зима!');
-      } else if (monthNumber < 6) {
-        document.write('Зараз Весна!');
-      } else if (monthNumber < 9) {
-        document.write('Зараз Літо!');
-      } else if (monthNumber < 12) {
-        document.write('Зараз Осінь!');
-      } else {
-        alert('Не вірно введенні дані');
+      let result = '';
+      //2. Обчіслення результату
+      for (let i = 1; i <= paragraph; i++) {
+        result += `<h1>Заголовок ${i}</h1>`;
+
+        for (let j = 1; j <= i; j++) {
+          result += `<p>Розділ ${i}, параграф ${j}</p>`;
+        }
+
+        result += '<hr>';
       }
+      //3. Виведення результату
+      document.write(result);
     </script>
   </body>
 </html>

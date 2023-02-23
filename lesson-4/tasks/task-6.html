@@ -18,6 +18,27 @@
     </p>
     <h1>Задача № 6</h1>
     <p>З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.</p>
-    <script></script>
+    <script>
+      //1. Введення необхідних данних
+      let tableNum = 1;
+      let counterNum = 1;
+
+      //2. Обчіслення результату
+      for (let i = 0; i < 3; i++) {
+        tableNum = `<table border='1px' style="float: left; margin: 10px;">`;
+        for (let j = 0; j < 3; j++) {
+          tableNum += '<tr>';
+          for (let k = 0; k < 3; k++) {
+            tableNum += `<td>${counterNum}</td>`;
+            counterNum++;
+          }
+          tableNum += '</tr>';
+        }
+        tableNum += '</table>';
+
+        //3. Виведення результату
+        document.write(tableNum);
+      }
+    </script>
   </body>
 </html>

@@ -51,5 +51,20 @@
         >
       </li>
     </ul>
+    <script>
+      // Задача: Вивести високосні роки у вказаному діапазоні (між початковими і кінцевими роками).
+      // Високосний - він кратний 4, але не кратний 100, а також якщо він кратний 400.
+
+      // startYear - початковий рік
+      // endYear - кінцевий рік
+
+      const startYear = parseInt(prompt('Початковий рік = '));
+      const endYear = parseInt(prompt('Кінцевий рік = '));
+
+      for (let year = startYear; year <= endYear; year++) {
+        if (year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0))
+          document.write(`Високосні роки : ${year} <br>`);
+      }
+    </script>
   </body>
 </html>

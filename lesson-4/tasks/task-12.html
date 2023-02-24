@@ -18,12 +18,51 @@
     </p>
     <h1>Задача № 12</h1>
     <p>
-      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. Вибір у
-      кожній позиції вибирається як одне з чотирьох зображень. Вивести ці
-      зображення і повідомити виграш користувача (три перших зображення 100 грн,
-      три других – 200, три третіх – 500, три четвертих зображення – 1000грн).
+      Ігровий автомат. Випадково вибираємо зображення у 3 позиціях. <br />
+      Вибір у кожній позиції вибирається як одне з чотирьох зображень. <br />
+      Вивести ці зображення і повідомити виграш користувача <br />
+      (три перших зображення 100 грн, три других – 200, три третіх – 500, три
+      четвертих зображення – 1000грн).
+      <br />
       Використати цикли і switch (для вибору зображення за номером).
     </p>
-    <script></script>
+    <button class="btn-go-back custom-btn btn-1" onclick="location.reload()">
+      ГРАТИ
+    </button>
+    <br />
+    <br />
+    <br />
+    <br />
+    <script>
+      let tryToWin = '';
+
+      for (let i = 0; i < 3; i++) {
+        let randomSlotFruit = Math.floor(Math.random() * 4) + 1;
+        tryToWin += randomSlotFruit;
+
+        document.write(
+          `<img src="./image/${randomSlotFruit}.png" width="120" style="margin: 10px;" />`,
+        );
+      }
+      let spinToWin;
+      switch (tryToWin) {
+        case '111':
+          spinToWin = 'Ви виграли 100 грн!!!';
+          break;
+        case '222':
+          spinToWin = 'Ви виграли 200 грн!!!';
+          break;
+        case '333':
+          spinToWin = 'Ви виграли 500 грн!!!';
+          break;
+        case '444':
+          spinToWin = 'Ви виграли 1000 грн!!!';
+          break;
+        default:
+          spinToWin = 'Спробуйте ще...';
+          break;
+      }
+      document.write(`<br /><br /><br /><br /><h2>${spinToWin}</h2>`);
+    </script>
   </body>
 </html>

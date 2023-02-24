@@ -21,6 +21,21 @@
       Користувач загадує число. Комп’ютер задає питання поки не вгадає число
       користувача (використати confirm).
     </p>
-    <script></script>
+    <script>
+      //1. Введення необхідних данних
+      let userNumber = parseInt(prompt('Загадай число від 1 до 10:'));
+      let count = 0;
+      let computerTry;
+      //2. Обчіслення результату
+      do {
+        count++;
+        const computerNumber = Math.floor(Math.random() * 10) + 1;
+        computerTry = confirm(
+          `Компьютер вгадуе число, це число ${computerNumber}?`,
+        );
+      } while (!computerTry);
+      //3. Виведення результату
+      alert(`Так, компьтер вгадав число!`);
+    </script>
   </body>
 </html>

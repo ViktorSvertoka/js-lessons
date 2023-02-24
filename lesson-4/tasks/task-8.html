@@ -22,15 +22,17 @@
       користувача (використати confirm).
     </p>
     <script>
+      //1. Введення необхідних данних
       let userNumber = parseInt(prompt('Загадайте число від 1 до 10'));
 
+      //2. Обчіслення результату і виведення результату
       for (let i = 1; i <= 3; i++) {
         const computerNumber = Math.floor(Math.random() * 10) + 1;
-        let computerWin = confirm(
+        let computerTry = confirm(
           `Спроба компьютера № ${i}. Це число ${computerNumber}?`,
         );
 
-        if (computerWin) {
+        if (computerTry) {
           document.write(`Компьютер вгадав!`);
           break;
         }

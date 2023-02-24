@@ -21,6 +21,21 @@
       Користувач загадує число. За 3 спроби комп’ютер намагається вгадати число
       користувача (використати confirm).
     </p>
-    <script></script>
+    <script>
+      let userNumber = parseInt(prompt('Загадайте число від 1 до 10'));
+
+      for (let i = 1; i <= 3; i++) {
+        const computerNumber = Math.floor(Math.random() * 10) + 1;
+        let computerWin = confirm(
+          `Спроба компьютера № ${i}. Це число ${computerNumber}?`,
+        );
+
+        if (computerWin) {
+          document.write(`Компьютер вгадав!`);
+          break;
+        }
+        if (i === 3) document.write(`Нажаль комьютер не вгадав...`);
+      }
+    </script>
   </body>
 </html>

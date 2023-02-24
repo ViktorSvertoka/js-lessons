@@ -51,6 +51,20 @@
         >
       </li>
     </ul>
-    <script></script>
+    <script>
+      // Задача: Є у продавця N (>0) булочок. Поки є булочкі продавати їх.
+      // (питати у користувача кількість, якщо є така, то продавати)
+      let N = parseInt(prompt(`Введіть початкову кількість булочок N`));
+      do {
+        const userRollNumber = parseInt(
+          prompt(`Є у наявності ${N} булок. Скільки вам?`),
+        );
+        if (userRollNumber <= N) {
+          alert(`Продано ${userRollNumber} булочок.`);
+          N -= userRollNumber;
+        } else alert(`У нас е тільки ${N} булочок.`);
+      } while (N > 0);
+      alert(`Всі булочки продані`);
+    </script>
   </body>
 </html>

@@ -23,6 +23,24 @@
       оплати товарів (кожного разу користувачу повідомляють, яку ще суму
       потрібно ввести).
     </p>
-    <script></script>
+    <script>
+      let totalSum = parseInt(prompt('Повідомте покупцю сумму до сплати.'));
+
+      do {
+        const userSum = parseInt(
+          prompt(
+            `До сплати ${totalSum} грн. Внесіть кошти для здійснення оплати.`,
+          ),
+        );
+
+        if (userSum <= totalSum) {
+          alert(`Внесено ${userSum} грн.`);
+          totalSum -= userSum;
+        } else {
+          alert(`Ви не сплатили ще ${totalSum} грн.`);
+        }
+      } while (totalSum > 0);
+      alert(`Ви сплатили всю суму, дякуємо за покупку!`);
+    </script>
   </body>
 </html>

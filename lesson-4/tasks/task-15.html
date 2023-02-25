@@ -21,6 +21,22 @@
       Користувача поступово вводить показники температури протягом року. Знайти
       середню температуру.
     </p>
-    <script></script>
+    <script>
+      let tempByMonth = parseInt(
+        prompt(
+          'Введіть кількість місяців за які ви хочете отримати середню температуру.',
+        ),
+      );
+      let averageTemp = 0;
+
+      for (let i = 1; i <= tempByMonth; i++) {
+        let userTemp = parseFloat(prompt('Введіть температуру за місяць.'));
+        averageTemp += userTemp;
+      }
+      averageTemp = averageTemp / tempByMonth;
+      document.write(
+        `<h2>Середня температура  ${averageTemp.toFixed()} градусів</h2>`,
+      );
+    </script>
   </body>
 </html>

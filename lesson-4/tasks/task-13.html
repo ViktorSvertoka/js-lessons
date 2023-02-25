@@ -21,6 +21,25 @@
       Морський бій. Комп’ютер випадково розташовує одиночний корабель на полі
       розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
     </p>
-    <script></script>
+    <script>
+      //1. Введення необхідних данних
+      let battlefield = parseInt(prompt('Задайте розмір поля'));
+      let numberOfShells = parseInt(prompt('Задайте кількість снарядів'));
+
+      let battleShip = Math.floor(Math.random() * battlefield) + 1;
+      //2. Обчіслення результату
+      for (let i = 0; i < numberOfShells; i++) {
+        const shipCoordinates = prompt('Введіть коордінати для пострілу');
+
+        if (battlefield === battleShip) {
+          //3. Виведення результату - перший випадок
+          document.write('<h2>Ви потопили корабель!!!</h2>');
+          break;
+        } else {
+          //4. Виведення результату - другий випадок
+          document.write('<h3>Постріли були не вдалими...</h3><br>');
+        }
+      }
+    </script>
   </body>
 </html>

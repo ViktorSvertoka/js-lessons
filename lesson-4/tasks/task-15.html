@@ -33,9 +33,9 @@
         let userTemp = parseFloat(prompt('Введіть температуру за місяць.'));
         averageTemp += userTemp;
       }
-      averageTemp = averageTemp / tempByMonth;
+      let totalAverageTemp = averageTemp / tempByMonth;
       document.write(
-        `<h2>Середня температура  ${averageTemp.toFixed()} градусів</h2>`,
+        `<h2>Середня температура  ${totalAverageTemp.toFixed()} градусів</h2>`,
       );
     </script>
   </body>

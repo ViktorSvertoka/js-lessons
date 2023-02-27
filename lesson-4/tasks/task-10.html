@@ -36,11 +36,7 @@
       let totalSumNumber = 0;
 
       //2. Обчіслення результату
-      for (
-        let currentNum = minNumber;
-        currentNum <= maxNumber && oddNumberCounter < 100;
-        currentNum++
-      ) {
+      for (let currentNum = minNumber; currentNum <= maxNumber; currentNum++) {
         if (currentNum % 2 !== 0) {
           totalSumNumber += currentNum;
           oddNumberCounter++;

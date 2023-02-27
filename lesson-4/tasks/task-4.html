@@ -20,28 +20,20 @@
     <p>Вивести таблицю з 3 рядків і 7 стовпців</p>
 
     <script>
-      //1. Введення необхідних данних
-      let tableItem = '';
-
-      //2. Обчіслення результату
-      for (let num = 1; num <= 7; num++) {
-        tableItem += `<td>${num}</td>`;
+      let column = 1;
+      let rows = 1;
+      document.write(`<table border="2px">`);
+      while (rows <= 3) {
+        document.write(`<tr>`);
+        column = 1;
+        while (column <= 7) {
+          document.write(`<td>${column}</td>`);
+          column++;
+        }
+        document.write(`</tr>`);
+        rows++;
       }
-
-      //3. Виведення результату
-      document.write(`
-<table border="2px">
-<tr>
-${tableItem}
-</tr>
-<tr>
-${tableItem}
-</tr>
-<tr>
-${tableItem}
-</tr>
-</table>
-`);
+      document.write(`</table> `);
     </script>
   </body>
 </html>

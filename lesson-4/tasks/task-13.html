@@ -22,23 +22,30 @@
       розміром N*M. Маючи К снарядів користувач намагається потопити корабель.
     </p>
     <script>
-      //1. Введення необхідних данних
-      let battlefield = parseInt(prompt('Задайте розмір поля'));
-      let numberOfShells = parseInt(prompt('Задайте кількість снарядів'));
+      const battlefieldX = parseInt(prompt('Задайте координати по осі X'));
+      const battlefieldY = parseInt(prompt('Задайте координати по осі Y'));
 
-      let battleShip = Math.floor(Math.random() * battlefield) + 1;
-      //2. Обчіслення результату
+      const numberOfShells = parseInt(
+        prompt('Введіть кількість снарядів для пострілів'),
+      );
+
+      const battleShipPositionX = 1 + Math.floor(Math.random() * battlefieldX);
+      const battleShipPositionY = 1 + Math.floor(Math.random() * battlefieldY);
+
       for (let i = 0; i < numberOfShells; i++) {
-        const shipCoordinates = prompt('Введіть коордінати для пострілу');
-
-        if (battlefield === battleShip) {
-          //3. Виведення результату - перший випадок
-          document.write('<h2>Ви потопили корабель!!!</h2>');
+        const shotUserX = parseInt(
+          prompt('Введіть кордінати для пострілу по осі X'),
+        );
+        const shotUserY = parseInt(
+          prompt('Введіть кордінати для пострілу по осі Y'),
+        );
+        if (
+          battleShipPositionX === shotUserX &&
+          battleShipPositionY === shotUserY
+        ) {
+          alert('Ви потопило корабель!!!');
           break;
-        } else {
-          //4. Виведення результату - другий випадок
-          document.write('<h3>Постріли були не вдалими...</h3><br>');
-        }
+        } else alert(`Нажаль постріл був невдалий...`);
       }
     </script>
   </body>

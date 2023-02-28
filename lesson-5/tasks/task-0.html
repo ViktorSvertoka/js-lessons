@@ -10,41 +10,17 @@
   </head>
   <body>
     <p>
-      <a href="../index-4.html"
+      <a href="../index-5.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
-    <h1>Задача № 16</h1>
+    <h1>Задача № 0</h1>
     <p>
-      Користувач поступово вводить прибуток магазину за кожен день протягом N
-      тижнів. Знайти загальну величину прибутку та вивести величину прибутку
-      протягом кожного окремого тижня.
+      Задача 0. Створити функцію, яка за номером місяця повертає пору року, до
+      якої відноситься цей місяць.
     </p>
-    <script>
-      let weeksNum = parseInt(prompt('Введіть кількість тижнів'));
-
-      let totalSum = 0;
-
-      for (let week = 1; week <= weeksNum; week++) {
-        let totalWeekSum = 0;
-        for (let day = 1; day <= 7; day++) {
-          let totalDaySum = parseFloat(
-            prompt(`Введіть суму за ${day} день ${week} тижня`),
-          );
-          totalWeekSum += totalDaySum;
-        }
-        document.write(
-          `<h3>Прибуток за ${week} тиждень: ${totalWeekSum.toFixed(
-            2,
-          )} грн.</h3>`,
-        );
-        totalSum += totalWeekSum;
-      }
-      document.write(
-        `<h2>Загальний прибуток складае: ${totalSum.toFixed(2)} грн.</h2>`,
-      );
-    </script>
+    <script></script>
   </body>
 </html>

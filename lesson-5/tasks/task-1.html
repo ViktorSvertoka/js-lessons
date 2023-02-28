@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-4.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      Вивести з використанням циклів маркований список з випадковими числами
+      (1-100). Кількість випадкових чисел вводиться користувачем. Приклад:
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let randomNumber = parseInt(prompt('Введіть кількість чисел'));
+      let listItem = '';
+
+      //2. Обчіслення результату
+      for (let num = 0; num < randomNumber; num++) {
+        listItem += `<li>${Math.floor(Math.random() * 100)}</li>`;
+      }
+
+      //3. Виведення результату
+      document.write(`
+        <ul>
+          ${listItem}
+        </ul>
+      `);
+    </script>
+  </body>
+</html>

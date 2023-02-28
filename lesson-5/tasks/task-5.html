@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-4.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 5</h1>
+    <p>
+      Вивести таблицю: <br />
+      123 <br />
+      456 <br />
+      789 <br />
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let tableNum = `<table border='1px'>`;
+      let counterNum = 1;
+
+      //2. Обчіслення результату
+      for (let i = 0; i < 3; i++) {
+        tableNum += '<tr>';
+        for (let j = 0; j < 3; j++) {
+          tableNum += `<td>${counterNum}</td>`;
+          counterNum++;
+        }
+        tableNum += '</tr>';
+      }
+
+      tableNum += '</table>';
+
+      //3. Виведення результату
+
+      document.write(tableNum);
+    </script>
+  </body>
+</html>

@@ -10,7 +10,7 @@
   </head>
   <body>
     <p>
-      <a href="../index-4.html"
+      <a href="../index-5.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
@@ -18,24 +18,9 @@
     </p>
     <h1>Задача № 9</h1>
     <p>
-      Користувач загадує число. Комп’ютер задає питання поки не вгадає число
-      користувача (використати confirm).
+      Задача 9. Дано покази температур (довільна кількість). Розробити функцію,
+      яка дозволить підрахувати кількість від’ємних показів температури.
     </p>
-    <script>
-      //1. Введення необхідних данних
-      let userNumber = parseInt(prompt('Загадай число від 1 до 10:'));
-      let counter = 0;
-      let computerTry;
-      //2. Обчіслення результату
-      do {
-        counter++;
-        const computerNumber = Math.floor(Math.random() * 10) + 1;
-        computerTry = confirm(
-          `Компьютер вгадуе число, це число ${computerNumber}?`,
-        );
-      } while (!computerTry);
-      //3. Виведення результату
-      alert(`Так, компьтер вгадав число!`);
-    </script>
+    <script></script>
   </body>
 </html>

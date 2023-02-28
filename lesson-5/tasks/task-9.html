@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-4.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 9</h1>
+    <p>
+      Користувач загадує число. Комп’ютер задає питання поки не вгадає число
+      користувача (використати confirm).
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let userNumber = parseInt(prompt('Загадай число від 1 до 10:'));
+      let counter = 0;
+      let computerTry;
+      //2. Обчіслення результату
+      do {
+        counter++;
+        const computerNumber = Math.floor(Math.random() * 10) + 1;
+        computerTry = confirm(
+          `Компьютер вгадуе число, це число ${computerNumber}?`,
+        );
+      } while (!computerTry);
+      //3. Виведення результату
+      alert(`Так, компьтер вгадав число!`);
+    </script>
+  </body>
+</html>

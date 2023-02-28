@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-4.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 6</h1>
+    <p>Вивести 3 таблиці (по 3 рядки і 3 стовпці у кожній) за зразком.</p>
+    <p>Tаблиця 1</p>
+    1 2 3 <br />
+    4 5 6 <br />
+    7 8 9 <br />
+    <p>Tаблиця 2</p>
+    10 11 12 <br />
+    13 14 15 <br />
+    16 17 18 <br />
+    <p>Tаблиця 3</p>
+    19 20 21 <br />
+    22 23 24 <br />
+    25 26 27 <br />
+
+    <script>
+      //1. Введення необхідних данних
+      let tableNum = 1;
+      let counterNum = 1;
+
+      //2. Обчіслення результату
+      for (let i = 0; i < 3; i++) {
+        tableNum = `<table border='1px' style="float: left; margin: 10px;">`;
+        for (let j = 0; j < 3; j++) {
+          tableNum += '<tr>';
+          for (let k = 0; k < 3; k++) {
+            tableNum += `<td>${counterNum}</td>`;
+            counterNum++;
+          }
+          tableNum += '</tr>';
+        }
+        tableNum += '</table>';
+
+        //3. Виведення результату
+        document.write(tableNum);
+      }
+    </script>
+  </body>
+</html>

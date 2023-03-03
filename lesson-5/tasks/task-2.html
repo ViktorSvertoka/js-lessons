@@ -21,6 +21,26 @@
       Задача 2. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей
       день робочим.
     </p>
-    <script></script>
+    <script>
+      function weekDay(day) {
+        switch (day) {
+          case 1:
+          case 2:
+          case 3:
+          case 4:
+          case 5:
+            return 'Робочий день';
+          case 6:
+          case 7:
+            return 'Вихідний день';
+          default:
+            return 'Не вірно ввели номер дня тижня!';
+        }
+      }
+
+      const dayNumber = parseInt(prompt('Введіть номер дня'));
+
+      document.write(weekDay(dayNumber));
+    </script>
   </body>
 </html>

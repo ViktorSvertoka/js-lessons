@@ -18,12 +18,44 @@
     </p>
     <h1>Задача № 3</h1>
     <p>
-      Задача 3. Створити окремі функції, які для 4 чисел знаходять: 1)суму;
-      <br />
+      Задача 3. Створити окремі функції, які для 4 чисел знаходять: <br />
+      1)суму; <br />
       2)добуток; <br />
       3)середнє арифметичне; <br />
       4)мінімальне значення. <br />
     </p>
-    <script></script>
+    <script>
+      function sum(x, y, z, n) {
+        return x + y + z + n;
+      }
+
+      function product(x, y, z, n) {
+        return x * y * z * n;
+      }
+
+      function arithmeticMean(x, y, z, n) {
+        return (x + y + z + n) / 4;
+      }
+
+      function minimumValue(x, y, z, n) {
+        return Math.min(x, y, z, n);
+      }
+
+      const num1 = parseFloat(prompt('Введіть перше число'));
+      const num2 = parseFloat(prompt('Введіть друге число'));
+      const num3 = parseFloat(prompt('Введіть третє число'));
+      const num4 = parseFloat(prompt('Введіть четверте число'));
+
+      const sumTotal = sum(num1, num2, num3, num4);
+      const productTotal = product(num1, num2, num3, num4);
+      const arithmeticMeanTotal = arithmeticMean(num1, num2, num3, num4);
+      const minimumValueTotal = minimumValue(num1, num2, num3, num4);
+
+      document.write(`${sumTotal} <br />`);
+      document.write(`${productTotal} <br />`);
+      document.write(`${arithmeticMeanTotal} <br />`);
+      document.write(`${minimumValueTotal} <br />`);
+    </script>
   </body>
 </html>
+2

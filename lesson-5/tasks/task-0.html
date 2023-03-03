@@ -21,6 +21,33 @@
       Задача 0. Створити функцію, яка за номером місяця повертає пору року, до
       якої відноситься цей місяць.
     </p>
-    <script></script>
+    <script>
+      function fourSeasons(month) {
+        switch (month) {
+          case 1:
+          case 2:
+          case 12:
+            return 'Зима';
+          case 3:
+          case 4:
+          case 5:
+            return 'Весна';
+          case 6:
+          case 7:
+          case 8:
+            return 'Літо';
+          case 9:
+          case 10:
+          case 11:
+            return 'Осінь';
+          default:
+            return 'Не вірно ввели номер місяця!';
+        }
+      }
+
+      const month = parseInt(prompt('Введіть номер місяця'));
+      const seasonName = fourSeasons(month);
+      document.write(seasonName);
+    </script>
   </body>
 </html>

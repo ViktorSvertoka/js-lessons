@@ -23,6 +23,47 @@
       1) Кілограми у фунти; <br />
       3) Кілометри у милі. <br />
     </p>
-    <script></script>
+    <script>
+      const number = parseInt(prompt('Введіть число'));
+
+      // 1) Сантиметри у дюйми
+      function findResultInches() {
+        let centimeters = number;
+        let inches = centimeters * 0.3937;
+
+        let resultInches = `<h2>Сантиметри ${number} Дюйми ${inches.toFixed(
+          2,
+        )}</h2>`;
+        return resultInches;
+      }
+
+      document.write(findResultInches(number));
+
+      // 1) Кілограми у фунти
+      function findResultPounds() {
+        let kilograms = number;
+        let pounds = kilograms * 2.2046;
+
+        let resultPounds = `<h2>Кілограми ${number} Фунти ${pounds.toFixed(
+          2,
+        )}</h2>`;
+        return resultPounds;
+      }
+
+      document.write(findResultPounds(number));
+
+      // 3) Кілометри у милі
+      function findResultMiles() {
+        let kilometers = number;
+        let miles = kilometers * 0.6214;
+
+        let resultMiles = `<h2>Кілометри ${number} Милі ${miles.toFixed(
+          2,
+        )}</h2>`;
+        return resultMiles;
+      }
+
+      document.write(findResultMiles(number));
+    </script>
   </body>
 </html>

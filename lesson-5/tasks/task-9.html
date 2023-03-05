@@ -21,6 +21,31 @@
       Задача 9. Дано покази температур (довільна кількість). Розробити функцію,
       яка дозволить підрахувати кількість від’ємних показів температури.
     </p>
-    <script></script>
+    <script>
+      const temperatureIndicators1 = 12;
+      const temperatureIndicators2 = -5;
+      const temperatureIndicators3 = 17;
+      const temperatureIndicators4 = -10;
+
+      function getNegativeTemperatureReadings(...temp) {
+        let negativeIndicators = 0;
+        for (i = 0; i < temp.length; i++) {
+          if (temp[i] < 0) negativeIndicators++;
+        }
+
+        return negativeIndicators;
+      }
+
+      const negativeTemperature = getNegativeTemperatureReadings(
+        temperatureIndicators1,
+        temperatureIndicators2,
+        temperatureIndicators3,
+        temperatureIndicators4,
+      );
+
+      document.write(
+        `<h2>Кількість від'ємних показників температури = ${negativeTemperature}</h2>`,
+      );
+    </script>
   </body>
 </html>

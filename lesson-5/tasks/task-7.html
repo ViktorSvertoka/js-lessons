@@ -21,6 +21,13 @@
       Задача 7. Створити функцію, яка випадковим чином виводить на екран одне із
       4 зображень (шляхи до зображень передаються у функцію)
     </p>
-    <script></script>
+    <script>
+      function showRandomImage() {
+        let image = 1 + Math.floor(Math.random() * 4);
+        return document.write(`<img src="../image/${image}.png" width="120">`);
+      }
+
+      showRandomImage();
+    </script>
   </body>
 </html>

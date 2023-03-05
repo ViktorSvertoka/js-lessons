@@ -26,10 +26,11 @@
       const temperatureIndicators2 = -5;
       const temperatureIndicators3 = 17;
       const temperatureIndicators4 = -10;
+      const temperatureIndicators5 = -14;
 
       function getNegativeTemperatureReadings(...temp) {
         let negativeIndicators = 0;
-        for (i = 0; i < temp.length; i++) {
+        for (let i = 0; i < temp.length; i++) {
           if (temp[i] < 0) negativeIndicators++;
         }
 
@@ -41,6 +42,7 @@
         temperatureIndicators2,
         temperatureIndicators3,
         temperatureIndicators4,
+        temperatureIndicators5,
       );
 
       document.write(

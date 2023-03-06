@@ -23,35 +23,6 @@
       більших за 100.
     </p>
 
-    <script>
-      const firstNumber = parseInt(prompt('Введіть перше число'));
-      const secondNumber = parseInt(prompt('Введіть друге число'));
-      const thirdNumber = parseInt(prompt('Введіть третє число'));
-
-      function findResult(number1, number2, number3) {
-        let evenNumbers = 0;
-        let positiveNumbers = 0;
-        let biggerOnesNumbers = 0;
-
-        for (let x = 0; x < arguments.length; x++) {
-          if (arguments[x] % 2 === 0) evenNumbers = evenNumbers + 1;
-        }
-
-        for (let y = 0; y < arguments.length; y++) {
-          if (arguments[y] > 0) positiveNumbers = positiveNumbers + 1;
-        }
-
-        for (let z = 0; z < arguments.length; z++) {
-          if (arguments[z] > 100) biggerOnesNumbers = biggerOnesNumbers + 1;
-        }
-
-        let result = `<h2>Кількість парних чисел: ${evenNumbers}<br />
-        Кількість додатних чисел: ${positiveNumbers}<br />
-        Кількість більших за 100 чисел: ${biggerOnesNumbers}<br /></h2>`;
-        return result;
-      }
-
-      document.write(findResult(firstNumber, secondNumber, thirdNumber));
-    </script>
+    <script></script>
   </body>
 </html>

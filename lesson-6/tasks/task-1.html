@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      Задача 1. Створити функцію, яка за номером місяця повертає його назву.
+    </p>
+    <script>
+      function nameOfTheMonth(month) {
+        switch (month) {
+          case 1:
+            return 'Січень';
+          case 2:
+            return 'Лютий';
+          case 3:
+            return 'Березень';
+          case 4:
+            return 'Квітень';
+          case 5:
+            return 'Травень';
+          case 6:
+            return 'Червень';
+          case 7:
+            return 'Ліпень';
+          case 8:
+            return 'Серпень';
+          case 9:
+            return 'Вересень';
+          case 10:
+            return 'Жовтень';
+          case 11:
+            return 'Листопад';
+          case 12:
+            return 'Грудень';
+          default:
+            return 'Не вірно ввели номер місяця!';
+        }
+      }
+
+      const month = parseInt(prompt('Введіть номер місяця'));
+      const monthName = nameOfTheMonth(month);
+      document.write(monthName);
+    </script>
+  </body>
+</html>

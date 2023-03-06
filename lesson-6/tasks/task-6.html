@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 6</h1>
+    <p>
+      Задача 6. Створити функцію, яка створює таблицю з вказаною кількістю
+      рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
+    </p>
+
+    <script>
+      const rows = parseInt(prompt('Введіть кількість рядків'));
+      const columns = parseInt(prompt('Введіть кількість стовпців'));
+      const contents = prompt('Введіть контент');
+
+      function getTableCreator(rows, columns, contents) {
+        document.write('<table border="2px"><tbody border="2px">');
+        for (let num1 = 1; num1 <= rows; num1++) {
+          document.write('<tr>');
+          for (let num2 = 1; num2 <= columns; num2++) {
+            document.write(`<td>${contents}</td>`);
+          }
+          document.write('</tr>');
+        }
+        document.write('</tbody></table>');
+      }
+
+      let table = getTableCreator(rows, columns, contents);
+    </script>
+  </body>
+</html>

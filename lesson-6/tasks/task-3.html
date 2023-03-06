@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 3</h1>
+    <p>
+      Задача 3. Створити окремі функції, які для 4 чисел знаходять: <br />
+      1)суму; <br />
+      2)добуток; <br />
+      3)середнє арифметичне; <br />
+      4)мінімальне значення. <br />
+    </p>
+    <script>
+      function sum(x, y, z, n) {
+        return x + y + z + n;
+      }
+
+      function product(x, y, z, n) {
+        return x * y * z * n;
+      }
+
+      function arithmeticMean(x, y, z, n) {
+        return (x + y + z + n) / 4;
+      }
+
+      function minimumValue(x, y, z, n) {
+        return Math.min(x, y, z, n);
+      }
+
+      const num1 = parseFloat(prompt('Введіть перше число'));
+      const num2 = parseFloat(prompt('Введіть друге число'));
+      const num3 = parseFloat(prompt('Введіть третє число'));
+      const num4 = parseFloat(prompt('Введіть четверте число'));
+
+      const sumTotal = sum(num1, num2, num3, num4);
+      const productTotal = product(num1, num2, num3, num4);
+      const arithmeticMeanTotal = arithmeticMean(num1, num2, num3, num4);
+      const minimumValueTotal = minimumValue(num1, num2, num3, num4);
+
+      document.write(`${sumTotal} <br />`);
+      document.write(`${productTotal} <br />`);
+      document.write(`${arithmeticMeanTotal} <br />`);
+      document.write(`${minimumValueTotal} <br />`);
+    </script>
+  </body>
+</html>
+2

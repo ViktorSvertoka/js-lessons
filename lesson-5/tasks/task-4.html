@@ -34,15 +34,15 @@
         let biggerOnesNumbers = 0;
 
         for (let x = 0; x < arguments.length; x++) {
-          if (arguments[x] % 2 === 0) evenNumbers = evenNumbers + 1;
+          if (arguments[x] % 2 === 0) evenNumbers += 1;
         }
 
         for (let y = 0; y < arguments.length; y++) {
-          if (arguments[y] > 0) positiveNumbers = positiveNumbers + 1;
+          if (arguments[y] > 0) positiveNumbers += 1;
         }
 
         for (let z = 0; z < arguments.length; z++) {
-          if (arguments[z] > 100) biggerOnesNumbers = biggerOnesNumbers + 1;
+          if (arguments[z] > 100) biggerOnesNumbers += 1;
         }
 
         let result = `<h2>Кількість парних чисел: ${evenNumbers}<br />

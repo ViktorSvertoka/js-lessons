@@ -21,32 +21,6 @@
       Задача 10. Дано покази температур (довільна кількість). Розробити функцію,
       яка дозволить знайти середнє значення для додатних показів температури.
     </p>
-    <script>
-      function findAverageTemperature() {
-        let totalTemperature = 0;
-        let positiveTemperature = 0;
-        for (let i = 0; i < arguments.length; i++) {
-          if (arguments[i] > 0) {
-            totalTemperature += arguments[i];
-            positiveTemperature++;
-          }
-        }
-        const result = totalTemperature / positiveTemperature;
-        return result;
-      }
-
-      const averageTemperature = findAverageTemperature(
-        -1,
-        15,
-        -23,
-        0,
-        29,
-        13,
-        -6,
-        1,
-        32,
-      );
-      document.write(`<h2>Середне значення: ${averageTemperature}</h2>`);
-    </script>
+    <script></script>
   </body>
 </html>

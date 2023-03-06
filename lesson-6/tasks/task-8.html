@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 8</h1>
+    <p>
+      Задача 8. Створити функцію, яка виводить банер у функцію передаються:
+      зображення, заголовок та посилання, куди переходимо при кліку на
+      зображення тег img повине знаходитись у середині тега a:
+      <!-- <a> <img src="”шлях”" /> </a> -->
+    </p>
+    <script>
+      function showBanner(image, title, link) {
+        const createBanner = `<h2>Записатися на курс по JS <br> Тисни на картинку, та переходь за посиланням</h2>
+        <a target='_blank' href='https://edu.fls.guru/#'><img src='../image/logo.png'>
+          
+        </a>`;
+        return createBanner;
+      }
+
+      document.write(showBanner());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 9</h1>
+    <p>
+      Задача 9. Дано покази температур (довільна кількість). Розробити функцію,
+      яка дозволить підрахувати кількість від’ємних показів температури.
+    </p>
+    <script>
+      const temperatureIndicators1 = 12;
+      const temperatureIndicators2 = -5;
+      const temperatureIndicators3 = 17;
+      const temperatureIndicators4 = -10;
+      const temperatureIndicators5 = -14;
+
+      function getNegativeTemperatureReadings(...temp) {
+        let negativeIndicators = 0;
+        for (let i = 0; i < temp.length; i++) {
+          if (temp[i] < 0) negativeIndicators++;
+        }
+
+        return negativeIndicators;
+      }
+
+      const negativeTemperature = getNegativeTemperatureReadings(
+        temperatureIndicators1,
+        temperatureIndicators2,
+        temperatureIndicators3,
+        temperatureIndicators4,
+        temperatureIndicators5,
+      );
+
+      document.write(
+        `<h2>Кількість від'ємних показників температури = ${negativeTemperature}</h2>`,
+      );
+    </script>
+  </body>
+</html>

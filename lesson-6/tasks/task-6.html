@@ -22,24 +22,6 @@
       рядків і стовпців (таблиця заповнюється заданим фіксованим повідомленням).
     </p>
 
-    <script>
-      const rows = parseInt(prompt('Введіть кількість рядків'));
-      const columns = parseInt(prompt('Введіть кількість стовпців'));
-      const contents = prompt('Введіть контент');
-
-      function getTableCreator(rows, columns, contents) {
-        document.write('<table border="2px"><tbody border="2px">');
-        for (let num1 = 1; num1 <= rows; num1++) {
-          document.write('<tr>');
-          for (let num2 = 1; num2 <= columns; num2++) {
-            document.write(`<td>${contents}</td>`);
-          }
-          document.write('</tr>');
-        }
-        document.write('</tbody></table>');
-      }
-
-      let table = getTableCreator(rows, columns, contents);
-    </script>
+    <script></script>
   </body>
 </html>

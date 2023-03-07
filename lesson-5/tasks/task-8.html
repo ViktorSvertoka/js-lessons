@@ -24,15 +24,27 @@
       <!-- <a> <img src="”шлях”" /> </a> -->
     </p>
     <script>
+      // function showBanner(image, title, link) {
+      //   const createBanner = `<h2>Записатися на курс по JS <br> Тисни на картинку, та переходь за посиланням</h2>
+      //   <a target='_blank' href='https://edu.fls.guru/#'><img src='../image/logo.png'></a>`;
+      //   return createBanner;
+      // }
+
+      // document.write(showBanner());
+
       function showBanner(image, title, link) {
-        const createBanner = `<h2>Записатися на курс по JS <br> Тисни на картинку, та переходь за посиланням</h2>
-        <a target='_blank' href='https://edu.fls.guru/#'><img src='../image/logo.png'>
-          
-        </a>`;
+        const createBanner = `<h2>${title}<br> Тисни на картинку, та переходь за посиланням</h2>
+  <a target='_blank' href='${link}'><img src='${image}'></a>`;
         return createBanner;
       }
 
-      document.write(showBanner());
+      document.write(
+        showBanner(
+          '../image/logo.png',
+          'Записатися на курс по JS',
+          'https://edu.fls.guru/#',
+        ),
+      );
     </script>
   </body>
 </html>

@@ -24,6 +24,73 @@
       номерами); за місяці, які є початковими у сезоні (весна, літо, осінь,
       зима).
     </p>
-    <script></script>
+    <script>
+      const paymentsPerYear = [
+        289, 120, 167, 89, 217, 111, 78, 202, 147, 152, 99, 261,
+      ];
+
+      function sumAll(payments) {
+        return payments.reduce((acc, val) => acc + val, 0);
+      }
+
+      function sumFirstHalf(payments) {
+        const halfIndex = payments.length / 2;
+        const firstHalf = payments.slice(0, halfIndex);
+        return sumAll(firstHalf);
+      }
+
+      function sumSecondHalf(payments) {
+        const halfIndex = payments.length / 2;
+        const secondHalf = payments.slice(halfIndex);
+        return sumAll(secondHalf);
+      }
+
+      function sumSummer(payments) {
+        const summerIndices = [5, 6, 7];
+        const summerPayments = summerIndices.map(i => payments[i]);
+        return sumAll(summerPayments);
+      }
+
+      function sumQ2(payments) {
+        const q2Indices = [3, 4, 5];
+        const q2Payments = q2Indices.map(i => payments[i]);
+        return sumAll(q2Payments);
+      }
+
+      function sumEvenMonths(payments) {
+        const evenPayments = payments.filter(
+          (val, index) => (index + 1) % 2 === 0,
+        );
+        return sumAll(evenPayments);
+      }
+
+      function sumSeasonStart(payments) {
+        const seasonStartIndices = [0, 5, 8];
+        const seasonStartPayments = seasonStartIndices.map(i => payments[i]);
+        return sumAll(seasonStartPayments);
+      }
+
+      document.write(`<h2>Сума за весь рік: ${sumAll(paymentsPerYear)}</h2>`);
+      document.write(
+        `<h2>Сума у першій половині року: ${sumFirstHalf(
+          paymentsPerYear,
+        )}</h2>`,
+      );
+      document.write(
+        `<h2>Сума у другій половині року: ${sumSecondHalf(
+          paymentsPerYear,
+        )}</h2>`,
+      );
+      document.write(`<h2>Сума за літо: ${sumSummer(paymentsPerYear)}</h2>`);
+      document.write(`<h2>Сума за ІІ квартал: ${sumQ2(paymentsPerYear)}</h2>`);
+      document.write(
+        `<h2>Сума за парні місяці: ${sumEvenMonths(paymentsPerYear)}</h2>`,
+      );
+      document.write(
+        `<h2>Сума за місяці, які є початковими у сезоні (весна, літо, осінь, зима): ${sumSeasonStart(
+          paymentsPerYear,
+        )}</h2>`,
+      );
+    </script>
   </body>
 </html>

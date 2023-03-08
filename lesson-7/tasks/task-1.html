@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      Задача 1. Дано масив, який містить оцінки з К предметів. Знайти середній
+      бал і з’ясувати до якої категорії він відноситься (відмінник, двійочник
+      (має хоча би одну двійку), хорошист (оцінки добре і відмінно), трійочник(є
+      хоча би одна трійка)).
+    </p>
+    <script>
+      function findMiddleGrade(array) {
+        let sum = 0;
+        let average;
+        for (let i = 0; i < array.length; i++) {
+          sum += array[i];
+        }
+        average = sum / array.length;
+        return average;
+      }
+
+      function studentSuccessCategory(average) {
+        if (average >= 10) {
+          return 'Відмінник';
+        } else if (average >= 7 && average < 10) {
+          return 'Хорошист';
+        } else if (average >= 4 && average < 7) {
+          return 'Трійочник';
+        } else {
+          return 'Двійочник';
+        }
+      }
+
+      let totalArray = [1 + Math.floor(Math.random() * 12)];
+      let average = findMiddleGrade(totalArray);
+      let totalSuccessCategory = studentSuccessCategory(average);
+      document.write(
+        `<h2>Середній бал ${average}, він відноситься до категорії ${totalSuccessCategory}.</h2>`,
+      );
+    </script>
+  </body>
+</html>

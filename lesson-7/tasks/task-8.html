@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-5.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 8</h1>
+    <p>
+      Задача 8. Дано одновимірний масив, у якому зберігається певна виграшна
+      сума (елементи заповнюються випадковим чином значеннями від -500 до 500).
+      Надаючи користувачу можливість вибирати номери елементів (поки він не
+      відмовиться). Знаходити сумарний виграш.
+    </p>
+    <script>
+      let array = [];
+      for (let i = 0; i < 100; i++) {
+        array.push(Math.floor(Math.random() * 1001) - 500);
+      }
+
+      let sum = 0;
+      while (true) {
+        let index = prompt(
+          `Введіть номер елементу (від 1 до ${array.length}) або натисніть "Відміна" для завершення гри:`,
+        );
+        if (index === null) {
+          break;
+        }
+        index = parseInt(index);
+        if (isNaN(index) || index < 1 || index > array.length) {
+          alert(`Введіть коректний номер елементу (від 1 до ${array.length}).`);
+        } else {
+          sum += array[index - 1];
+          alert(`Ваш виграш становить ${sum}.`);
+        }
+      }
+
+      alert(`Загальний виграш становить ${sum}.`);
+    </script>
+  </body>
+</html>

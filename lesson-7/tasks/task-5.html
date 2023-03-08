@@ -17,37 +17,7 @@
       >
     </p>
     <h1>Задача № 5</h1>
-    <p>
-      Задача 5. Дано послідовність оцінок учня. Підрахувати кількість: 1) двійок
-      2) кількість хороших оцінок (добре, відмінно); 3) кількість оцінок, які
-      нижче середнього.
-    </p>
-    <script>
-      const grades = [3, 4, 5, 2, 5, 2, 2, 2, 3, 4, 5, 5, 3];
-
-      function totalTwos(grades) {
-        return grades.filter(grade => grade === 2).length;
-      }
-
-      function totalGoodGrades(grades) {
-        return grades.filter(grade => grade === 4 || grade === 5).length;
-      }
-
-      function totalBelowAverageGrades(grades) {
-        const average =
-          grades.reduce((sum, grade) => sum + grade, 0) / grades.length;
-        return grades.filter(grade => grade < average).length;
-      }
-
-      document.write(`<h2>Кількість двійок: ${totalTwos(grades)}</h2>`);
-      document.write(
-        `<h2>Кількість хороших оцінок: ${totalGoodGrades(grades)}</h2>`,
-      );
-      document.write(
-        `<h2>Кількість оцінок нижче середнього: ${totalBelowAverageGrades(
-          grades,
-        )}</h2>`,
-      );
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

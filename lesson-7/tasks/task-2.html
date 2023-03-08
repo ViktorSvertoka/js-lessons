@@ -17,55 +17,7 @@
       >
     </p>
     <h1>Задача № 2</h1>
-    <p>
-      Задача 2. Дано масив, який зберігає кількість відвідувачів магазину
-      протягом тижня. Вивести на екран: номери днів, протягом яких кількість
-      відвідувачів була меншою за 20; номери днів, коли кількість відвідувачів
-      була мінімальною; номери днів, коли кількість відвідувачів була
-      мінімальною; загальну кількість клієнтів у робочі дні та окремо загальну
-      кількість днів на вихідних.
-    </p>
-    <script>
-      function analyzeVisitors(visitors) {
-        let daysUnder20 = [];
-        let minVisitors = visitors[0];
-        let minVisitorsDays = [1];
-        let workDaysVisitors = 0;
-        let weekendVisitors = 0;
-
-        for (let i = 0; i < visitors.length; i++) {
-          if (visitors[i] < 20) {
-            daysUnder20.push(i + 1);
-          }
-          if (visitors[i] < minVisitors) {
-            minVisitors = visitors[i];
-            minVisitorsDays = [i + 1];
-          } else if (visitors[i] === minVisitors) {
-            minVisitorsDays.push(i + 1);
-          }
-
-          if (i < 5) {
-            workDaysVisitors += visitors[i];
-          } else {
-            weekendVisitors += visitors[i];
-          }
-        }
-
-        document.write(
-          `<h2>Дні з менше ніж 20 відвідувачів: ${daysUnder20}</h2>`,
-        );
-        document.write(
-          `<h2>Дні з мінімальною кількістю відвідувачів: ${minVisitorsDays}</h2>`,
-        );
-        document.write(
-          `<h2>Кількість відвідувачів у робочі дні: ${workDaysVisitors}</h2>`,
-        );
-        document.write(
-          `<h2>Кількість відвідувачів на вихідних: ${weekendVisitors}</h2>`,
-        );
-      }
-
-      analyzeVisitors([35, 19, 25, 12, 30, 28, 22]);
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

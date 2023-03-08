@@ -23,6 +23,30 @@
       Надаючи користувачу можливість вибирати номери елементів (поки він не
       відмовиться). Знаходити сумарний виграш.
     </p>
-    <script></script>
+    <script>
+      let array = [];
+      for (let i = 0; i < 100; i++) {
+        array.push(Math.floor(Math.random() * 1001) - 500);
+      }
+
+      let sum = 0;
+      while (true) {
+        let index = prompt(
+          `Введіть номер елементу (від 1 до ${array.length}) або натисніть "Відміна" для завершення гри:`,
+        );
+        if (index === null) {
+          break;
+        }
+        index = parseInt(index);
+        if (isNaN(index) || index < 1 || index > array.length) {
+          alert(`Введіть коректний номер елементу (від 1 до ${array.length}).`);
+        } else {
+          sum += array[index - 1];
+          alert(`Ваш виграш становить ${sum}.`);
+        }
+      }
+
+      alert(`Загальний виграш становить ${sum}.`);
+    </script>
   </body>
 </html>

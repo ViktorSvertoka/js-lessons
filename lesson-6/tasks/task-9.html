@@ -25,6 +25,33 @@
       Користувач вводить номер клітинки, куди стріляє. Гра продовжується до тих
       пір, поки не будуть потоплені усі кораблі.
     </p>
-    <script></script>
+    <script>
+      const cell = parseInt(prompt('Введіть кількість клітинок:'));
+      const numShips = parseInt(prompt('Введіть кількість кораблів:'));
+
+      const board = [].fill(0);
+
+      for (let i = 0; i < numShips; i++) {
+        const position = Math.floor(Math.random() * cell);
+        board[position] = 1;
+      }
+
+      let numShipsRemaining = numShips;
+      while (numShipsRemaining > 0) {
+        const guess = parseInt(
+          prompt(`Введіть номер клітинки (від 0 до ${cell - 1}):`),
+        );
+
+        if (board[guess] == 1) {
+          alert('Ви потопили корабель!');
+          board[guess] = 0;
+          numShipsRemaining--;
+        } else {
+          alert('Промах!');
+        }
+      }
+
+      alert('Вітаємо, всі кораблі потоплені!');
+    </script>
   </body>
 </html>

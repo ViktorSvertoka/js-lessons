@@ -42,7 +42,7 @@
           prompt(`Введіть номер клітинки (від 0 до ${cell - 1}):`),
         );
 
-        if (board[guess] == 1) {
+        if (board[guess] === 1) {
           alert('Ви потопили корабель!');
           board[guess] = 0;
           numShipsRemaining--;

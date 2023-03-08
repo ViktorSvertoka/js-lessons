@@ -17,53 +17,8 @@
       >
     </p>
     <h1>Задача № 4</h1>
-    <p>
-      Задача 4. Дано послідовність номерів автомобілів. Підрахувати кількість
-      номерів, які : • починаються на букву «А»; • перша і остання літери
-      співпадають; • складаються з більше ніш 5 символів;
-    </p>
+    <p></p>
 
-    <script>
-      const carNumbers = [
-        'AA1234KA',
-        'AB1234MA',
-        'AC2WG',
-        'AD2B',
-        'AE3T',
-        'BA1JH',
-        'CB2222AA',
-        'AG55555LK',
-      ];
-
-      function CarNumbersStartWithA(numbers) {
-        return numbers.filter(number => number.startsWith('A')).length;
-      }
-
-      function CarNumbersWithSameFirstAndLastLetters(numbers) {
-        return numbers.filter(
-          number => number.charAt(0) === number.charAt(number.length - 1),
-        ).length;
-      }
-
-      function CarNumbersLongerThanFiveCharacters(numbers) {
-        return numbers.filter(number => number.length > 5).length;
-      }
-
-      document.write(
-        `<h2>Кількість номерів, які починаються на букву "А": ${CarNumbersStartWithA(
-          carNumbers,
-        )}</h2>`,
-      );
-      document.write(
-        `<h2>Кількість номерів, у яких перша і остання літери співпадають: ${CarNumbersWithSameFirstAndLastLetters(
-          carNumbers,
-        )}</h2>`,
-      );
-      document.write(
-        `<h2>Кількість номерів, які складаються з більше ніж 5 символів: ${CarNumbersLongerThanFiveCharacters(
-          carNumbers,
-        )}</h2>`,
-      );
-    </script>
+    <script></script>
   </body>
 </html>

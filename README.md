@@ -74,8 +74,6 @@ standard is fully aligned with the third edition of the international standard
 ISO/IEC 16262:2011.| Modern Javascript | | ES6 | 2015 | | ES7 | 2016 | | ES8 |
 2017 | | ES9 | 2018 | | ES10 | 2019 | | ES11 | 2020 | | ES12 | 2021 |
 
-<blockquote>I can understand too Confusing 🥵😢🤣</blockquote>
-
 <br>
 Where Else is Javascript Used? Is it only used to create dynamic webpages?
 
@@ -120,5 +118,3 @@ What are these frameworks used for?
 - **Electron.js** : is used to create dynamic, robust desktop apps for MacOs,
   Windows and Linux
 - **Node.js** : Is used to create efficient server side applications
-
-> Topics we would Cover and Details about this course is in below File

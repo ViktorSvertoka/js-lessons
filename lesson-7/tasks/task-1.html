@@ -21,6 +21,10 @@
       1. Користувач вводить кількість елементів. Створити масив, що складається
       з вказаної кількості елементів заповнених нулями.
     </p>
-    <script></script>
+    <script>
+      let count = prompt('Введіть кількість елементів:');
+      let array = new Array(parseInt(count)).fill(0);
+      document.write(`Масив [${array}]`);
+    </script>
   </body>
 </html>

@@ -22,17 +22,13 @@
       елементів заповнені 1-цями, а інші до кінця масиву заповнені 7-ками.
     </p>
     <script>
-      function createArray() {
-        let userElement = parseInt(prompt('Введіть кількість елементів:'));
-        let array = new Array(userElement);
+      let userElement = parseInt(prompt('Введіть кількість елементів:'));
+      let array = new Array(userElement);
 
-        array.fill(1, 0, 6);
-        array.fill(7, 6);
+      array.fill(1, 0, 6);
+      array.fill(7, 6);
 
-        document.write(`Масив [${array}]`);
-      }
-
-      createArray();
+      document.write(`Масив [${array}]`);
     </script>
   </body>
 </html>

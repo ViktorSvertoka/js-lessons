@@ -18,6 +18,24 @@
     </p>
     <h1>Задача № 9</h1>
     <p>9. Дано масив імен. Сформувати масив з перших літер цих імен.</p>
-    <script></script>
+    <script>
+      const names = [
+        'Оленка',
+        'Степан',
+        'Ореся',
+        'Кіндрат',
+        'Марічка',
+        'Олесь',
+        'Стефанія',
+        'Тарас',
+        'Леся',
+      ];
+
+      const firstLatterOfNames = names.map(name => name.charAt(0));
+
+      document.write(
+        `<h2>Масив з перших літер: [${firstLatterOfNames.join(', ')}]</h2>`,
+      );
+    </script>
   </body>
 </html>

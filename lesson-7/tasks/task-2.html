@@ -21,6 +21,14 @@
       2. Користувач вводить кількість елементів. Створити масив, у якому перша
       половина заповнена 1-цями, а друга заповнена 7-ками.
     </p>
-    <script></script>
+    <script>
+      let userElement = parseInt(prompt('Введіть кількість елементів:'));
+      let array = new Array(userElement);
+
+      array.fill(1, 0, Math.floor(userElement / 2));
+      array.fill(7, Math.floor(userElement / 2), userElement);
+
+      document.write(`Масив [${array}]`);
+    </script>
   </body>
 </html>

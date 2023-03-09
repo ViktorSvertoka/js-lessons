@@ -21,6 +21,16 @@
       6.Дано масив елементів. Усі елементи, які більші за перший елемент
       помножити на 2
     </p>
-    <script></script>
+    <script>
+      const numberElements = [10, 2, 56, 74, 9, 43, 6, 27, 8, 11];
+
+      for (let i = 0; i < numberElements.length; i++) {
+        if (numberElements[i] > numberElements[0]) {
+          numberElements[i] *= 2;
+        }
+      }
+
+      document.write(`<h2>Новий масив [${numberElements.join(', ')}]</h2>`);
+    </script>
   </body>
 </html>

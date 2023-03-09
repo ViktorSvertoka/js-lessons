@@ -21,6 +21,12 @@
       10. Дано масив цін у грн. Податок складає 20%. Сформувати масив, який буде
       містити величину сплаченого податку у грн.
     </p>
-    <script></script>
+    <script>
+      const arrayPrices = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000];
+
+      const arrayTax = arrayPrices.map(price => price * 0.2);
+
+      document.write(`<h2>Податок складає 20%: [${arrayTax.join(', ')}]</h2>`);
+    </script>
   </body>
 </html>

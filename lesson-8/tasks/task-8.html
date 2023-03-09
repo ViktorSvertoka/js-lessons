@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-7.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 8</h1>
+    <p>
+      8. Дано масив номерів авто. Сформувати новий масив тих, які починаються на
+      «А»
+    </p>
+    <script>
+      const carNumbers = [
+        'AA1022BN',
+        'PL2045CK',
+        'AX1188BN',
+        'DE4456JG',
+        'AK2552CK',
+        'EU5674KL',
+      ];
+
+      const carNumbersStartsA = carNumbers.filter(number =>
+        number.startsWith('A'),
+      );
+      document.write(
+        `<h2>Масив номерів на А: [${carNumbersStartsA.join(', ')}]</h2>`,
+      );
+    </script>
+  </body>
+</html>

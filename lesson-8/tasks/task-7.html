@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-7.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 7</h1>
+    <p>
+      7.Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за
+      1000 грн. дати 30% знижки.
+    </p>
+    <script>
+      const numberElements = [1200, 1000, 2000, 700, 1600, 900, 3300, 400];
+
+      const updatedPrices = numberElements.map(price => {
+        if (price > 1000) {
+          return price * 0.7;
+        }
+        return price;
+      });
+
+      document.write(
+        `<h2>Діє знижка 30%, на товари від 1001 грн. [${updatedPrices.join(
+          ', ',
+        )}]</h2>`,
+      );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-7.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 6</h1>
+    <p>
+      6.Дано масив елементів. Усі елементи, які більші за перший елемент
+      помножити на 2
+    </p>
+    <script>
+      const numberElements = [10, 2, 56, 74, 9, 43, 6, 27, 8, 11];
+
+      for (let i = 0; i < numberElements.length; i++) {
+        if (numberElements[i] > numberElements[0]) {
+          numberElements[i] *= 2;
+        }
+      }
+
+      document.write(`<h2>Новий масив [${numberElements.join(', ')}]</h2>`);
+    </script>
+  </body>
+</html>

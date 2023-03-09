@@ -18,6 +18,17 @@
     </p>
     <h1>Задача № 5</h1>
     <p>5.Дано масив елементів. Знайти добуток додатних елементів</p>
-    <script></script>
+    <script>
+      const arrayNumbers = [100, -100, 200, -200, 300, -300, 400, -400];
+
+      const positiveElements = arrayNumbers.filter(array => array > 0);
+
+      const totalPositiveElements = positiveElements.reduce(
+        (acc, number) => acc + number,
+        0,
+      );
+
+      document.write(`Добуток додатних елементів: [${totalPositiveElements}]`);
+    </script>
   </body>
 </html>

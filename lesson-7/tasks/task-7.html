@@ -21,6 +21,21 @@
       7.Дано масив цін. Змінити цей масив так, що на ціни товарів, які більші за
       1000 грн. дати 30% знижки.
     </p>
-    <script></script>
+    <script>
+      const numberElements = [1200, 1000, 2000, 700, 1600, 900, 3300, 400];
+
+      const updatedPrices = numberElements.map(price => {
+        if (price > 1000) {
+          return price * 0.7;
+        }
+        return price;
+      });
+
+      document.write(
+        `<h2>Діє знижка 30%, на товари від 1001 грн. [${updatedPrices.join(
+          ', ',
+        )}]</h2>`,
+      );
+    </script>
   </body>
 </html>

@@ -19,8 +19,22 @@
     <h1>Задача № 13</h1>
     <p>
       Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) 13)Знайти індекс останньої ціни, що більше за 1000
+      1 до 10000) <br />
+      <br />
+      13)Знайти індекс останньої ціни, що більше за 1000
     </p>
-    <script></script>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
+
+      const lastOverThousandIndex = prices.findLastIndex(price => price > 1000);
+
+      document.write(
+        `<h3>Знайти індекс останньої ціни, що більше за 1000 грн. [${lastOverThousandIndex}]</h3>`,
+      );
+    </script>
   </body>
 </html>

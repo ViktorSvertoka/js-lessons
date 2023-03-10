@@ -22,14 +22,18 @@
       50 коп). Визначити скільки гривень і копійок є у даній сумі.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      let coins2 = parseInt(prompt('Кількість монет номіналом 2 копійки:'));
+      let coins5 = parseInt(prompt('Кількість монет номіналом 5 копійок:'));
+      let coins25 = parseInt(prompt('Кількість монет номіналом 25 копійок:'));
+      let coins50 = parseInt(prompt('Кількість монет номіналом 50 копійок:'));
 
+      let totalCents = coins2 * 2 + coins5 * 5 + coins25 * 25 + coins50 * 50;
+      let totalHryvnias = Math.floor(totalCents / 100);
+      let totalCentsRemainder = totalCents % 100;
 
-      // 2. Обчіслення результату
-
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      document.write(
+        `В даній сумі ${totalHryvnias} гривень і ${totalCentsRemainder} копійок.`,
+      );
     </script>
   </body>
 </html>

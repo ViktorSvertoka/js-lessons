@@ -19,8 +19,26 @@
     <h1>Задача № 5</h1>
     <p>
       Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) 5)Підрахувати кількість змін цін
+      1 до 10000) <br />
+      <br />
+      5)Підрахувати кількість змін цін
     </p>
-    <script></script>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
+
+      let changesCount = 0;
+
+      for (let i = 1; i < prices.length; i++) {
+        if (prices[i] !== prices[i - 1]) {
+          changesCount++;
+        }
+      }
+
+      document.write(`<h3>Кількість змін цін: ${changesCount}</h3>`);
+    </script>
   </body>
 </html>

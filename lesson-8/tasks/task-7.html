@@ -19,8 +19,22 @@
     <h1>Задача № 7</h1>
     <p>
       Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) 7)Визначати, чи усі ціни більше за 1000
+      1 до 10000) <br />
+      <br />
+      7)Визначати, чи усі ціни більше за 1000
     </p>
-    <script></script>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
+
+      const allPricesAbove1000 = prices.every(price => price > 1000);
+
+      document.write(
+        `<h3>Чи усі ціни більше за 1000 грн. [${allPricesAbove1000}]</h3>`,
+      );
+    </script>
   </body>
 </html>

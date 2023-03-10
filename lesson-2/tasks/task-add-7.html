@@ -22,14 +22,12 @@
       Наприклад: число 23,56 => ціла: 23, дробова: 0,56.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      let x = 23.56;
 
+      let intPart = Math.floor(x);
+      let fracPart = x - intPart;
 
-      // 2. Обчіслення результату
-
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      document.write(`Ціла: ${intPart}, дробова: ${fracPart.toFixed(2)}`);
     </script>
   </body>
 </html>

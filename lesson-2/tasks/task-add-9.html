@@ -22,14 +22,16 @@
       скільки повних годин і повних хвилин пройшло до цього моменту.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      let N = parseInt(
+        prompt('Введіть кількість секунд, що пройшла від початку доби:'),
+      );
 
+      let hours = Math.floor(N / 3600);
+      let remainingSeconds = N - hours * 3600;
+      let minutes = Math.floor(remainingSeconds / 60);
 
-      // 2. Обчіслення результату
-
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      document.write(`Повних годин: ${hours} <br>`);
+      document.write(`Повних хвилин: ${minutes} <br>`);
     </script>
   </body>
 </html>

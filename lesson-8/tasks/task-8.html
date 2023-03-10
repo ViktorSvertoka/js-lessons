@@ -19,8 +19,22 @@
     <h1>Задача № 8</h1>
     <p>
       Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) 8)Підрахувати кількість цін, що більше за 1000
+      1 до 10000) <br />
+      <br />
+      8)Підрахувати кількість цін, що більше за 1000
     </p>
-    <script></script>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
+
+      const numOfPricesOver1000 = prices.filter(price => price > 1000).length;
+
+      document.write(
+        `<h3>Кількість цін, що більше за 1000 грн.: ${numOfPricesOver1000}</h3>`,
+      );
+    </script>
   </body>
 </html>

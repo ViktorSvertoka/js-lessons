@@ -19,10 +19,28 @@
     <h1>Задача № 4</h1>
     <p>
       Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) 4)Сформувати новий масив, що міститиме значення цін у
-      відсотках стосовно максимального
+      1 до 10000) <br />
+      <br />
+      4)Сформувати новий масив, що міститиме значення цін у відсотках стосовно
+      максимального
     </p>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
 
-    <script></script>
+      const maxPrice = Math.max(...prices);
+
+      const pricesInPercents = prices.map(price =>
+        ((price / maxPrice) * 100).toFixed(),
+      );
+
+      document.write(
+        `<h3>Масив що міститиме значення цін у відсотках стосовно
+      максимального. [${pricesInPercents.join(', ')}]</h3>`,
+      );
+    </script>
   </body>
 </html>

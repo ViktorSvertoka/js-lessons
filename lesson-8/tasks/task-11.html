@@ -30,10 +30,10 @@
         .map(() => Math.floor(Math.random() * 10000) + 1)
         .slice(0, 20);
 
-      const firstPriceOver1000 = prices.find(price => price > 1000);
+      const firstPriceOver1000Index = prices.findIndex(price => price > 1000);
 
       document.write(
-        `<h3>Перша ціна, що більше за 1000 грн.: ${firstPriceOver1000} грн.</h3>`,
+        `<h3>Індекс першої ціни, що більше за 1000 грн. : ${firstPriceOver1000Index}</h3>`,
       );
     </script>
   </body>

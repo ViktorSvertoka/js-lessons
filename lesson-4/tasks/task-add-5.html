@@ -18,9 +18,22 @@
     </p>
     <h1>Додаткова задача № 5</h1>
     <p>
-      4. З клавіатури поступово вводяться числа. Знайти суму перших N парних
-      чисел.
+      З клавіатури поступово вводяться числа. Знайти суму перших N парних чисел.
     </p>
-    <script></script>
+    <script>
+      let sum = 0;
+      let count = 0;
+      while (true) {
+        const input = parseInt(prompt('Введіть число:'));
+        if (input % 2 === 0) {
+          sum += input;
+          count++;
+          if (count === 2) {
+            break;
+          }
+        }
+      }
+      document.write(`Сума перших парних чисел: ${sum} `);
+    </script>
   </body>
 </html>

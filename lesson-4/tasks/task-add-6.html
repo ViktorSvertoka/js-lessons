@@ -18,14 +18,30 @@
     </p>
     <h1>Додаткова задача № 6</h1>
     <p>
-      <!-- 4.1. З клавіатури вводяться два числа N i M (N < M). Вивести а екран числа
-                N---M
-                N+1 --- M-1
-                N+2 --- M-2
-                N+3 --- M-3
-                . . . . . . 
+      <!-- З клавіатури вводяться два числа N i M (N < M). 
+               Вивести на екран числа N і M
+               Вивести на екран числа N + 1 і M - 1
+               Вивести на екран числа N + 2 і M - 2
+               Вивести на екран числа N + 3 і M - 3
+               
             Виведення завершити коли число справа стане меншим за число зліва. -->
     </p>
-    <script></script>
+    <script>
+      let n = parseInt(prompt('Введіть число N:'));
+      let m = parseInt(prompt('Введіть число M:'));
+      let left = n;
+      let right = m;
+
+      while (left <= right) {
+        if (left <= m && right >= n) {
+          document.write(`${left} --- ${right} <br>`);
+          document.write(`${left + 1} --- ${right - 1} <br>`);
+          document.write(`${left + 2} --- ${right - 2} <br>`);
+          document.write(`${left + 3} --- ${right - 3} <br>`);
+        }
+        left += 4;
+        right -= 4;
+      }
+    </script>
   </body>
 </html>

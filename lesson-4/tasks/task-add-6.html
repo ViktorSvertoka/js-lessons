@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-2.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 6</h1>
+    <p>
+      Дано три дійсні змінні a, b і c. Скласти алгоритм, який міняє місцями
+      значення цих змінних наступним чином: змінна a набуває значення змінної b,
+      змінна b набуває значення змінної c, а змінна c – попереднє значення
+      змінної a.
+    </p>
+    <script>
+      //1. Введення необхідних данних
+      let a = 1;
+      let b = 2;
+      let c = 3;
+
+      //2. Обчіслення результату
+      a = b;
+      b = c;
+      c = b - a;
+
+      //3. Виведення результату
+      document.write(` A = ${a} <br> B = ${b} <br> C = ${c} `);
+    </script>
+  </body>
+</html>

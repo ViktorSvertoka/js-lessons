@@ -10,48 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-2.html"
+      <a href="../index-4.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Додаткова задача № 16</h1>
-    <p>
-      З клавіатури вводиться номер місяця. Визначити, який буде місяць через
-      вказану кількість N місяців.
-    </p>
-    <script>
-      const startMonth = parseInt(prompt('Введіть номер місяця: '));
-      const numMonths = parseInt(prompt('Введіть кількість місяців: '));
-
-      const startDate = new Date();
-      startDate.setMonth(startMonth - 1);
-
-      const futureDate = new Date(
-        startDate.setMonth(startDate.getMonth() + numMonths),
-      );
-
-      const futureMonth = futureDate.getMonth() + 1;
-
-      const monthNames = [
-        'Січень',
-        'Лютий',
-        'Березень',
-        'Квітень',
-        'Травень',
-        'Червень',
-        'Липень',
-        'Серпень',
-        'Вересень',
-        'Жовтень',
-        'Листопад',
-        'Грудень',
-      ];
-
-      alert(
-        `Місяць через ${numMonths} місяців буде ${monthNames[futureMonth - 1]}`,
-      );
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

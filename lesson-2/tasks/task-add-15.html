@@ -23,14 +23,12 @@
       а вивести 2 роки і 4 місяці.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      const months = prompt('Введіть кількість місяців: ');
 
+      const years = Math.floor(months / 12);
+      const remainingMonths = months % 12;
 
-      // 2. Обчіслення результату
-
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      alert(`${years} років і ${remainingMonths} місяців`);
     </script>
   </body>
 </html>

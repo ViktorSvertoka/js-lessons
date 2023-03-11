@@ -18,9 +18,21 @@
     </p>
     <h1>Додаткова задача № 2</h1>
     <p>
-      2.З клавіатури вводитяться числа поки не буде введено 0. Знайти добуток
+      З клавіатури вводитяться числа поки не буде введено 0. Знайти добуток
       чисел.
     </p>
-    <script></script>
+    <script>
+      let number;
+      let product = 1;
+
+      do {
+        number = parseInt(prompt('Введіть число: '));
+        if (number !== 0) {
+          product *= number;
+        }
+      } while (number !== 0);
+
+      document.write(`Добуток чисел: ${product}`);
+    </script>
   </body>
 </html>

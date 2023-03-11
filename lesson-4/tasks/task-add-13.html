@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-2.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 13</h1>
+    <p>Визначити скільки повних тижнів є у вказаній кількості днів.</p>
+    <script>
+      // вхідні дані - кількість днів
+      const days = parseInt(prompt('Введіть кількість днів.'));
+
+      // розрахунок повних тижнів
+      let fullWeeks = Math.floor(days / 7);
+
+      // виведення результату
+      document.write('Повних тижнів: ' + fullWeeks);
+    </script>
+  </body>
+</html>

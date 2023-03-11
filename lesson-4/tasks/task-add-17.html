@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-2.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 17</h1>
+    <p>
+      Зашифрувати один введений англійський символ у верхньому регістрі (один з
+      символів: A,B,…Z) методом зміщення (шифр Цезаря).
+    </p>
+    <script>
+      // Ввід символу для шифрування
+      const char = prompt('Введіть символ у верхньому регістрі:');
+
+      // Отримання номеру символу у таблиці ASCII
+      const charCode = char.charCodeAt(0);
+
+      // Зміщення на 3 позиції (можна замінити на будь-яке інше значення)
+      const shiftedCharCode = charCode + 3;
+
+      // Перевірка, чи виходить за межі діапазону літер в верхньому регістрі
+      if (shiftedCharCode > 90) {
+        // Якщо так, то зміщення потрібно робити від кінця діапазону
+        const overflow = shiftedCharCode - 90;
+        const shiftedChar = String.fromCharCode(64 + overflow);
+        alert(`Зашифрований символ: ${shiftedChar}`);
+      } else {
+        // Інакше повертаємо зашифрований символ
+        const shiftedChar = String.fromCharCode(shiftedCharCode);
+        alert(`Зашифрований символ: ${shiftedChar}`);
+      }
+    </script>
+  </body>
+</html>

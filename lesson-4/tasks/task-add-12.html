@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-2.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Додаткова задача № 12</h1>
+    <p>
+      З клавіатури вводиться кількість монет номіналом 2 копійки (5коп, 25коп,
+      50 коп). Визначити скільки гривень і копійок є у даній сумі.
+    </p>
+    <script>
+      let coins2 = parseInt(prompt('Кількість монет номіналом 2 копійки:'));
+      let coins5 = parseInt(prompt('Кількість монет номіналом 5 копійок:'));
+      let coins25 = parseInt(prompt('Кількість монет номіналом 25 копійок:'));
+      let coins50 = parseInt(prompt('Кількість монет номіналом 50 копійок:'));
+
+      let totalCents = coins2 * 2 + coins5 * 5 + coins25 * 25 + coins50 * 50;
+      let totalHryvnias = Math.floor(totalCents / 100);
+      let totalCentsRemainder = totalCents % 100;
+
+      document.write(
+        `В даній сумі ${totalHryvnias} гривень і ${totalCentsRemainder} копійок.`,
+      );
+    </script>
+  </body>
+</html>

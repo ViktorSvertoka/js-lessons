@@ -22,14 +22,27 @@
       день тижня через N днів.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      let dayOfWeek = parseInt(prompt('Введіть номер дня тижня (від 1 до 7):'));
 
+      let daysToAdd = parseInt(
+        prompt('Введіть кількість днів для підрахунку:'),
+      );
 
-      // 2. Обчіслення результату
+      let weekdays = [
+        'неділя',
+        'понеділок',
+        'вівторок',
+        'середа',
+        'четвер',
+        "п'ятниця",
+        'субота',
+      ];
 
+      let futureDayOfWeek = (dayOfWeek + daysToAdd) % 7;
 
-      // 3. Виведення результату
-      document.write(` ${} `);
+      document.write(
+        'Через ' + daysToAdd + ' днів буде ' + weekdays[futureDayOfWeek],
+      );
     </script>
   </body>
 </html>

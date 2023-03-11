@@ -22,14 +22,26 @@
       символів: A,B,…Z) методом зміщення (шифр Цезаря).
     </p>
     <script>
-      // 1. Введення необхідних данних
+      // Ввід символу для шифрування
+      const char = prompt('Введіть символ у верхньому регістрі:');
 
+      // Отримання номеру символу у таблиці ASCII
+      const charCode = char.charCodeAt(0);
 
-      // 2. Обчіслення результату
+      // Зміщення на 3 позиції (можна замінити на будь-яке інше значення)
+      const shiftedCharCode = charCode + 3;
 
-
-      // 3. Виведення результату
-      document.write(` ${} `);
+      // Перевірка, чи виходить за межі діапазону літер в верхньому регістрі
+      if (shiftedCharCode > 90) {
+        // Якщо так, то зміщення потрібно робити від кінця діапазону
+        const overflow = shiftedCharCode - 90;
+        const shiftedChar = String.fromCharCode(64 + overflow);
+        alert(`Зашифрований символ: ${shiftedChar}`);
+      } else {
+        // Інакше повертаємо зашифрований символ
+        const shiftedChar = String.fromCharCode(shiftedCharCode);
+        alert(`Зашифрований символ: ${shiftedChar}`);
+      }
     </script>
   </body>
 </html>

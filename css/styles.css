@@ -158,3 +158,11 @@ h1 {
   margin: 10px;
   padding: 10px;
 }
+
+.wrapper {
+  display: flex;
+}
+
+.wrapp-task {
+  margin-right: 100px;
+}

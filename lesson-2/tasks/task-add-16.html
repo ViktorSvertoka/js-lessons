@@ -22,14 +22,36 @@
       вказану кількість N місяців.
     </p>
     <script>
-      // 1. Введення необхідних данних
+      const startMonth = parseInt(prompt('Введіть номер місяця: '));
+      const numMonths = parseInt(prompt('Введіть кількість місяців: '));
 
+      const startDate = new Date();
+      startDate.setMonth(startMonth - 1);
 
-      // 2. Обчіслення результату
+      const futureDate = new Date(
+        startDate.setMonth(startDate.getMonth() + numMonths),
+      );
 
+      const futureMonth = futureDate.getMonth() + 1;
 
-      // 3. Виведення результату
-      document.write(` ${} `);
+      const monthNames = [
+        'Січень',
+        'Лютий',
+        'Березень',
+        'Квітень',
+        'Травень',
+        'Червень',
+        'Липень',
+        'Серпень',
+        'Вересень',
+        'Жовтень',
+        'Листопад',
+        'Грудень',
+      ];
+
+      alert(
+        `Місяць через ${numMonths} місяців буде ${monthNames[futureMonth - 1]}`,
+      );
     </script>
   </body>
 </html>

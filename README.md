@@ -2,11 +2,9 @@
 
 ![](./assets/testing.gif)
 
-### В этом репозитории буду разбирать задачи и примеры по JS в процессе обучения.
+1. use strict; //file js
 
-1. use strict; //строгий режим прописываем в файл js
-
-2. type="module" //строгий режим прописываем в файле html
+2. type="module" //file html
 
 # Javascript Basics For Beginners
 

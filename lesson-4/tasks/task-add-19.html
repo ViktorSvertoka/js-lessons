@@ -18,12 +18,97 @@
     </p>
     <h1>Додаткова задача № 19</h1>
     <p>
-      16. Танчики. На полі з 10 клітинок розміщують танк. За один крок танк може
+      Танчики. На полі з 10 клітинок розміщують танк. За один крок танк може
       переміщуватися на відстань від 0 до 1 у будь-якому напрямку (в межах
       поля). При влучанні броня танка пошкоджується на 30 балів (всього 100).
       Гра продовжується поки або не закінчаться снаряди (кількість вводиться з
       клавіатури) або не буде влучання. Спробуйте відоразити гру графічно.
     </p>
-    <script></script>
+    <script>
+      // Поле гри розміру 10x10 клітинок
+      const boardSize = 10;
+
+      // Кількість життів танка
+      let tankHealth = 100;
+
+      // Функція для генерації випадкових чисел в межах від min до max (включно)
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // Об'єкт танка з властивостями для координат та напрямку руху
+      const tank = {
+        x: getRandomInt(0, boardSize - 1),
+        y: getRandomInt(0, boardSize - 1),
+        direction: 'up',
+      };
+
+      // Функція для переміщення танка на відстань від 0 до 1 клітинки у випадковому напрямку
+      function moveTank() {
+        // Визначення випадкового напрямку
+        const directions = ['up', 'down', 'left', 'right'];
+        const randomDirection =
+          directions[getRandomInt(0, directions.length - 1)];
+
+        // Обновлення координат танка відповідно до напрямку
+        switch (randomDirection) {
+          case 'up':
+            tank.y = Math.max(tank.y - 1, 0);
+            break;
+          case 'down':
+            tank.y = Math.min(tank.y + 1, boardSize - 1);
+            break;
+          case 'left':
+            tank.x = Math.max(tank.x - 1, 0);
+            break;
+          case 'right':
+            tank.x = Math.min(tank.x + 1, boardSize - 1);
+            break;
+        }
+
+        // Оновлення напрямку танка
+        tank.direction = randomDirection;
+      }
+
+      // Функція для виконання пострілу
+      function fireShot(x, y) {
+        // Якщо координати співпадають з танком, то пошкодження броні
+        if (x === tank.x && y === tank.y) {
+          tankHealth -= 30;
+          console.log(`Tank hit! Health remaining: ${tankHealth}`);
+          return true;
+        }
+        return false;
+      }
+
+      // Запитуємо користувача про кількість пострілів
+      const numShots = parseInt(prompt('Enter the number of shots:'));
+
+      // Виконуємо вказану кількість пострілів
+      for (let i = 0; i < numShots; i++) {
+        // Випадкові координати для пострілу
+        const shotX = getRandomInt(0, boardSize - 1);
+        const shotY = getRandomInt(0, boardSize - 1);
+
+        // Відображення пострілу на консолі
+        console.log(`Shot ${i + 1}: (${shotX}, ${shotY})`);
+
+        // Виконання пострілу та перевірка наявності здоров'я танка
+        if (fireShot(shotX, shotY)) {
+          if (tankHealth <= 0) {
+            console.log('Tank destroyed!');
+            break;
+          }
+        }
+
+        // Переміщення танка
+        moveTank();
+      }
+
+      // Виведення повідомлення про закінчення гри
+      if (tankHealth > 0) {
+        console.log('Out of ammo!');
+      }
+    </script>
   </body>
 </html>

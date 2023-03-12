@@ -18,9 +18,31 @@
     </p>
     <h1>Додаткова задача № 13</h1>
     <p>
-      11. Комп’ютер загадує випадкове число від 1 до 10. Вгадати число шляхом
+      Комп’ютер загадує випадкове число від 1 до 10. Вгадати число шляхом
       введеня можливих варіантів. В кінці вивести кількість спроб користувача.
     </p>
-    <script></script>
+    <script>
+      let randomNumber = Math.floor(Math.random() * 10) + 1;
+      let guess = 0;
+      let attempts = 0;
+
+      while (guess !== randomNumber) {
+        guess = parseInt(prompt('Вгадайте число от 1 до 10:'));
+        if (isNaN(guess)) {
+          alert('Введіть число!');
+        } else if (guess < 1 || guess > 10) {
+          alert('Введіть число від 1 до 10!');
+        } else {
+          attempts++;
+          if (guess < randomNumber) {
+            alert('Загадане число більше!');
+          } else if (guess > randomNumber) {
+            alert('Загадане число меньше!');
+          }
+        }
+      }
+
+      alert(`Ви вгадали число ${randomNumber} за ${attempts} спроб!`);
+    </script>
   </body>
 </html>

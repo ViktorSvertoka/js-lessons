@@ -18,10 +18,42 @@
     </p>
     <h1>Додаткова задача № 14</h1>
     <p>
-      11.1. Комп’ютер загадує два випадкових числа від 1 до 10. Вгадати обидва
-      числа шляхом введеня можливих варіантів. В кінці вивести кількість спроб
+      Комп’ютер загадує два випадкових числа від 1 до 10. Вгадати обидва числа
+      шляхом введеня можливих варіантів. В кінці вивести кількість спроб
       користувача.
     </p>
-    <script></script>
+    <script>
+      let randomNumber1 = Math.floor(Math.random() * 10) + 1;
+      let randomNumber2 = Math.floor(Math.random() * 10) + 1;
+      let guess1 = 0;
+      let guess2 = 0;
+      let attempts = 0;
+
+      while (guess1 !== randomNumber1 || guess2 !== randomNumber2) {
+        guess1 = parseInt(prompt('Вгадайте перше число от 1 до 10:'));
+        guess2 = parseInt(prompt('Вгадайте друге число от 1 до 10:'));
+        if (isNaN(guess1) || isNaN(guess2)) {
+          alert('Введіть число!');
+        } else if (guess1 < 1 || guess1 > 10 || guess2 < 1 || guess2 > 10) {
+          alert('Введите числа от 1 до 10!');
+        } else {
+          attempts++;
+          if (guess1 < randomNumber1) {
+            alert('Перше загадане число більше!');
+          } else if (guess1 > randomNumber1) {
+            alert('Перше загадане число меньше!');
+          }
+          if (guess2 < randomNumber2) {
+            alert('Друге загадане число більше!');
+          } else if (guess2 > randomNumber2) {
+            alert('Друге загадане число меньше!');
+          }
+        }
+      }
+
+      alert(
+        `Ви вгадати обидва числа ${randomNumber1} і ${randomNumber2} за ${attempts} спроб!`,
+      );
+    </script>
   </body>
 </html>

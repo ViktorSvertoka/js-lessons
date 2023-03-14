@@ -80,6 +80,13 @@ let scores = [56, 78, 988, -67, -444, 65, 84, -34];
 
 //=====
 //сумму тильки выграшных значень
-const positiveSum = scores.reduce((prevSum, element) =>
-  element > 0 ? prevSum + element : prevSum,
-);
+// const positiveSum = scores.reduce((prevSum, element) =>
+//   element > 0 ? prevSum + element : prevSum,
+// );
+
+//=====
+//список тильки выграшных результатив
+// const positiveScore = scores.filter(element => element > 0);
+
+//=====
+const positiveScore = scores.filter(element => element > 0);

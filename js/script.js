@@ -52,7 +52,7 @@
 
 // console.log(container);
 
-//??
+//??===============================================
 
 // let scores = [56, 78, 988, -67, -444, 65, 84, -34];
 
@@ -89,4 +89,4 @@
 // const positiveScore = scores.filter(element => element > 0);
 
 //=====
-// const positiveScore = scores.filter(element => element > 0);
+// const negativeScore = scores.filter(element => element < 0);

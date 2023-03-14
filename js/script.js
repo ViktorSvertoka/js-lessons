@@ -54,7 +54,7 @@
 
 //??
 
-let scores = [56, 78, 988, -67, -444, 65, 84, -34];
+// let scores = [56, 78, 988, -67, -444, 65, 84, -34];
 
 //вывесты выграшни значення бильше 0
 // scores.forEach(score => {
@@ -89,4 +89,4 @@ let scores = [56, 78, 988, -67, -444, 65, 84, -34];
 // const positiveScore = scores.filter(element => element > 0);
 
 //=====
-const positiveScore = scores.filter(element => element > 0);
+// const positiveScore = scores.filter(element => element > 0);

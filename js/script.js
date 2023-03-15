@@ -90,3 +90,37 @@
 
 //=====
 // const negativeScore = scores.filter(element => element < 0);
+
+//================================================================================
+
+//Modal
+
+const refs = {
+  overlay: document.getElementById('overlay'),
+  modalWindow: document.getElementById('modalWindow'),
+  closeBtn: document.getElementById('closeBtn'),
+  openBtn: document.getElementById('openBtn'),
+};
+
+const classes = {
+  openModal: 'open-modal',
+};
+
+refs.openBtn.addEventListener('click', handleModal);
+
+function handleModal(event) {
+  console.log(event);
+}
+
+const link = document.getElementById('link');
+
+link.addEventListener('click', handleClick);
+
+function handleClick(event) {
+  event.preventDefault();
+  console.log('Hello');
+}
+
+// link.addEventListener('click', event => {
+//   event.preventDefault();
+// });

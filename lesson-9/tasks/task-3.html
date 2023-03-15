@@ -10,40 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-8.html"
+      <a href="../index-9.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 3</h1>
-    <p>
-      Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
-      1 до 10000) <br />
-      <br />
-      3)Сформувати список з тих цін, які більші за попереднє значення
-    </p>
-    <script>
-      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
-      const prices = new Array(numOfPrices)
-        .fill(0)
-        .map(() => Math.floor(Math.random() * 10000) + 1)
-        .slice(0, 20);
-
-      const higherPrices = prices
-        .reduce(
-          (result, price) => {
-            if (price > result[result.length - 1]) {
-              result.push(price);
-            }
-            return result;
-          },
-          [0],
-        )
-        .slice(1);
-
-      document.write(`<h3>Масив цін, що більші за
-        попереднє значення. [${higherPrices.join(', ')}]</h3>`);
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

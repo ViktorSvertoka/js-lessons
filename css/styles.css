@@ -167,7 +167,7 @@ h1 {
   margin-right: 100px;
 }
 
-body.open-modal {
+/* body.open-modal {
   overflow-y: hidden;
 }
 
@@ -198,4 +198,4 @@ body.open-modal > .overlay {
 .overlay {
   position: absolute;
   top: 0;
-}
+} */

@@ -95,31 +95,42 @@
 
 //Modal
 
-const refs = {
-  overlay: document.getElementById('overlay'),
-  modalWindow: document.getElementById('modalWindow'),
-  closeBtn: document.getElementById('closeBtn'),
-  openBtn: document.getElementById('openBtn'),
-};
+// const refs = {
+//   overlay: document.getElementById('overlay'),
+//   modalWindow: document.getElementById('modalWindow'),
+//   closeBtn: document.getElementById('closeBtn'),
+//   openBtn: document.getElementById('openBtn'),
+// };
 
-const classes = {
-  openModal: 'open-modal',
-};
+// const classes = {
+//   openModal: 'open-modal',
+// };
 
-refs.openBtn.addEventListener('click', handleModal);
+// refs.openBtn.addEventListener('click', handleModal);
+// refs.closeBtn.addEventListener('click', handleModal);
+// refs.overlay.addEventListener('click', handleModal);
 
-function handleModal(event) {
-  console.log(event);
-}
+// document.addEventListener('keydown', handleModalClose);
 
-const link = document.getElementById('link');
+// function handleModal() {
+//   document.body.classList.toggle(classes.openModal);
+// }
 
-link.addEventListener('click', handleClick);
+// function handleModalClose({ code }) {
+//   if (code === 'Escape') {
+//     document.body.classList.remove(classes.openModal);
+//   }
+// }
 
-function handleClick(event) {
-  event.preventDefault();
-  console.log('Hello');
-}
+//======================================================================================
+// const link = document.getElementById('link');
+
+// link.addEventListener('click', handleClick);
+
+// function handleClick(event) {
+//   event.preventDefault();
+//   console.log('Hello');
+// }
 
 // link.addEventListener('click', event => {
 //   event.preventDefault();

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-8.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 8</h1>
+    <p>
+      Задача. Дано історію цін на цінні папери за деякий період (згенерувати від
+      1 до 10000) <br />
+      <br />
+      8)Підрахувати кількість цін, що більше за 1000
+    </p>
+    <script>
+      const numOfPrices = Math.floor(Math.random() * 10000) + 1;
+      const prices = new Array(numOfPrices)
+        .fill(0)
+        .map(() => Math.floor(Math.random() * 10000) + 1)
+        .slice(0, 20);
+
+      const numOfPricesOver1000 = prices.filter(price => price > 1000).length;
+
+      document.write(
+        `<h3>Кількість цін, що більше за 1000 грн.: ${numOfPricesOver1000}</h3>`,
+      );
+    </script>
+  </body>
+</html>

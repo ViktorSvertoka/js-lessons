@@ -29,13 +29,22 @@
       document.write(`Третій приклад [${arrayOfElements[1][0]}] <br>`);
       document.write(`Четвертий приклад [${arrayOfElements[1][1]}] <br>`);
 
+      // 5) Суму парних рядків.
       document.write(
         `Пятий приклад [${arrayOfElements[0][0] + arrayOfElements[1][1]}] <br>`,
       );
 
+      // 6) Суму непарних стовпців.
       document.write(
         `Шостий приклад [${
           arrayOfElements[1][0] + arrayOfElements[0][1]
+        }] <br>`,
+      );
+
+      // 7) У парних рядках – непарні стовпці, у непарних – парні.
+      document.write(
+        `Сьомий приклад [${
+          arrayOfElements[1][0] + arrayOfElements[0][0]
         }] <br>`,
       );
     </script>

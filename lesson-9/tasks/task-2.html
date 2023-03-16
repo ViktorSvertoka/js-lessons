@@ -23,6 +23,51 @@
       2) загальний прибуток усіх магазинів по дням (загальний прибуток усіх
       магазинів за понеділок, за вівторок, і т.д.); <br />
     </p>
-    <script></script>
+    <script>
+      function getRandomNumber(minV, maxV) {
+        return minV + Math.floor(Math.random() * (maxV - minV + 1));
+      }
+
+      //Формування рандомного одновимірного масиву
+      function getRandomArray(arrLength, minV, maxV) {
+        let arr = [];
+        for (let i = 0; i < arrLength; i++) {
+          const randNum = getRandomNumber(minV, maxV);
+          arr.push(randNum);
+        }
+
+        return arr;
+      }
+
+      //Формування рандомного двовимірного масиву
+      function getRandomTable(rowsNumber, colsNumber, minV, maxV) {
+        let table = [];
+        for (let rowsNumber = 0; rowsNumber < rowsNumber; rowsNumber++) {
+          const randRow = getRandomArray(colsNumber, minV, maxV);
+          table.push(randRow);
+        }
+
+        return table;
+      }
+
+      //Формування рандомного тривимірного масиву
+      function getRandom3DArray(
+        layersNumber,
+        rowsNumber,
+        colsNumber,
+        minV,
+        maxV,
+      ) {
+        let array3D = [];
+        for (let i = 0; i < layersNumber; i++) {
+          const table = getRandomTable(rowsNumber, colsNumber, minV, maxV);
+          array3D.push(table);
+        }
+
+        return array3D;
+      }
+
+      //==============================================
+    </script>
   </body>
 </html>

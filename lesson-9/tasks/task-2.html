@@ -42,11 +42,10 @@
       //Формування рандомного двовимірного масиву
       function getRandomTable(rowsNumber, colsNumber, minV, maxV) {
         let table = [];
-        for (let rowsNumber = 0; rowsNumber < rowsNumber; rowsNumber++) {
+        for (let i = 0; i < rowsNumber; i++) {
           const randRow = getRandomArray(colsNumber, minV, maxV);
           table.push(randRow);
         }
-
         return table;
       }
 
@@ -68,6 +67,44 @@
       }
 
       //==============================================
+
+      const stores = prompt('Введіть кількість магазинів:');
+      const days = prompt('Введіть кількість днів:');
+      const maxIncome = prompt('Введіть максимальний прибуток:');
+
+      const incomeArray = getRandom3DArray(stores, days, 1, 0, maxIncome);
+
+      const weeklyIncomes = [];
+
+      for (let i = 0; i < stores; i++) {
+        let totalIncome = 0;
+        for (let j = 0; j < days; j++) {
+          totalIncome += incomeArray[i][j][0];
+        }
+        weeklyIncomes.push(totalIncome);
+      }
+
+      const dailyIncomes = [];
+
+      for (let j = 0; j < days; j++) {
+        let totalIncome = 0;
+        for (let i = 0; i < stores; i++) {
+          totalIncome += incomeArray[i][j][0];
+        }
+        dailyIncomes.push(totalIncome);
+      }
+
+      document.write(
+        `<h2>Загальний прибуток кожного магазину за тиждень:</h2>`,
+      );
+      for (let i = 0; i < weeklyIncomes.length; i++) {
+        document.write(`Магазин ${i + 1}: ${weeklyIncomes[i]}<br/>`);
+      }
+
+      document.write(`<h2>Загальний прибуток усіх магазинів по днях:</h2>`);
+      for (let j = 0; j < dailyIncomes.length; j++) {
+        document.write(`День ${j + 1}: ${dailyIncomes[j]}<br/>`);
+      }
     </script>
   </body>
 </html>

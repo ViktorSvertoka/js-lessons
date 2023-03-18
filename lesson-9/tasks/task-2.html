@@ -68,9 +68,9 @@
 
       //==============================================
 
-      const stores = prompt('Введіть кількість магазинів:');
-      const days = prompt('Введіть кількість днів:');
-      const maxIncome = prompt('Введіть максимальний прибуток:');
+      const stores = parseInt(prompt('Введіть кількість магазинів:'));
+      const days = parseInt(prompt('Введіть кількість днів:'));
+      const maxIncome = parseInt(prompt('Введіть максимальний прибуток:'));
 
       const incomeArray = getRandom3DArray(stores, days, 1, 0, maxIncome);
 

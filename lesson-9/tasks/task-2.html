@@ -146,9 +146,33 @@
       }
 
       const workDaysTotal = workDaysIncome(incomeTable);
-
       document.write(
         `<h2>3. Загальний прибуток за робочі дні: [${workDaysTotal.join(
+          ',  ',
+        )}]</h2>`,
+      );
+
+      // 4) загальний прибуток за вихідні дні
+      function getWeekendIncome(incomeTable) {
+        const weekendDays = [5, 6]; // Saturday = 5, Sunday = 6
+        let weekendIncome = 0;
+
+        for (let day = 0; day < incomeTable[0].length; day++) {
+          if (weekendDays.includes(day)) {
+            const dayIncome = incomeTable.reduce(
+              (sum, row) => sum + row[day],
+              0,
+            );
+            weekendIncome += dayIncome;
+          }
+        }
+
+        return weekendIncome;
+      }
+
+      const weekendIncome = getWeekendIncome(incomeTable);
+      document.write(
+        `<h2>4. Загальний прибуток за вихідні дні: [${workDaysTotal.join(
           ',  ',
         )}]</h2>`,
       );

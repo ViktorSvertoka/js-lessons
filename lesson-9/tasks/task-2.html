@@ -172,7 +172,7 @@
 
       const weekendIncome = getWeekendIncome(incomeTable);
       document.write(
-        `<h2>4. Загальний прибуток за вихідні дні: [${workDaysTotal.join(
+        `<h2>4. Загальний прибуток за вихідні дні: [${weekendIncome.join(
           ',  ',
         )}]</h2>`,
       );
@@ -189,7 +189,7 @@
 
       const maxWednesdayIncome = getMaxIncomeWednesday(incomeTable);
       document.write(
-        `<h2>5. Максимальний прибуток за середу: [${workDaysTotal.join(
+        `<h2>5. Максимальний прибуток за середу: [${maxWednesdayIncome.join(
           ',  ',
         )}]</h2>`,
       );

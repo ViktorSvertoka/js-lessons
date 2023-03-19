@@ -10,71 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-9.html"
+      <a href="../index-10.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
-    <h1>Задача № 3</h1>
-    <p>
-      Морський бій. Випадковим чином на двовимірному полі розміром 6*6
-      розташовується 5 кораблів. Користувач стріляє вказуючи координати. Гра
-      продовжується поки не потоплено усі кораблі або у користувача не
-      закінчаться снаряди.
-    </p>
-    <script>
-      function generateRandomBoard() {
-        let board = [];
-        for (let i = 0; i < 6; i++) {
-          let row = [];
-          for (let j = 0; j < 6; j++) {
-            row.push(0);
-          }
-          board.push(row);
-        }
-
-        let shipCount = 5;
-        while (shipCount > 0) {
-          let row = Math.floor(Math.random() * 6);
-          let col = Math.floor(Math.random() * 6);
-          if (board[row][col] === 0) {
-            board[row][col] = 1;
-            shipCount--;
-          }
-        }
-
-        return board;
-      }
-
-      function play(board, numShots) {
-        let numShips = 5;
-        while (numShips > 0 && numShots > 0) {
-          let row = parseInt(
-            prompt('Введіть номер рядка для пострілу, від 0 до 5:'),
-          );
-          let col = parseInt(
-            prompt('Введіть номер стовпця для пострілу, від 0 до 5:'),
-          );
-          if (board[row][col] === 1) {
-            board[row][col] = 0;
-            numShips--;
-            alert('Ви влучили!');
-          } else {
-            alert('Ви промахнулися...');
-          }
-          numShots--;
-        }
-
-        if (numShips === 0) {
-          alert('Ви виграли!!!');
-        } else {
-          alert('Ви програли...');
-        }
-      }
-
-      let board = generateRandomBoard();
-      play(board, 10);
-    </script>
+    <h1>Задача № 4</h1>
+    <p></p>
+    <script></script>
   </body>
 </html>

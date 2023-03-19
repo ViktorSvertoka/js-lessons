@@ -85,17 +85,22 @@
       const days = parseInt(prompt('Введіть кількість днів:'));
       const maxIncome = parseInt(prompt('Введіть максимальний прибуток:'));
 
-      const income = getRandomTable(stores, days, 0, maxIncome);
+      const incomeTable = getRandomTable(stores, days, 0, maxIncome);
 
       // 1) загальний прибуток кожного масиву за тиждень
-      const weeklyIncome = [];
-      for (let i = 0; i < stores; i++) {
-        let total = 0;
-        for (let j = 0; j < days; j++) {
-          total += income[i][j];
+      function weeklyIncomeByStore(incomeTable) {
+        const weeklyIncome = [];
+        for (let i = 0; i < incomeTable.length; i++) {
+          let storeIncome = 0;
+          for (let j = 0; j < incomeTable[i].length; j++) {
+            storeIncome += incomeTable[i][j];
+          }
+          weeklyIncome.push(storeIncome);
         }
-        weeklyIncome.push(total);
+        return weeklyIncome;
       }
+
+      const weeklyIncome = weeklyIncomeByStore(incomeTable);
 
       document.write(
         `<h2>1. Загальний прибуток кожного магазину за тиждень: [${weeklyIncome.join(
@@ -105,20 +110,20 @@
 
       // 2) загальний прибуток усіх магазинів по дням
       // (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
-      const dailyIncome = [];
-      for (let j = 0; j < days; j++) {
-        let total = 0;
-        for (let i = 0; i < stores; i++) {
-          total += income[i][j];
-        }
-        dailyIncome.push(total);
-      }
+      // const dailyIncome = [];
+      // for (let j = 0; j < days; j++) {
+      //   let total = 0;
+      //   for (let i = 0; i < stores; i++) {
+      //     total += income[i][j];
+      //   }
+      //   dailyIncome.push(total);
+      // }
 
-      document.write(
-        `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyIncome.join(
-          ',  ',
-        )}]</h2>`,
-      );
+      // document.write(
+      //   `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyIncome.join(
+      //     ',  ',
+      //   )}]</h2>`,
+      // );
     </script>
   </body>
 </html>

@@ -154,7 +154,7 @@
 
       // 4) загальний прибуток за вихідні дні
       function getWeekendIncome(incomeTable) {
-        const weekendDays = [5, 6]; // Saturday = 5, Sunday = 6
+        const weekendDays = [5, 6]; //субота = [5], неділя = [6]
         let weekendIncome = 0;
 
         for (let day = 0; day < incomeTable[0].length; day++) {
@@ -173,6 +173,23 @@
       const weekendIncome = getWeekendIncome(incomeTable);
       document.write(
         `<h2>4. Загальний прибуток за вихідні дні: [${workDaysTotal.join(
+          ',  ',
+        )}]</h2>`,
+      );
+
+      // 5) максимальний прибуток за середу
+      function getMaxIncomeWednesday(incomeTable) {
+        const wednesday = 2; //середа = [2]
+        const wednesdayIncome = incomeTable.reduce(
+          (max, row) => Math.max(max, row[wednesday]),
+          0,
+        );
+        return wednesdayIncome;
+      }
+
+      const maxWednesdayIncome = getMaxIncomeWednesday(incomeTable);
+      document.write(
+        `<h2>5. Максимальний прибуток за середу: [${workDaysTotal.join(
           ',  ',
         )}]</h2>`,
       );

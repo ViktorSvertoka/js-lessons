@@ -85,39 +85,23 @@
       const days = parseInt(prompt('Введіть кількість днів:'));
       const maxIncome = parseInt(prompt('Введіть максимальний прибуток:'));
 
-      const incomeArray = getRandom3DArray(stores, days, 1, 0, maxIncome);
+      const income = getRandomTable(stores, days, 0, maxIncome);
 
-      const weeklyIncomes = [];
-
+      // 1) загальний прибуток кожного масиву за тиждень
+      const weeklyIncome = [];
       for (let i = 0; i < stores; i++) {
-        let totalIncome = 0;
+        let total = 0;
         for (let j = 0; j < days; j++) {
-          totalIncome += incomeArray[i][j][0];
+          total += income[i][j];
         }
-        weeklyIncomes.push(totalIncome);
-      }
-
-      const dailyIncomes = [];
-
-      for (let j = 0; j < days; j++) {
-        let totalIncome = 0;
-        for (let i = 0; i < stores; i++) {
-          totalIncome += incomeArray[i][j][0];
-        }
-        dailyIncomes.push(totalIncome);
+        weeklyIncome.push(total);
       }
 
       document.write(
-        `<h2>Загальний прибуток кожного магазину за тиждень:</h2>`,
+        `<h2>1. Загальний прибуток кожного магазину за тиждень: [${weeklyIncome.join(
+          ',  ',
+        )}]</h2>`,
       );
-      for (let i = 0; i < weeklyIncomes.length; i++) {
-        document.write(`Магазин ${i + 1}: ${weeklyIncomes[i]}<br/>`);
-      }
-
-      document.write(`<h2>Загальний прибуток усіх магазинів по днях:</h2>`);
-      for (let j = 0; j < dailyIncomes.length; j++) {
-        document.write(`День ${j + 1}: ${dailyIncomes[j]}<br/>`);
-      }
     </script>
   </body>
 </html>

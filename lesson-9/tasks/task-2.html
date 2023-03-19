@@ -111,7 +111,7 @@
 
       // 2) загальний прибуток усіх магазинів по дням
       // (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
-      function dailyIncome(incomeTable) {
+      function getDailyIncome(incomeTable) {
         const dailyTotal = [];
         for (let j = 0; j < incomeTable[0].length; j++) {
           let dailyIncome = 0;
@@ -123,7 +123,7 @@
         return dailyTotal;
       }
 
-      const dailyTotal = dailyIncome(incomeTable);
+      const dailyTotal = getDailyIncome(incomeTable);
       document.write(
         `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyTotal.join(
           ',  ',
@@ -131,7 +131,7 @@
       );
 
       // 3) загальний прибуток за робочі дні
-      function workDaysIncome(incomeTable) {
+      function getWorkDaysIncome(incomeTable) {
         const workDaysTotal = [];
         for (let i = 0; i < incomeTable.length; i++) {
           let workDaysIncome = 0;
@@ -145,7 +145,7 @@
         return workDaysTotal;
       }
 
-      const workDaysTotal = workDaysIncome(incomeTable);
+      const workDaysTotal = getWorkDaysIncome(incomeTable);
       document.write(
         `<h2>3. Загальний прибуток за робочі дні: [${workDaysTotal.join(
           ',  ',

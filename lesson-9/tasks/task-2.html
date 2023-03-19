@@ -101,7 +101,6 @@
       }
 
       const weeklyIncome = weeklyIncomeByStore(incomeTable);
-
       document.write(
         `<h2>1. Загальний прибуток кожного магазину за тиждень: [${weeklyIncome.join(
           ',  ',
@@ -110,20 +109,24 @@
 
       // 2) загальний прибуток усіх магазинів по дням
       // (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
-      // const dailyIncome = [];
-      // for (let j = 0; j < days; j++) {
-      //   let total = 0;
-      //   for (let i = 0; i < stores; i++) {
-      //     total += income[i][j];
-      //   }
-      //   dailyIncome.push(total);
-      // }
+      function dailyIncome(incomeTable) {
+        const dailyTotal = [];
+        for (let j = 0; j < incomeTable[0].length; j++) {
+          let dailyIncome = 0;
+          for (let i = 0; i < incomeTable.length; i++) {
+            dailyIncome += incomeTable[i][j];
+          }
+          dailyTotal.push(dailyIncome);
+        }
+        return dailyTotal;
+      }
 
-      // document.write(
-      //   `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyIncome.join(
-      //     ',  ',
-      //   )}]</h2>`,
-      // );
+      const dailyTotal = dailyIncome(incomeTable);
+      document.write(
+        `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyTotal.join(
+          ',  ',
+        )}]</h2>`,
+      );
     </script>
   </body>
 </html>

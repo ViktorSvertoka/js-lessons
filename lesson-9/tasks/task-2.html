@@ -89,7 +89,7 @@
 
       const incomeTable = getRandomTable(stores, days, 0, maxIncome);
 
-      // 1) загальний прибуток кожного масиву за тиждень
+      // 1) Знайти : загальний прибуток кожного масиву за тиждень
       function weeklyIncomeByStore(incomeTable) {
         const weeklyIncome = [];
         for (let i = 0; i < incomeTable.length; i++) {
@@ -109,7 +109,7 @@
         )}]</h2>`,
       );
 
-      // 2) загальний прибуток усіх магазинів по дням
+      // 2) Знайти : загальний прибуток усіх магазинів по дням
       // (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
       function getDailyIncome(incomeTable) {
         const dailyTotal = [];
@@ -130,7 +130,7 @@
         )}]</h2>`,
       );
 
-      // 3) загальний прибуток за робочі дні
+      // 3) Знайти : загальний прибуток за робочі дні
       function getWorkDaysIncome(incomeTable) {
         const workDaysTotal = [];
         for (let i = 0; i < incomeTable.length; i++) {
@@ -152,7 +152,7 @@
         )}]</h2>`,
       );
 
-      // 4) загальний прибуток за вихідні дні
+      // 4) Знайти : загальний прибуток за вихідні дні
       function getWeekendIncome(incomeTable) {
         const weekendDays = [5, 6]; //субота = [5], неділя = [6]
         let weekendIncome = 0;
@@ -177,7 +177,7 @@
         )}]</h2>`,
       );
 
-      // 5) максимальний прибуток за середу
+      // 5) Знайти : максимальний прибуток за середу
       function getMaxIncomeWednesday(incomeTable) {
         const wednesday = 2; //середа = [2]
         const wednesdayIncome = incomeTable.reduce(
@@ -194,7 +194,7 @@
         )}]</h2>`,
       );
 
-      // 6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+      // 6) Знайти : сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
       function getHighIncomeList(incomeTable) {
         const highIncomeList = incomeTable.flatMap(row =>
           row.filter(income => income > 200),
@@ -209,7 +209,7 @@
         )}]</h2>`,
       );
 
-      // 7) відсортувати кожен тиждень за зростанням
+      // 7) Знайти : відсортувати кожен тиждень за зростанням
       function sortWeeks(incomeTable) {
         for (let i = 0; i < incomeTable.length; i++) {
           incomeTable[i].sort((a, b) => a - b);

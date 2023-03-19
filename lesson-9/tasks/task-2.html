@@ -31,7 +31,7 @@
       8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому
       тижні (рядку), тобто при порівнянні рядків потрібно порівнювати
       максимальні елементи у кожному з цих рядків <br />
-      8) упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто
+      9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто
       при порівнянні двох рядків треба знайти суму кожного з рядків і
       порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів
       повинен іти раніше). <br />
@@ -124,6 +124,29 @@
       const dailyTotal = dailyIncome(incomeTable);
       document.write(
         `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyTotal.join(
+          ',  ',
+        )}]</h2>`,
+      );
+
+      // 3) загальний прибуток за робочі дні
+      function workDaysIncome(incomeTable) {
+        const workDaysTotal = [];
+        for (let i = 0; i < incomeTable.length; i++) {
+          let workDaysIncome = 0;
+          for (let j = 0; j < incomeTable[i].length; j++) {
+            if (j !== 5 && j !== 6) {
+              workDaysIncome += incomeTable[i][j];
+            }
+          }
+          workDaysTotal.push(workDaysIncome);
+        }
+        return workDaysTotal;
+      }
+
+      const workDaysTotal = workDaysIncome(incomeTable);
+
+      document.write(
+        `<h2>3. Загальний прибуток за робочі дні: [${workDaysTotal.join(
           ',  ',
         )}]</h2>`,
       );

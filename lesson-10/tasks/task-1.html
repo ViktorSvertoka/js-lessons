@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-9.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>Знайти суми елементів у вказаній області</p>
+    <script>
+      const arrayOfElements = [
+        [25, 75],
+        [50, 100],
+      ];
+
+      document.write(`Перший приклад [${arrayOfElements[0][0]}] <br>`);
+      document.write(`Другий приклад [${arrayOfElements[0][1]}] <br>`);
+      document.write(`Третій приклад [${arrayOfElements[1][0]}] <br>`);
+      document.write(`Четвертий приклад [${arrayOfElements[1][1]}] <br>`);
+
+      // 5) Суму парних рядків.
+      document.write(
+        `Пятий приклад [${arrayOfElements[0][0] + arrayOfElements[1][1]}] <br>`,
+      );
+
+      // 6) Суму непарних стовпців.
+      document.write(
+        `Шостий приклад [${
+          arrayOfElements[1][0] + arrayOfElements[0][1]
+        }] <br>`,
+      );
+
+      // 7) У парних рядках – непарні стовпці, у непарних – парні.
+      document.write(
+        `Сьомий приклад [${
+          arrayOfElements[1][0] + arrayOfElements[0][0]
+        }] <br>`,
+      );
+    </script>
+  </body>
+</html>

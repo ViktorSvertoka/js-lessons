@@ -193,6 +193,21 @@
           ',  ',
         )}]</h2>`,
       );
+
+      // 6) сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
+      function getHighIncomeList(incomeTable) {
+        const highIncomeList = incomeTable.flatMap(row =>
+          row.filter(income => income > 200),
+        );
+        return highIncomeList;
+      }
+
+      const highIncomeList = getHighIncomeList(incomeTable);
+      document.write(
+        `<h2>6. Сформувати загальний список зі значенням, які що більші за 200: [${highIncomeList.join(
+          ',  ',
+        )}]</h2>`,
+      );
     </script>
   </body>
 </html>

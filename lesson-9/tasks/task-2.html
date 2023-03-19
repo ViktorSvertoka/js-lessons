@@ -102,6 +102,23 @@
           ',  ',
         )}]</h2>`,
       );
+
+      // 2) загальний прибуток усіх магазинів по дням
+      // (загальний прибуток усіх магазинів за понеділок, за вівторок, і т.д.)
+      const dailyIncome = [];
+      for (let j = 0; j < days; j++) {
+        let total = 0;
+        for (let i = 0; i < stores; i++) {
+          total += income[i][j];
+        }
+        dailyIncome.push(total);
+      }
+
+      document.write(
+        `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyIncome.join(
+          ',  ',
+        )}]</h2>`,
+      );
     </script>
   </body>
 </html>

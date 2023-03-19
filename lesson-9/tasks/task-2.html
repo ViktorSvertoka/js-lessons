@@ -208,6 +208,21 @@
           ',  ',
         )}]</h2>`,
       );
+
+      // 7) відсортувати кожен тиждень за зростанням
+      function sortWeeks(incomeTable) {
+        for (let i = 0; i < incomeTable.length; i++) {
+          incomeTable[i].sort((a, b) => a - b);
+        }
+        return incomeTable;
+      }
+
+      const sortedTable = sortWeeks(incomeTable);
+      document.write(
+        `<h2>7. Відсортувати кожен тиждень за зростанням: [${sortedTable.join(
+          ',  ',
+        )}]</h2>`,
+      );
     </script>
   </body>
 </html>

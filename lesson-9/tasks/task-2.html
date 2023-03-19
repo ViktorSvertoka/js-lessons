@@ -87,7 +87,7 @@
       const days = parseInt(prompt('Введіть кількість днів:'));
       const maxIncome = parseInt(prompt('Введіть максимальний прибуток:'));
 
-      const incomeTable = getRandomTable(stores, days, 0, maxIncome);
+      const incomeTableRundom = getRandomTable(stores, days, 0, maxIncome);
 
       // 1) Знайти : загальний прибуток кожного масиву за тиждень
       function weeklyIncomeByStore(incomeTable) {
@@ -102,7 +102,7 @@
         return weeklyIncome;
       }
 
-      const weeklyIncome = weeklyIncomeByStore(incomeTable);
+      const weeklyIncome = weeklyIncomeByStore(incomeTableRundom);
       document.write(
         `<h2>1. Загальний прибуток кожного магазину за тиждень: [${weeklyIncome.join(
           ',  ',
@@ -123,7 +123,7 @@
         return dailyTotal;
       }
 
-      const dailyTotal = getDailyIncome(incomeTable);
+      const dailyTotal = getDailyIncome(incomeTableRundom);
       document.write(
         `<h2>2. Загальний прибуток усіх магазинів по дням: [${dailyTotal.join(
           ',  ',
@@ -145,7 +145,7 @@
         return workDaysTotal;
       }
 
-      const workDaysTotal = getWorkDaysIncome(incomeTable);
+      const workDaysTotal = getWorkDaysIncome(incomeTableRundom);
       document.write(
         `<h2>3. Загальний прибуток за робочі дні: [${workDaysTotal.join(
           ',  ',
@@ -170,11 +170,9 @@
         return weekendIncome;
       }
 
-      const weekendIncome = getWeekendIncome(incomeTable);
+      const weekendIncome = getWeekendIncome(incomeTableRundom);
       document.write(
-        `<h2>4. Загальний прибуток за вихідні дні: [${weekendIncome.join(
-          ',  ',
-        )}]</h2>`,
+        `<h2>4. Загальний прибуток за вихідні дні: [${weekendIncome}]</h2>`,
       );
 
       // 5) Знайти : максимальний прибуток за середу
@@ -187,11 +185,9 @@
         return wednesdayIncome;
       }
 
-      const maxWednesdayIncome = getMaxIncomeWednesday(incomeTable);
+      const maxWednesdayIncome = getMaxIncomeWednesday(incomeTableRundom);
       document.write(
-        `<h2>5. Максимальний прибуток за середу: [${maxWednesdayIncome.join(
-          ',  ',
-        )}]</h2>`,
+        `<h2>5. Максимальний прибуток за середу: [${maxWednesdayIncome}]</h2>`,
       );
 
       // 6) Знайти : сформувати загальний список (одновимірний масив) зі значенням, які що більші за 200
@@ -202,7 +198,7 @@
         return highIncomeList;
       }
 
-      const highIncomeList = getHighIncomeList(incomeTable);
+      const highIncomeList = getHighIncomeList(incomeTableRundom);
       document.write(
         `<h2>6. Сформувати загальний список зі значенням, які що більші за 200: [${highIncomeList.join(
           ',  ',
@@ -217,12 +213,53 @@
         return incomeTable;
       }
 
-      const sortedTable = sortWeeks(incomeTable);
+      const sortedTable = sortWeeks(incomeTableRundom);
       document.write(
         `<h2>7. Відсортувати кожен тиждень за зростанням: [${sortedTable.join(
           ',  ',
         )}]</h2>`,
       );
+
+      // 8) відсортувати тижні (рядки) за спаданням максимального елементи у цьому
+      // тижні (рядку), тобто при порівнянні рядків потрібно порівнювати
+      // максимальні елементи у кожному з цих рядків
+
+      // Функція для порівняння максимальних елементів у рядках
+      function compareMaxIncomes(row1, row2) {
+        const maxIncome1 = getMaxIncome(row1);
+        const maxIncome2 = getMaxIncome(row2);
+        if (maxIncome1 < maxIncome2) {
+          return 1;
+        } else if (maxIncome1 > maxIncome2) {
+          return -1;
+        } else {
+          return 0;
+        }
+      }
+
+      // Функція для пошуку максимального елемента у рядку
+      function getMaxIncome(row) {
+        let maxIncome = row[0];
+        for (let i = 1; i < row.length; i++) {
+          if (row[i] > maxIncome) {
+            maxIncome = row[i];
+          }
+        }
+        return maxIncome;
+      }
+
+      // Сортування тижнів за спаданням максимального елемента в кожному тижні
+      incomeTableRundom.sort(compareMaxIncomes);
+
+      document.write(
+        `<h2>8. Відсортувати тижні за спаданням максимального елементи у цьому тижні: 
+  [${incomeTableRundom}]</h2>`,
+      );
+
+      // 9) упорядкувати тижні (рядки) за спаданням суми елементів у рядку (тобто
+      // при порівнянні двох рядків треба знайти суму кожного з рядків і
+      // порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів
+      // повинен іти раніше).
     </script>
   </body>
 </html>

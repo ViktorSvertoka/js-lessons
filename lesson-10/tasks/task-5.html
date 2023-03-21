@@ -21,6 +21,37 @@
       Задача 5. Дано масив імен. Застосовуючи відповідне сортування та бінарний
       пошук визначити, чи є у масиві ім’я «Olga» і під яким індексом.
     </p>
-    <script></script>
+    <script>
+      function binarySearch(arr, x) {
+        let left = 0;
+        let right = arr.length - 1;
+
+        while (left <= right) {
+          const mid = Math.floor((left + right) / 2);
+
+          if (arr[mid] === x) {
+            return mid;
+          } else if (arr[mid] < x) {
+            left = mid + 1;
+          } else {
+            right = mid - 1;
+          }
+        }
+
+        return -1;
+      }
+
+      const names = ['Anna', 'Boris', 'Olga', 'Peter', 'Svetlana'];
+
+      names.sort(); // Сортуємо масив імен за алфавітом
+
+      const index = binarySearch(names, 'Olga'); // Знаходимо індекс імені "Olga" у відсортованому масиві
+
+      if (index !== -1) {
+        document.write(`<h2>Ім'я Olga знаходиться на позиції ${index}</h2>`);
+      } else {
+        document.write(`<h2>Ім'я Olga не знайдено в масиві</h2>`);
+      }
+    </script>
   </body>
 </html>

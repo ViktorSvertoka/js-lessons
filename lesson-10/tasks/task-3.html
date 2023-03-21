@@ -21,6 +21,27 @@
       Задача 3. Дано масив 30 випадкових цілих чисел. Підрахувати скільки було
       обмінів під час сортування включеннями.
     </p>
-    <script></script>
+    <script>
+      let arr = [];
+
+      for (let i = 0; i < 30; i++) {
+        arr.push(Math.floor(Math.random() * 100));
+      }
+
+      let swaps = 0;
+
+      for (let i = 1; i < arr.length; i++) {
+        let current = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > current) {
+          arr[j + 1] = arr[j];
+          j--;
+          swaps++;
+        }
+        arr[j + 1] = current;
+      }
+
+      document.write(`<h2>Кількість обмінів: ${swaps}</h2>`);
+    </script>
   </body>
 </html>

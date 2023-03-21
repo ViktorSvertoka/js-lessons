@@ -21,6 +21,41 @@
       Задача 1. Дано масив 30 випадкових цілих чисел. Підрахувати скільки було
       обмінів під час сортування бульбашкою
     </p>
-    <script></script>
+    <script>
+      // Створюємо масив з 30 випадкових цілих чисел
+      let arr = [];
+
+      for (let i = 0; i < 30; i++) {
+        arr.push(Math.floor(Math.random() * 100));
+      }
+
+      function bubbleSort(arr) {
+        let n = arr.length;
+        let swapped = false;
+        let swaps = 0;
+
+        do {
+          swapped = false;
+          for (let i = 0; i < n - 1; i++) {
+            if (arr[i] > arr[i + 1]) {
+              let temp = arr[i];
+              arr[i] = arr[i + 1];
+              arr[i + 1] = temp;
+              swapped = true;
+              swaps++;
+            }
+          }
+          n--;
+        } while (swapped);
+
+        return swaps;
+      }
+
+      let numSwaps = bubbleSort(arr);
+
+      document.write(
+        `<h2>Кількість обмінів під час сортування: ${numSwaps}</h2>`,
+      );
+    </script>
   </body>
 </html>

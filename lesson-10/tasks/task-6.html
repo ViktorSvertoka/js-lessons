@@ -23,7 +23,35 @@
       індексом.
     </p>
     <script>
-      const names = ['Anna', 'Boris', 'Olga', 'Svetlana', 'Ivan'];
+      const names = ['Anna', 'Olga', 'Svetlana', 'Ivan', 'Boris'];
+
+      names.sort((a, b) => a.length - b.length);
+
+      let result = -1;
+      let left = 0;
+      let right = names.length - 1;
+
+      while (left <= right) {
+        const middle = Math.floor((left + right) / 2);
+        const name = names[middle];
+
+        if (name.length === 5) {
+          result = middle;
+          break;
+        }
+
+        if (name.length < 5) {
+          left = middle + 1;
+        } else {
+          right = middle - 1;
+        }
+      }
+
+      if (result === -1) {
+        document.write('У масиві немає імен довжиною 5 символів.');
+      } else {
+        document.write(`Ім'я "${names[result]}" має індекс ${result + 1}.`);
+      }
     </script>
   </body>
 </html>

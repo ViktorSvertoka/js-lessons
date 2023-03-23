@@ -166,36 +166,3 @@ h1 {
 .wrapp-task {
   margin-right: 100px;
 }
-
-/* body.open-modal {
-  overflow-y: hidden;
-}
-
-body.open-modal > .modal-window,
-body.open-modal > .overlay {
-  display: block;
-}
-
-.modal-window {
-  font-size: 30px;
-  width: 50%;
-  text-align: center;
-  background-color: aquamarine;
-  padding: 20px;
-  border: 2px solid black;
-  border-radius: 15px;
-  display: none;
-}
-
-.close-btn {
-  color: blueviolet;
-}
-
-.open-btn {
-  color: cornflowerblue;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-} */

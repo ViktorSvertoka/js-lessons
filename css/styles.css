@@ -159,6 +159,10 @@ h1 {
   padding: 10px;
 }
 
+.wrapper-main {
+  display: flex;
+}
+
 .wrapper {
   display: flex;
 }

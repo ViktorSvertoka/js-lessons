@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-10.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 2</h1>
+    <p>
+      Задача 2. Дано масив 30 випадкових цілих чисел. Підрахувати скільки було
+      обмінів під час сортування змішуванням.
+    </p>
+    <script>
+      function getRandomArray(length) {
+        return Array(length)
+          .fill()
+          .map(() => Math.floor(Math.random() * 100));
+      }
+
+      function countSwaps(arr) {
+        let counter = 0;
+        let startArray = 0;
+        let endArray = arr.length - 1;
+
+        while (startArray < endArray) {
+          for (let i = startArray; i < endArray; i++) {
+            if (arr[i] > arr[i + 1]) {
+              let tmp = arr[i];
+              arr[i] = arr[i + 1];
+              arr[i + 1] = tmp;
+              counter++;
+            }
+          }
+          endArray--;
+          for (let i = endArray; i > startArray; i--) {
+            if (arr[i - 1] > arr[i]) {
+              let tmp = arr[i - 1];
+              arr[i - 1] = arr[i];
+              arr[i] = tmp;
+              counter++;
+            }
+          }
+          startArray++;
+        }
+
+        return counter;
+      }
+
+      const randomIntegers = 30;
+      const arr = getRandomArray(randomIntegers);
+      const swaps = countSwaps(arr);
+
+      document.write(`<h2>Кількість обмінів: ${swaps}</h2>`);
+    </script>
+  </body>
+</html>

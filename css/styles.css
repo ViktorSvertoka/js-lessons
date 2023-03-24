@@ -163,6 +163,10 @@ h1 {
   display: flex;
 }
 
+.list-main {
+  margin-right: 50px;
+}
+
 .wrapper {
   display: flex;
 }

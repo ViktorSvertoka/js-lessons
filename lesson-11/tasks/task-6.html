@@ -10,50 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-10.html"
+      <a href="../index-11.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 6</h1>
-    <p>
-      Задача 6. Дано масив імен. Застосовуючи відповідне сортування та бінарний
-      пошук визначити, чи є у масиві ім’я довжиною 5 символів і під яким
-      індексом.
-    </p>
-    <script>
-      const names = ['Anna', 'Olga', 'Svetlana', 'Ivan', 'Boris'];
-
-      names.sort((a, b) => a.length - b.length);
-
-      let result = -1;
-      let left = 0;
-      let right = names.length - 1;
-
-      while (left <= right) {
-        const middle = Math.floor((left + right) / 2);
-        const name = names[middle];
-
-        if (name.length === 5) {
-          result = middle;
-          break;
-        }
-
-        if (name.length < 5) {
-          left = middle + 1;
-        } else {
-          right = middle - 1;
-        }
-      }
-
-      if (result === -1) {
-        document.write('У масиві немає імен довжиною 5 символів.');
-      } else {
-        document.write(
-          `<h2>Ім'я "${names[result]}" має індекс № ${result + 1}.</h2>`,
-        );
-      }
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

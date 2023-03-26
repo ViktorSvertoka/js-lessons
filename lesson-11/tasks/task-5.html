@@ -21,6 +21,23 @@
       Задача 5. Тренажер додавання. Кожні 10 секунд користувачу задають
       випадковий приклад з додавання двох цифр і робиться перевірка.
     </p>
-    <script></script>
+    <script>
+      function askQuestion() {
+        let num1 = Math.floor(Math.random() * 10) + 1;
+        let num2 = Math.floor(Math.random() * 10) + 1;
+
+        let correctAnswer = num1 + num2;
+
+        let userAnswer = prompt(`Скільки буде ${num1} + ${num2} ?`);
+
+        if (userAnswer === correctAnswer) {
+          alert('Правильно!');
+        } else {
+          alert(`Неправильно! Правильна відповідь: ${correctAnswer}`);
+        }
+      }
+
+      setInterval(askQuestion, 10000);
+    </script>
   </body>
 </html>

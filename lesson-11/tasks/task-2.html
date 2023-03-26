@@ -18,10 +18,42 @@
     </p>
     <h1>Задача № 2</h1>
     <p>
-      Задача 2. Нехай , де . Визначити . Розв’язати з використанням рекурсивних
-      і нерекурсивних алгоритмів
+      Задача 2. Нехай X0 = X1 = 1, Xi = Xi - 1 + 2 * Xi - 2, де i = 2,3...
+      Визначити Xn. Розв’язати з використанням рекурсивних і нерекурсивних
+      алгоритмів.
     </p>
     <img src="../images/image-2.png" alt="" />
-    <script></script>
+    <script>
+      function recursiveXn(n) {
+        if (n === 0 || n === 1) {
+          return 1;
+        } else {
+          return recursiveXn(n - 1) + 2 * recursiveXn(n - 2);
+        }
+      }
+
+      function nonRecursiveXn(n) {
+        let x0 = 1;
+        let x1 = 1;
+        let xn;
+
+        if (n === 0 || n === 1) {
+          return 1;
+        }
+
+        for (let i = 2; i <= n; i++) {
+          xn = x1 + 2 * x0;
+          x0 = x1;
+          x1 = xn;
+        }
+
+        return xn;
+      }
+
+      document.write(`<h2>Рекурсивний алгоритм. X5 = ${recursiveXn(5)}</h2>`);
+      document.write(
+        `<h2>Нерекурсивний алгоритм. X5 = ${nonRecursiveXn(5)}</h2>`,
+      );
+    </script>
   </body>
 </html>

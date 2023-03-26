@@ -10,54 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-11.html"
+      <a href="../index-12.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 3</h1>
-    <p>
-      Задача 3. З використанням замикань розробити ітератор, тобто функцію, що
-      буде поступово за окремими викликами видавати по одне значення від
-      заданого мінімального до заданого максимального. Якщо значення досягне
-      максимального, то наступним буде мінімальне значення. З використанням цієї
-      функції реалізувати перебір номерів місяців.
-    </p>
-    <script>
-      function createMonthIterator(min, max) {
-        let currentMonth = min;
-        return function next() {
-          const value = currentMonth;
-          currentMonth++;
-          if (currentMonth > max) {
-            currentMonth = min;
-          }
-          return value;
-        };
-      }
-
-      const months = [
-        'Січень',
-        'Лютий',
-        'Березень',
-        'Квітень',
-        'Травень',
-        'Червень',
-        'Липень',
-        'Серпень',
-        'Вересень',
-        'Жовтень',
-        'Листопад',
-        'Грудень',
-      ];
-
-      const monthIteratorName = createMonthIterator(1, 12);
-      for (let i = 0; i < 24; i++) {
-        const monthIndex = monthIteratorName() - 1;
-        const monthName = months[monthIndex];
-        document.write(`<h4>${monthIndex + 1} - ${monthName}</h4>`);
-      }
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

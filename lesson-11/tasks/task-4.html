@@ -25,6 +25,45 @@
       переклад цього слова. Підрахувати кількість вгаданих букв.
     </p>
 
-    <script></script>
+    <script>
+      function letterIterator(word) {
+        let index = 0;
+
+        return function () {
+          if (index < word.length) {
+            const letter = word[index];
+            index++;
+            return letter;
+          } else {
+            return null;
+          }
+        };
+      }
+
+      const word = 'hello';
+
+      alert(`Це слово означае привітання і почінаеться на букву (h)`);
+
+      let correctCount = 0;
+      const iterator = letterIterator(word);
+
+      while (true) {
+        const letter = iterator();
+        if (letter === null) {
+          break;
+        }
+
+        const guess = prompt(`Введіть по одній букві переклад слова`);
+        if (guess === null) {
+          break;
+        } else if (guess === letter) {
+          correctCount++;
+        }
+      }
+
+      document.write(`<h2>Кількість вгаданих букв: ${correctCount}</h2>`);
+
+      document.write(`<h2>Загадане слово: "${word}"</h2>`);
+    </script>
   </body>
 </html>

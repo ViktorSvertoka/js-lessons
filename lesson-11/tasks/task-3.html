@@ -37,9 +37,26 @@
         };
       }
 
-      const monthIterator = createMonthIterator(1, 12);
+      const months = [
+        'Січень',
+        'Лютий',
+        'Березень',
+        'Квітень',
+        'Травень',
+        'Червень',
+        'Липень',
+        'Серпень',
+        'Вересень',
+        'Жовтень',
+        'Листопад',
+        'Грудень',
+      ];
+
+      const monthIteratorName = createMonthIterator(1, 12);
       for (let i = 0; i < 24; i++) {
-        console.log(monthIterator());
+        const monthIndex = monthIteratorName() - 1;
+        const monthName = months[monthIndex];
+        document.write(`<h4>${monthIndex + 1} - ${monthName}</h4>`);
       }
     </script>
   </body>

@@ -24,6 +24,23 @@
       максимального, то наступним буде мінімальне значення. З використанням цієї
       функції реалізувати перебір номерів місяців.
     </p>
-    <script></script>
+    <script>
+      function createMonthIterator(min, max) {
+        let currentMonth = min;
+        return function next() {
+          const value = currentMonth;
+          currentMonth++;
+          if (currentMonth > max) {
+            currentMonth = min;
+          }
+          return value;
+        };
+      }
+
+      const monthIterator = createMonthIterator(1, 12);
+      for (let i = 0; i < 24; i++) {
+        console.log(monthIterator());
+      }
+    </script>
   </body>
 </html>

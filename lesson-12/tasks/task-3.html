@@ -473,8 +473,8 @@
 
       let totalPrice = 0;
 
-      for (const elementData of dataList) {
-        totalPrice += elementData.price;
+      for (const elementOfDataList of dataList) {
+        totalPrice += elementOfDataList.price;
       }
 
       console.log(`Загальна вартість: ${totalPrice}`);
@@ -492,6 +492,7 @@
       }
 
       let count = countPriceDecreases(dataList);
+
       console.log(`Кількість товарів, у яких ціна зменшилась: ${count}`);
 
       // 3) Знайти кількість товарів, які доступні (sell_status:"available")
@@ -499,6 +500,7 @@
       const availableItemsCount = dataList.filter(
         item => item.sell_status === 'available',
       ).length;
+
       console.log(`Кількість товарів, які доступні: ${availableItemsCount}`);
     </script>
   </body>

@@ -167,6 +167,19 @@
       const totalCostOfAllSites = totalCost;
 
       console.log(totalCostOfAllSites);
+
+      // 2) Знайти кількість сайтів, що було зроблено між 2000 та 2009 рр.
+
+      let websitesCount = 0;
+
+      for (const webStudioProject of webStudioProjects) {
+        const graduationYear = webStudioProject.graduationYear;
+        if (graduationYear >= 2000 && graduationYear <= 2009) {
+          websitesCount++;
+        }
+      }
+
+      console.log(websitesCount);
     </script>
   </body>
 </html>

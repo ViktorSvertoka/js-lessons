@@ -230,6 +230,17 @@
 
       webStudioProjects.sort((a, b) => b.costOfTheSite - a.costOfTheSite);
       console.table(webStudioProjects);
+
+      // 7) Створити 2 окремих списки з копіями об’єктів, що містять сайти з вартість до 10000 і більше 10000
+
+      const cheapSites = webStudioProjects.filter(
+        site => site.costOfTheSite <= 10000,
+      );
+      const expensiveSites = webStudioProjects.filter(
+        site => site.costOfTheSite > 10000,
+      );
+      console.table(cheapSites);
+      console.table(expensiveSites);
     </script>
   </body>
 </html>

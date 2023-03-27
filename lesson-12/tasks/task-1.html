@@ -195,6 +195,18 @@
       }
 
       console.log(websitesCount10k);
+
+      // 4) Створити загальний список усіх спонсорів (поки можуть повторюватись, просто зібрати усі у масив)
+
+      const allSponsors = [];
+
+      for (const webStudioProject of webStudioProjects) {
+        for (const sponsor of webStudioProject.sponsors) {
+          allSponsors.push(sponsor);
+        }
+      }
+
+      console.table(allSponsors);
     </script>
   </body>
 </html>

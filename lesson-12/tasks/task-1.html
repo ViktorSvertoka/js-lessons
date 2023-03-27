@@ -225,6 +225,11 @@
       }
 
       console.log(yearWithMaxInvestment);
+
+      // 6) Упорядкувати список за спаданням прибутку
+
+      webStudioProjects.sort((a, b) => b.costOfTheSite - a.costOfTheSite);
+      console.table(webStudioProjects);
     </script>
   </body>
 </html>

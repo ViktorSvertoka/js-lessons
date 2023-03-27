@@ -178,6 +178,23 @@
       }
 
       console.log(websitesCount);
+
+      // 3) Знайти кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+
+      let websitesCount10k = 0;
+
+      for (const webStudioProject of webStudioProjects) {
+        let totalInvestment = 0;
+        const sponsors = webStudioProject.sponsors;
+        for (const sponsor of sponsors) {
+          totalInvestment += sponsor.investment;
+        }
+        if (totalInvestment > 100000) {
+          websitesCount10k++;
+        }
+      }
+
+      console.log(websitesCount10k);
     </script>
   </body>
 </html>

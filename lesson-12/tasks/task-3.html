@@ -478,6 +478,21 @@
       }
 
       console.log(totalPrice);
+
+      // 2)Знайти кількість товарів, у яких ціна зменшилась (price < old_price).
+
+      function countPriceDecreases(dataList) {
+        let count = 0;
+        for (let i = 0; i < dataList.length; i++) {
+          if (dataList[i].price < dataList[i].old_price) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      let count = countPriceDecreases(dataList);
+      console.log(`Кількість товарів, у яких ціна зменшилась: ${count}`);
     </script>
   </body>
 </html>

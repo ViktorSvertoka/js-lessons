@@ -21,6 +21,29 @@
       Розробити функцію, у яку передають об’єкт (день, місяць, рік). Визначити,
       який буде рік через N місяців.
     </p>
-    <script></script>
+    <script>
+      const dateObj = { day: 27, month: 3, year: 2023 };
+
+      const numMonths = parseInt(
+        prompt('Введіть N місяців, щоб дізнатися якій буде рік.'),
+      );
+
+      function calculateYearAfterMonths(dateObj, numMonths) {
+        const month = dateObj.month;
+        const year = dateObj.year;
+
+        const futureMonth = month + numMonths;
+
+        const yearDiff = Math.floor((futureMonth - 1) / 12);
+
+        const futureYear = year + yearDiff;
+
+        return futureYear;
+      }
+
+      const futureYear = calculateYearAfterMonths(dateObj, numMonths);
+
+      alert(`Через ${numMonths} місяців, буде ${futureYear} рік.`);
+    </script>
   </body>
 </html>

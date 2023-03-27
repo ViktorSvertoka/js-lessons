@@ -40,6 +40,133 @@
       7) Створити 2 окремих списки з копіями об’єктів, що містять сайти з
       вартість до 10000 і більше 10000 <br />
     </p>
-    <script></script>
+    <script>
+      const webStudioProjects = [
+        {
+          companyName: 'Apple',
+          companyOwner: 'Steve Jobs',
+          sponsors: [
+            {
+              firstName: 'Tim',
+              lastName: 'Cook',
+              investment: 19000,
+            },
+            {
+              firstName: 'Katherine',
+              lastName: 'Adams',
+              investment: 15000,
+            },
+            {
+              firstName: 'Phil',
+              lastName: 'Schiller',
+              investment: 13000,
+            },
+            {
+              firstName: 'Lisa',
+              lastName: 'Jackson',
+              investment: 10000,
+            },
+          ],
+          graduationYear: 1993,
+          costOfTheSite: 1000,
+        },
+        {
+          companyName: 'Google',
+          companyOwner: 'Larry Page',
+          sponsors: [
+            {
+              firstName: 'Eric',
+              lastName: 'Schmidt',
+              investment: 30000,
+            },
+            {
+              firstName: 'Sundar',
+              lastName: 'Pichai',
+              investment: 35000,
+            },
+            {
+              firstName: 'Sergey',
+              lastName: 'Brin',
+              investment: 36000,
+            },
+            {
+              firstName: 'Paul',
+              lastName: 'Buchheit',
+              investment: 37000,
+            },
+          ],
+          graduationYear: 1998,
+          costOfTheSite: 2000,
+        },
+        {
+          companyName: 'Amazon',
+          companyOwner: 'Jeff Bezos',
+          sponsors: [
+            {
+              firstName: 'James',
+              lastName: 'Johnson',
+              investment: 30000,
+            },
+            {
+              firstName: 'Robert',
+              lastName: 'Williams',
+              investment: 50000,
+            },
+            {
+              firstName: 'Phil',
+              lastName: 'Brown',
+              investment: 30000,
+            },
+            {
+              firstName: 'Michael',
+              lastName: 'Jones',
+              investment: 10000,
+            },
+          ],
+          graduationYear: 2001,
+          costOfTheSite: 30000,
+        },
+        {
+          companyName: 'Microsoft',
+          companyOwner: 'Bill Gates',
+          sponsors: [
+            {
+              firstName: 'David',
+              lastName: 'Miller',
+              investment: 50000,
+            },
+            {
+              firstName: 'Barbara',
+              lastName: 'Davis',
+              investment: 56000,
+            },
+            {
+              firstName: 'Susan',
+              lastName: 'Lopez',
+              investment: 65000,
+            },
+            {
+              firstName: 'Jessica',
+              lastName: 'Martinez',
+              investment: 78000,
+            },
+          ],
+          graduationYear: 2007,
+          costOfTheSite: 40000,
+        },
+      ];
+
+      // 1) Знайти загальну вартість усіх сайтів
+
+      let totalCost = 0;
+
+      for (const webStudioProject of webStudioProjects) {
+        totalCost += webStudioProject.costOfTheSite;
+      }
+
+      const totalCostOfAllSites = totalCost;
+
+      console.log(totalCostOfAllSites);
+    </script>
   </body>
 </html>

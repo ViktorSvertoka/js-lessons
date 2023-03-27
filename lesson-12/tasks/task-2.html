@@ -28,18 +28,8 @@
         prompt('Введіть N місяців, щоб дізнатися якій буде рік.'),
       );
 
-      function calculateYearAfterMonths(dateObj, numMonths) {
-        const month = dateObj.month;
-        const year = dateObj.year;
-
-        const futureMonth = month + numMonths;
-
-        const yearDiff = Math.floor((futureMonth - 1) / 12);
-
-        const futureYear = year + yearDiff;
-
-        return futureYear;
-      }
+      const calculateYearAfterMonths = ({ month, year }, numMonths) =>
+        year + Math.floor((month + numMonths - 1) / 12);
 
       const futureYear = calculateYearAfterMonths(dateObj, numMonths);
 

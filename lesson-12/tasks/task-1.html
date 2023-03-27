@@ -207,6 +207,24 @@
       }
 
       console.table(allSponsors);
+
+      // 5) Знайти рік, коли прибуток був найбільшим
+
+      let maxInvestment = 0;
+      let yearWithMaxInvestment;
+
+      for (const webStudioProject of webStudioProjects) {
+        const investmentSum = webStudioProject.sponsors.reduce(
+          (total, sponsor) => total + sponsor.investment,
+          0,
+        );
+        if (investmentSum > maxInvestment) {
+          maxInvestment = investmentSum;
+          yearWithMaxInvestment = webStudioProject.graduationYear;
+        }
+      }
+
+      console.log(yearWithMaxInvestment);
     </script>
   </body>
 </html>

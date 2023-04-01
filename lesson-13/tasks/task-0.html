@@ -25,6 +25,40 @@
       3) Використати обидва методи стосовно обидвох об’єктів (використати call,
       apply)
     </p>
-    <script></script>
+    <script>
+      let object1 = {
+        numbers: [2, 1, 45, 5, 2, 3],
+
+        getSum: function () {
+          return this.numbers.reduce((prevSum, element) => prevSum + element);
+        },
+      };
+
+      let object2 = {
+        numbers: [22, 11, 5, 45, 5, 23],
+
+        getProduct: function (minValue, maxValue) {
+          return this.numbers.reduce(
+            (prevProduct, num) =>
+              num >= minValue && num <= maxValue
+                ? prevProduct * num
+                : prevProduct,
+            1,
+          );
+        },
+      };
+
+      let sum2 = object1.getSum.call(object2);
+
+      let prod1 = object2.getProduct.call(object1, 3, 7);
+
+      let sum2a = object1.getSum.apply(object2);
+
+      let prod1a = object2.getProduct.apply(object1, [3, 7]);
+
+      console.log(`1) Sum = ${object1.getSum()} Product = ${prod1}`);
+
+      console.log(`2) Product = ${object2.getProduct(1, 6)} Sum = ${sum2}`);
+    </script>
   </body>
 </html>

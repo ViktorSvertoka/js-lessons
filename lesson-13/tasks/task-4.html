@@ -26,6 +26,45 @@
       <br />
       Метод виведення випадкового банера <br />
     </p>
-    <script></script>
+    <script>
+      class Banner {
+        constructor(images) {
+          this.images = images;
+        }
+
+        getRandomImage() {
+          const randomIndex = Math.floor(Math.random() * this.images.length);
+          return this.images[randomIndex];
+        }
+
+        render() {
+          const { imageUrl, link } = this.getRandomImage();
+          document.write(
+            `<a href="${link}"target="_blank"><img src="${imageUrl}" alt="Banner" width="300" /></a>`,
+          );
+        }
+      }
+
+      const images = [
+        {
+          imageUrl:
+            'https://cdn.pixabay.com/photo/2015/04/23/17/41/javascript-736400_960_720.png',
+          link: 'https://uk.wikipedia.org/wiki/JavaScript',
+        },
+        {
+          imageUrl:
+            'https://cdn.pixabay.com/photo/2020/01/22/12/33/python-4785225_960_720.jpg',
+          link: 'https://uk.wikipedia.org/wiki/Python',
+        },
+        {
+          imageUrl:
+            'https://cdn.pixabay.com/photo/2013/07/12/16/50/cafe-151346_960_720.png',
+          link: 'https://uk.wikipedia.org/wiki/Java',
+        },
+      ];
+
+      const banner = new Banner(images);
+      banner.render();
+    </script>
   </body>
 </html>

@@ -25,6 +25,49 @@
       місяців чи років. <br />
       Введення та виведення дати реалізувати за допомогою методу toString.
     </p>
-    <script></script>
+    <script>
+      class TDate {
+        constructor(day, month, year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+        }
+
+        addDays(days) {
+          const date = new Date(this.year, this.month - 1, this.day);
+          date.setDate(date.getDate() + days);
+          this.day = date.getDate();
+          this.month = date.getMonth() + 1;
+          this.year = date.getFullYear();
+        }
+
+        addMonths(months) {
+          const date = new Date(this.year, this.month - 1 + months, this.day);
+          this.day = date.getDate();
+          this.month = date.getMonth() + 1;
+          this.year = date.getFullYear();
+        }
+
+        addYears(years) {
+          this.year += years;
+        }
+
+        toString() {
+          return `${this.day}.${this.month}.${this.year}`;
+        }
+      }
+
+      const date = new TDate(2, 4, 2023);
+      console.log(date.toString());
+
+      date.addDays(15);
+      console.log(date.toString());
+
+      date.addMonths(5);
+      console.log(date.toString());
+
+      date.addYears(3);
+      console.log(date.toString());
+    </script>
   </body>
 </html>

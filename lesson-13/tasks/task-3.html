@@ -30,6 +30,48 @@
       Перевірка правильності вказаної відповіді <br />
       render - виведення інформації про тестування на екран <br />
     </p>
-    <script></script>
+    <script>
+      class MultChecker {
+        constructor(number) {
+          this.number = number;
+          this.correctAnswers = 0;
+          this.incorrectAnswers = 0;
+        }
+
+        generateExample() {
+          const multiplier = Math.floor(Math.random() * 10) + 1;
+          return `${this.number} * ${multiplier}`;
+        }
+
+        checkAnswer(answer) {
+          const result = this.number * parseInt(answer, 10);
+          if (result === this.number * answer) {
+            this.correctAnswers++;
+            return true;
+          } else {
+            this.incorrectAnswers++;
+            return false;
+          }
+        }
+
+        render() {
+          document.write(`
+        <div>
+          <h2>Перевірка множення</h2>
+          <p>Число: ${this.number}</p>
+          <p>Правильна відповідь: ${this.correctAnswers}</p>
+          <p>Не правильна відповідь: ${this.incorrectAnswers}</p>
+          <p>Сумма множення: ${answer}</p>
+        </div>
+      `);
+        }
+      }
+
+      const checker = new MultChecker(5);
+      const example = checker.generateExample();
+      const answer = parseInt(prompt(`Скільки буде ${example}?`));
+      checker.checkAnswer(answer);
+      checker.render();
+    </script>
   </body>
 </html>

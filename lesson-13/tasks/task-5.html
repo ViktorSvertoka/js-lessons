@@ -22,12 +22,63 @@
       2) Поля : <br />
       Масив імен хлопців <br />
       Масив імен дівчат <br />
-      3) Методи : Метод випадкового вибору імені хлопця <br />
+      3) Методи : <br />
+      Метод випадкового вибору імені хлопця <br />
       Метод випадкового вибору імені дівчини <br />
       Метод виведення пари для танців <br />
       Метод run , який ініціює через кожні 5 секунд виведення нової пари для
       танців <br />
     </p>
-    <script></script>
+    <script>
+      class DanceManager {
+        constructor(boys, girls) {
+          this.boys = boys;
+          this.girls = girls;
+        }
+
+        chooseBoy() {
+          return this.boys[Math.floor(Math.random() * this.boys.length)];
+        }
+
+        chooseGirl() {
+          return this.girls[Math.floor(Math.random() * this.girls.length)];
+        }
+
+        printDancePair() {
+          const boy = this.chooseBoy();
+          const girl = this.chooseGirl();
+          console.log(`${boy} і ${girl} танцюють разом!`);
+        }
+
+        run() {
+          setInterval(() => {
+            this.printDancePair();
+          }, 5000);
+        }
+      }
+
+      const boys = [
+        'Степан',
+        'Петро',
+        'Іван',
+        'Микола',
+        'Сергій',
+        'Віктор',
+        'Юрій',
+        'Александр',
+      ];
+      const girls = [
+        'Марія',
+        'Стефанія',
+        'Юлія',
+        'Зоряна',
+        'Ольга',
+        'Яна',
+        'Ірина',
+        'Вікторія',
+      ];
+      const manager = new DanceManager(boys, girls);
+      manager.run();
+    </script>
   </body>
 </html>

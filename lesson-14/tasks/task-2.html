@@ -26,6 +26,35 @@
       4) Курс долара зберігати в окремому полі. <br />
       В усіх задачах повинен бути toString
     </p>
-    <script></script>
+    <script>
+      class TMoney {
+        constructor(amountInUsd, exchangeRate) {
+          this.amountInUsd = amountInUsd;
+          this.exchangeRate = exchangeRate;
+        }
+
+        add(amountInUah) {
+          const amountInUsd = amountInUah / this.exchangeRate;
+          this.amountInUsd += amountInUsd;
+        }
+
+        subtract(amountInUah) {
+          const amountInUsd = amountInUah / this.exchangeRate;
+          this.amountInUsd -= amountInUsd;
+        }
+
+        toString() {
+          return `Сума у доларах ($${this.amountInUsd.toFixed(2)}) за курсом ${
+            this.exchangeRate
+          } грн/$`;
+        }
+      }
+
+      const money = new TMoney(1000, 36.67);
+      money.add(1000);
+      console.log(money.toString());
+      money.subtract(5000);
+      console.log(money.toString());
+    </script>
   </body>
 </html>

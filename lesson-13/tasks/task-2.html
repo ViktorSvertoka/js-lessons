@@ -31,6 +31,59 @@
       Додавання пасажирів <br />
       Висадка пасажирів <br />
     </p>
-    <script></script>
+    <script>
+      const Auto = {
+        brand: '',
+        tankSize: 0,
+        numberOfLitersAvailable: 0,
+        numberOfSeats: 0,
+        numberOfPassengers: 0,
+
+        refuel: function (liters) {
+          if (this.numberOfLitersAvailable + liters > this.tankSize) {
+            console.log('Переповнення бака');
+            return;
+          }
+          this.numberOfLitersAvailable += liters;
+          console.log(`Заправлено ${liters} літрів`);
+        },
+
+        showPassengerCount: function () {
+          console.log(`Кількість пасажирів: ${this.numberOfPassengers}`);
+        },
+
+        addPassenger: function (count) {
+          if (this.numberOfPassengers + count > this.numberOfSeats) {
+            console.log('Неможливо додати стільки пасажирів');
+            return;
+          }
+          this.numberOfPassengers += count;
+          console.log(`Додано ${count} пасажирів`);
+        },
+
+        removePassenger: function (count) {
+          if (this.numberOfPassengers - count < 0) {
+            console.log('Неможливо висадити стільки пасажирів');
+            return;
+          }
+          this.numberOfPassengers -= count;
+          console.log(`Висаджено ${count} пасажирів`);
+        },
+      };
+
+      const myAuto = Object.create(Auto);
+      myAuto.brand = 'Toyota';
+      myAuto.tankSize = 55;
+      myAuto.numberOfSeats = 5;
+      myAuto.numberOfLitersAvailable = 30;
+      myAuto.numberOfPassengers = 2;
+
+      myAuto.showPassengerCount(); // Кількість пасажирів: 2
+      myAuto.addPassenger(3); // Додано 3 пасажирів
+      myAuto.showPassengerCount(); // Кількість пасажирів: 5
+      myAuto.removePassenger(2); // Висаджено 2 пасажирів
+      myAuto.showPassengerCount(); // Кількість пасажирів: 3
+      myAuto.refuel(10); // Заправлено 10 літрів
+    </script>
   </body>
 </html>

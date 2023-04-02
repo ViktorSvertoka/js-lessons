@@ -26,6 +26,44 @@
       5) Методи (дії) - Метод пострілу (задається позиція пострілу) <br />
       6) Виведення ігрового поля
     </p>
-    <script></script>
+    <script>
+      let Tir = {
+        field: [],
+        size: 5,
+
+        generateField: function () {
+          this.field = [];
+          for (let i = 0; i < this.size; i++) {
+            this.field[i] = [];
+            for (let j = 0; j < this.size; j++) {
+              this.field[i][j] = Math.round(Math.random());
+            }
+          }
+        },
+
+        printField: function () {
+          for (let i = 0; i < this.field.length; i++) {
+            console.log(this.field[i].join(' '));
+          }
+        },
+
+        shoot: function (x, y) {
+          if (this.field[x] && this.field[x][y]) {
+            console.log('Ви влучили в зайця!');
+            this.field[x][y] = 0;
+          } else {
+            console.log('Промах!');
+          }
+        },
+      };
+
+      Tir.generateField();
+      Tir.printField();
+
+      const x = parseInt(prompt('Введіть координату по осі X (від 0 до 4):'));
+      const y = parseInt(prompt('Введіть координату по осі Y (від 0 до 4):'));
+
+      Tir.shoot(x, y);
+    </script>
   </body>
 </html>

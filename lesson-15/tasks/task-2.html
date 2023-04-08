@@ -17,44 +17,7 @@
       >
     </p>
     <h1>Задача № 2</h1>
-    <p>
-      1) Створити клас TMoney для роботи з грошовими сумами. <br />
-      2) Сума повинна зберігатися у вигляді доларового еквіваленту. <br />
-      3) Реалізувати методи додавання/вилучення грошової маси, вказуючи
-      необхідну суму у гривнях, та визначення курсу долара, при якому сума у
-      гривнях збільшиться на 100. <br />
-      4) Курс долара зберігати в окремому полі. <br />
-      В усіх задачах повинен бути toString
-    </p>
-    <script>
-      class TMoney {
-        constructor(amountInUsd, exchangeRate) {
-          this.amountInUsd = amountInUsd;
-          this.exchangeRate = exchangeRate;
-        }
-
-        add(amountInUah) {
-          const amountInUsd = amountInUah / this.exchangeRate;
-          this.amountInUsd += amountInUsd;
-        }
-
-        subtract(amountInUah) {
-          const amountInUsd = amountInUah / this.exchangeRate;
-          this.amountInUsd -= amountInUsd;
-        }
-
-        toString() {
-          return `Сума у доларах ($${this.amountInUsd.toFixed(2)}) за курсом ${
-            this.exchangeRate
-          } грн/$`;
-        }
-      }
-
-      const money = new TMoney(1000, 36.67);
-      money.add(1000);
-      console.log(money.toString());
-      money.subtract(5000);
-      console.log(money.toString());
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

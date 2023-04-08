@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-14.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 2</h1>
+    <p>
+      1) Створити клас TMoney для роботи з грошовими сумами. <br />
+      2) Сума повинна зберігатися у вигляді доларового еквіваленту. <br />
+      3) Реалізувати методи додавання/вилучення грошової маси, вказуючи
+      необхідну суму у гривнях, та визначення курсу долара, при якому сума у
+      гривнях збільшиться на 100. <br />
+      4) Курс долара зберігати в окремому полі. <br />
+      В усіх задачах повинен бути toString
+    </p>
+    <script>
+      class TMoney {
+        constructor(amountInUsd, exchangeRate) {
+          this.amountInUsd = amountInUsd;
+          this.exchangeRate = exchangeRate;
+        }
+
+        add(amountInUah) {
+          const amountInUsd = amountInUah / this.exchangeRate;
+          this.amountInUsd += amountInUsd;
+        }
+
+        subtract(amountInUah) {
+          const amountInUsd = amountInUah / this.exchangeRate;
+          this.amountInUsd -= amountInUsd;
+        }
+
+        toString() {
+          return `Сума у доларах ($${this.amountInUsd.toFixed(2)}) за курсом ${
+            this.exchangeRate
+          } грн/$`;
+        }
+      }
+
+      const money = new TMoney(1000, 36.67);
+      money.add(1000);
+      console.log(money.toString());
+      money.subtract(5000);
+      console.log(money.toString());
+    </script>
+  </body>
+</html>

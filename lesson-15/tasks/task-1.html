@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-14.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      1) Створити клас TDate для роботи із датами у форматі “день.місяць.рік”.
+      <br />
+      Дата представляється структурою із трьома полями. <br />
+      Реалізувати методи збільшення/зменшення дати на певну кількість днів,
+      місяців чи років. <br />
+      Введення та виведення дати реалізувати за допомогою методу toString.
+    </p>
+    <script>
+      class TDate {
+        constructor(day, month, year) {
+          this.day = day;
+          this.month = month;
+          this.year = year;
+        }
+
+        addDays(days) {
+          const date = new Date(this.year, this.month - 1, this.day);
+          date.setDate(date.getDate() + days);
+          this.day = date.getDate();
+          this.month = date.getMonth() + 1;
+          this.year = date.getFullYear();
+        }
+
+        addMonths(months) {
+          const date = new Date(this.year, this.month - 1 + months, this.day);
+          this.day = date.getDate();
+          this.month = date.getMonth() + 1;
+          this.year = date.getFullYear();
+        }
+
+        addYears(years) {
+          this.year += years;
+        }
+
+        toString() {
+          return `${this.day}.${this.month}.${this.year}`;
+        }
+      }
+
+      const date = new TDate(2, 4, 2023);
+      console.log(date.toString());
+
+      date.addDays(15);
+      console.log(date.toString());
+
+      date.addMonths(5);
+      console.log(date.toString());
+
+      date.addYears(3);
+      console.log(date.toString());
+    </script>
+  </body>
+</html>

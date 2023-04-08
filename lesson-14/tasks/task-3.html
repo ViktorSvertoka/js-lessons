@@ -32,6 +32,140 @@
       та вказаний термін часу; <br />
       В усіх задачах повинен бути toString
     </p>
-    <script></script>
+    <script>
+      const companyData = [
+        {
+          companyName: 'Web Developer Company LTD',
+          dateOfEstablishment: [
+            {
+              year: 2002,
+              month: 'June',
+            },
+          ],
+          services: [
+            {
+              name: 'Web Development',
+              cost: 5000,
+              deadline: 30,
+            },
+            {
+              name: 'Mobile App Development',
+              cost: 8000,
+              deadline: 60,
+            },
+            {
+              name: 'Software Testing',
+              cost: 3000,
+              deadline: 20,
+            },
+            {
+              name: 'UI/UX Design',
+              cost: 4000,
+              deadline: 15,
+            },
+          ],
+          branchAddresses: [
+            {
+              country: 'Ukraine',
+              city: 'Kyiv',
+              street: 'Khreshchatyk St.',
+              houseNumber: 1,
+            },
+            {
+              country: 'Ukraine',
+              city: 'Kyiv',
+              street: 'Mykhailivska St.',
+              houseNumber: 15,
+            },
+            {
+              country: 'USA',
+              city: 'New York',
+              street: 'Broadway',
+              houseNumber: 32,
+            },
+            {
+              country: 'USA',
+              city: 'San Francisco',
+              street: 'Market St.',
+              houseNumber: 24,
+            },
+          ],
+        },
+      ];
+
+      class Firm {
+        constructor(
+          companyName,
+          dateOfEstablishment,
+          services,
+          branchAddresses,
+        ) {
+          this.companyName = companyName;
+          this.dateOfEstablishment = dateOfEstablishment;
+          this.services = services;
+          this.branchAddresses = branchAddresses;
+        }
+
+        getAge() {
+          const currentDate = new Date();
+          const yearOfEstablishment = this.dateOfEstablishment[0].year;
+          const monthOfEstablishment = this.dateOfEstablishment[0].month;
+
+          let age = currentDate.getFullYear() - yearOfEstablishment;
+          if (
+            currentDate.getMonth() <
+            new Date(
+              `${monthOfEstablishment} 1, ${currentDate.getFullYear()}`,
+            ).getMonth()
+          ) {
+            age--;
+          }
+
+          return age;
+        }
+
+        getBranchesByCity(city) {
+          const branches = this.branchAddresses.filter(
+            branch => branch.city === city,
+          );
+          return branches;
+        }
+
+        getServicesByCostAndDeadline(cost, deadline) {
+          const services = this.services.filter(
+            service => service.cost <= cost && service.deadline <= deadline,
+          );
+          return services;
+        }
+
+        toString() {
+          const city = 'Kyiv';
+          const age = this.getAge();
+          const branches = this.getBranchesByCity(city);
+          const services = this.getServicesByCostAndDeadline(6000, 40);
+
+          let result = `${this.companyName} has been operating for ${age} years.\n\n`;
+          result += `Branches in ${city}:\n`;
+          branches.forEach(branch => {
+            result += `${branch.street} ${branch.houseNumber}, ${branch.country}\n`;
+          });
+          result += '\nServices:\n';
+          services.forEach(service => {
+            result += `${service.name}: cost $${service.cost}, deadline ${service.deadline} days\n`;
+          });
+
+          return result;
+        }
+      }
+
+      const webDeveloperCompany = new Firm(
+        companyData[0].companyName,
+        companyData[0].dateOfEstablishment,
+        companyData[0].services,
+        companyData[0].branchAddresses,
+      );
+
+      console.log(webDeveloperCompany.toString());
+    </script>
   </body>
 </html>

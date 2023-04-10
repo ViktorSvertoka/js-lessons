@@ -21,6 +21,32 @@
       Створити службове авто (водій, марка, номер). Створити клас таким чином,
       щоб можна було створити тільки один екземпляр цього класу.
     </p>
-    <script></script>
+    <script>
+      class ServiceCar {
+        static instance = null;
+
+        constructor(driver, brand, number) {
+          this.driver = driver;
+          this.brand = brand;
+          this.number = number;
+          if (!ServiceCar.instance) {
+            ServiceCar.instance = this;
+          }
+          return ServiceCar.instance;
+        }
+
+        toString() {
+          return `Водій: ${this.driver} -> Марка: ${this.brand} -> Номер: ${this.number}`;
+        }
+      }
+
+      const car1 = new ServiceCar('Steve', 'AUDI', 'AA2525BX');
+      console.log(car1.toString());
+
+      const car2 = new ServiceCar('Tim', 'BMW', 'AA7777AA');
+      console.log(car2.toString());
+
+      console.log(car1 === car2); // true
+    </script>
   </body>
 </html>

@@ -24,6 +24,43 @@
       щоб неможна було зробити одночасно декілька об’єктів-нагадувачів. Методи
       зупинки таймера, метод зміни повідомлення без зупинки таймера.
     </p>
-    <script></script>
+    <script>
+      class Reminder {
+        static instances = [];
+
+        constructor(timeInterval, message) {
+          this.timeInterval = timeInterval;
+          this.message = message;
+          this.reminderCount = 0;
+          this.intervalId = setInterval(() => {
+            console.log(`${this.message} (${++this.reminderCount})`);
+          }, this.timeInterval * 1000);
+
+          Reminder.instances.push(this);
+        }
+
+        stop() {
+          clearInterval(this.intervalId);
+          const index = Reminder.instances.indexOf(this);
+          if (index > -1) {
+            Reminder.instances.splice(index, 1);
+          }
+        }
+
+        changeMessage(newMessage) {
+          this.message = newMessage;
+        }
+      }
+
+      const reminder = new Reminder(5, 'Будильник 2');
+
+      setTimeout(() => {
+        reminder.changeMessage('Будильник 1');
+      }, 3000);
+
+      setTimeout(() => {
+        reminder.stop();
+      }, 30000);
+    </script>
   </body>
 </html>

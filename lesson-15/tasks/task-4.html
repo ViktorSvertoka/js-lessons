@@ -23,6 +23,80 @@
       Організувати реєстрацію/відвантаження товарів, фільтрація за назвою
       товару, фільтрація за назвою фірми
     </p>
-    <script></script>
+    <script>
+      class Sklad {
+        constructor() {
+          this.goods = [];
+        }
+
+        registerGoods(
+          name,
+          unit,
+          quantity,
+          manufacturerName,
+          manufacturerRegistrationNumber,
+        ) {
+          const good = {
+            name,
+            unit,
+            quantity,
+            manufacturer: {
+              name: manufacturerName,
+              registrationNumber: manufacturerRegistrationNumber,
+            },
+          };
+          this.goods.push(good);
+          console.log(
+            `Товар "${name}" от фирмы "${manufacturerName}" успешно зарегистрирован на складе.`,
+          );
+        }
+
+        shipGoods(name, quantity) {
+          const goodIndex = this.goods.findIndex(good => good.name === name);
+          if (goodIndex === -1) {
+            console.log(`Товар "${name}" не найден на складе.`);
+            return;
+          }
+          const good = this.goods[goodIndex];
+          if (good.quantity < quantity) {
+            console.log(
+              `На складе недостаточно товара "${name}" для отгрузки.`,
+            );
+            return;
+          }
+          good.quantity -= quantity;
+          console.log(`Товар "${name}" успешно отгружен со склада.`);
+        }
+
+        filterGoodsByName(name) {
+          const filteredGoods = this.goods.filter(good => good.name === name);
+          console.log(`Список товаров "${name}":`);
+          console.log(filteredGoods);
+        }
+
+        filterGoodsByManufacturer(manufacturerName) {
+          const filteredGoods = this.goods.filter(
+            good => good.manufacturer.name === manufacturerName,
+          );
+          console.log(`Список товаров от фирмы "${manufacturerName}":`);
+          console.log(filteredGoods);
+        }
+      }
+
+      const sklad = new Sklad();
+
+      // Регистрация товаров на складе
+      sklad.registerGoods('Книга', 'шт.', 100, 'Издательство А', '001');
+      sklad.registerGoods('Книга', 'шт.', 50, 'Издательство Б', '002');
+      sklad.registerGoods('Ручка', 'шт.', 500, 'Фабрика X', '003');
+
+      // Отгрузка товаров со склада
+      sklad.shipGoods('Книга', 20);
+      sklad.shipGoods('Ручка', 600);
+
+      // Фильтрация товаров по названию и производителю
+      sklad.filterGoodsByName('Книга');
+      sklad.filterGoodsByManufacturer('Фабрика X');
+    </script>
   </body>
 </html>

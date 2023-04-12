@@ -10,94 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-15.html"
+      <a href="../index-16.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 4</h1>
-    <p>
-      Склад. База товарів, які зберігаються на складі: назва товару, одиниця
-      виміру, кількість, фірма виробник (назва, реєстраційний номер).
-      Організувати реєстрацію/відвантаження товарів, фільтрація за назвою
-      товару, фільтрація за назвою фірми
-    </p>
-    <script>
-      class Stock {
-        constructor() {
-          this.goods = [];
-        }
-
-        registerGoods(
-          name,
-          unit,
-          quantity,
-          manufacturerName,
-          manufacturerRegistrationNumber,
-        ) {
-          const good = {
-            name,
-            unit,
-            quantity,
-            manufacturer: {
-              name: manufacturerName,
-              registrationNumber: manufacturerRegistrationNumber,
-            },
-          };
-          this.goods.push(good);
-          console.log(
-            `Товар "${name}" від фірми "${manufacturerName}" успішно зареестрованний на складі.`,
-          );
-        }
-
-        shipGoods(name, quantity) {
-          const goodIndex = this.goods.findIndex(good => good.name === name);
-          if (goodIndex === -1) {
-            console.log(`Товар "${name}" не знайдено на складі.`);
-            return;
-          }
-          const good = this.goods[goodIndex];
-          if (good.quantity < quantity) {
-            console.log(
-              `На складі не достатньо товару "${name}" для відвантаження.`,
-            );
-            return;
-          }
-          good.quantity -= quantity;
-          console.log(`Товар "${name}" успішно відвантажен зі складу.`);
-        }
-
-        filterGoodsByName(name) {
-          const filteredGoods = this.goods.filter(good => good.name === name);
-          console.log(`Список товарів "${name}":`);
-          console.log(filteredGoods);
-        }
-
-        filterGoodsByManufacturer(manufacturerName) {
-          const filteredGoods = this.goods.filter(
-            good => good.manufacturer.name === manufacturerName,
-          );
-          console.log(`Спісок товарів від фірми "${manufacturerName}":`);
-          console.log(filteredGoods);
-        }
-      }
-
-      const stock = new Stock();
-
-      // Реєстрація товарів на складі
-      stock.registerGoods('MacBook', 'шт.', 100, 'Apple', '001122');
-      stock.registerGoods('Lenovo', 'шт.', 50, 'IBM', '003344');
-      stock.registerGoods('Galaxy', 'шт.', 500, 'Samsung', '007788');
-
-      // Відвантаження товарів зі складу
-      stock.shipGoods('MacBook', 20);
-      stock.shipGoods('Lenovo', 40);
-      stock.shipGoods('Galaxy', 600);
-
-      // Фільтрація за назвою товару, фільтрація за назвою фірми
-      stock.filterGoodsByName('MacBook');
-      stock.filterGoodsByManufacturer('IBM');
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

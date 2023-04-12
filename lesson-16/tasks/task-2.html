@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-15.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 2</h1>
+    <p>
+      Створити службове авто (водій, марка, номер). Створити клас таким чином,
+      щоб можна було створити тільки один екземпляр цього класу.
+    </p>
+    <script>
+      class ServiceCar {
+        static instance = null;
+
+        constructor(driver, brand, number) {
+          this.driver = driver;
+          this.brand = brand;
+          this.number = number;
+          if (!ServiceCar.instance) {
+            ServiceCar.instance = this;
+          }
+          return ServiceCar.instance;
+        }
+
+        toString() {
+          return `Водій: ${this.driver} -> Марка: ${this.brand} -> Номер: ${this.number}`;
+        }
+      }
+
+      const car1 = new ServiceCar('Steve', 'AUDI', 'AA2525BX');
+      console.log(car1.toString());
+
+      const car2 = new ServiceCar('Tim', 'BMW', 'AA7777AA');
+      console.log(car2.toString());
+
+      console.log(car1 === car2); // true
+    </script>
+  </body>
+</html>

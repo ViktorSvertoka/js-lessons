@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-15.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 5</h1>
+    <p>
+      Особиста бібліотека. Картотека домашньої бібліотеки: дані книги (автори
+      (піб, рік народження, короткий опис), назва книги, жанр, видавництво
+      (назва, реєстраційний номер, рік засування)). Реалізувати розділи
+      бібліотеки (спеціальна література, хобі, домашнє господарство і т.д.),
+      походження книги і наявність на даний час. Організувати
+      додавання/вилучення книг та вибір книг за назвою, за ПІБ автора, за
+      видавництвом.
+    </p>
+    <script>
+      class Book {
+        constructor(author, title, genre, publisher) {
+          this.author = author;
+          this.title = title;
+          this.genre = genre;
+          this.publisher = publisher;
+        }
+
+        toString() {
+          return `${this.title} by ${this.author} (${this.publisher.name}, ${this.publisher.year}) - ${this.genre}`;
+        }
+      }
+
+      class Library {
+        constructor(name) {
+          this.name = name;
+          this.books = [];
+        }
+
+        addBook(book) {
+          this.books.push(book);
+        }
+
+        removeBook(book) {
+          const index = this.books.indexOf(book);
+          if (index !== -1) {
+            this.books.splice(index, 1);
+          }
+        }
+
+        findByTitle(title) {
+          return this.books.filter(book => book.title === title);
+        }
+
+        findByAuthor(author) {
+          return this.books.filter(book => book.author === author);
+        }
+
+        findByPublisher(publisherName) {
+          return this.books.filter(
+            book => book.publisher.name === publisherName,
+          );
+        }
+      }
+
+      // Создание книг
+      const publishingHouse = [
+        { name: 'Publisher A', registrationNumber: '0012345', year: 2000 },
+        { name: 'Publisher B', registrationNumber: '0023456', year: 2010 },
+        { name: 'Publisher C', registrationNumber: '0034567', year: 2015 },
+        { name: 'Publisher D', registrationNumber: '0045678', year: 2020 },
+        { name: 'Publisher E', registrationNumber: '0056789', year: 2023 },
+      ];
+
+      const books = [
+        {
+          author: 'Mark Twain',
+          title: 'The Adventures of Tom Sawyer',
+          birthDate: 1835,
+          genre: 'Fiction',
+          publisher: publishingHouse[0],
+        },
+        {
+          author: 'Scott Fitzgerald',
+          title: 'The Great Gatsby',
+          birthDate: 1896,
+          genre: 'Non-fiction',
+          publisher: publishingHouse[1],
+        },
+        {
+          author: 'Ernest Hemingway',
+          title: 'The Sun Also Rises',
+          birthDate: 1899,
+          genre: 'Science fiction',
+          publisher: publishingHouse[2],
+        },
+        {
+          author: 'Toni Morrison',
+          title: 'Song of Solomon',
+          birthDate: 1931,
+          genre: 'Mystery',
+          publisher: publishingHouse[3],
+        },
+        {
+          author: 'J.D. Salinger',
+          title: 'A Perfect Day for Bananafish',
+          birthDate: 1919,
+          genre: 'Romance',
+          publisher: publishingHouse[4],
+        },
+        {
+          author: 'Edgar Allan Poe',
+          title: 'The Murders in the Rue Morgue',
+          birthDate: 1809,
+          genre: 'Thriller',
+          publisher: publishingHouse[0],
+        },
+        {
+          author: 'Nathaniel Hawthorne',
+          title: 'Twice Told Tales',
+          birthDate: 1804,
+          genre: 'Horror',
+          publisher: publishingHouse[1],
+        },
+        {
+          author: 'John Steinbeck',
+          title: 'East of Eden',
+          birthDate: 1902,
+          genre: 'Historical fiction',
+          publisher: publishingHouse[2],
+        },
+        {
+          author: 'East of Eden',
+          title: 'To Kill a Mockingbird',
+          birthDate: 1926,
+          genre: 'Self-help',
+          publisher: publishingHouse[3],
+        },
+        {
+          author: 'Herman Melville',
+          title: 'Moby-Dick or, The Whale',
+          birthDate: 1819,
+          genre: 'Travel',
+          publisher: publishingHouse[4],
+        },
+      ];
+
+      const library = new Library('My Library');
+
+      books.forEach(book => library.addBook(book));
+
+      const booksByTitle = library.findByTitle('The Adventures of Tom Sawyer');
+      const booksByAuthor = library.findByAuthor('Mark Twain');
+      const booksByPublisher = library.findByPublisher('Publisher A');
+
+      library.removeBook(books[1]);
+
+      console.log('All books in the library:');
+      library.books.forEach(book => {
+        console.log(`  Title: ${book.title}`);
+        console.log(`  Author: ${book.author}`);
+        console.log(
+          `  Publisher: ${book.publisher.name} (${book.publisher.year})`,
+        );
+        console.log(`  Genre: ${book.genre}`);
+        console.log('');
+      });
+    </script>
+  </body>
+</html>

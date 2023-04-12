@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-15.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 3</h1>
+    <p>
+      Створити клас Нагадувач. Кожні вказані кількості секунд (використати
+      setInterval) програма нагадує про якусь подію (це просто текст) і також
+      виводиться порядковий номер скільки раз вже нагадування було. Зробити так,
+      щоб неможна було зробити одночасно декілька об’єктів-нагадувачів. Методи
+      зупинки таймера, метод зміни повідомлення без зупинки таймера.
+    </p>
+    <script>
+      class Reminder {
+        static instances = [];
+
+        constructor(timeInterval, message) {
+          this.timeInterval = timeInterval;
+          this.message = message;
+          this.reminderCount = 0;
+          this.intervalId = setInterval(() => {
+            console.log(`${this.message} (${++this.reminderCount})`);
+          }, this.timeInterval * 1000);
+
+          Reminder.instances.push(this);
+        }
+
+        stop() {
+          clearInterval(this.intervalId);
+          const index = Reminder.instances.indexOf(this);
+          if (index > -1) {
+            Reminder.instances.splice(index, 1);
+          }
+        }
+
+        changeMessage(newMessage) {
+          this.message = newMessage;
+        }
+      }
+
+      const reminder = new Reminder(5, 'Будильник 2');
+
+      setTimeout(() => {
+        reminder.changeMessage('Будильник 1');
+      }, 3000);
+
+      setTimeout(() => {
+        reminder.stop();
+      }, 30000);
+    </script>
+  </body>
+</html>

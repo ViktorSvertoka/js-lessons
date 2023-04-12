@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-15.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 6</h1>
+    <p>
+      Дано два класи MultChecker (клас для перевірки таблиці множення - рандомно
+      генеруються числа, які треба перемножати), AddChecker (клас для перевірки
+      додавання - рандомно генеруються числа у заданому діапазоні, які треба
+      додавати). Обидва класи надсилають результати тестування об'єкту класу
+      Hystory, який зберігає історію тестування у масиві у вигляді об'єктів
+      Приклад. testsList= [ {firstNum:1, secondNum:5,opration:’*’, userAnswer:7,
+      correctAnswer:5}, {firstNum:3, secondNum:4,opration:’+’, userAnswer:7,
+      correctAnswer:7}, ] Можна створити окремий клас TestData, який описує один
+      такий тест і у якому будуть ці поля. Розробити клас TestManager, який
+      використовуючи ці класи за допомогою таймера періодично генерує якісь N
+      задач (рандомно вибираємо, що опитувати: додавання чи множення) і
+      проводить опитування. Результати тестування додаються в об’єкт History.
+      Зробити так, щоб об'єкт такого класу можна було створити тільки один. Коли
+      зроблено ці N задач вивести усю історію на екран.
+    </p>
+    <script>
+      class MultChecker {
+        static generateRandomNumber() {
+          return Math.floor(Math.random() * 10) + 1;
+        }
+
+        static generateTest() {
+          const firstNum = this.generateRandomNumber();
+          const secondNum = this.generateRandomNumber();
+          const correctAnswer = firstNum * secondNum;
+          return new TestData(firstNum, secondNum, '*', correctAnswer);
+        }
+      }
+
+      class AddChecker {
+        static generateRandomNumber(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        static generateTest() {
+          const firstNum = this.generateRandomNumber(1, 10);
+          const secondNum = this.generateRandomNumber(1, 10);
+          const correctAnswer = firstNum + secondNum;
+          return new TestData(firstNum, secondNum, '+', correctAnswer);
+        }
+      }
+
+      class TestData {
+        constructor(firstNum, secondNum, operation, correctAnswer) {
+          this.firstNum = firstNum;
+          this.secondNum = secondNum;
+          this.operation = operation;
+          this.correctAnswer = correctAnswer;
+          this.userAnswer = null;
+        }
+
+        setUserAnswer(userAnswer) {
+          this.userAnswer = userAnswer;
+        }
+
+        isCorrect() {
+          return this.userAnswer === this.correctAnswer;
+        }
+      }
+
+      class History {
+        constructor() {
+          if (History.instance) {
+            return History.instance;
+          }
+          this.testsList = [];
+          History.instance = this;
+        }
+
+        addTest(testData) {
+          this.testsList.push(testData);
+        }
+
+        print() {
+          console.log(this.testsList);
+        }
+      }
+
+      class TestManager {
+        constructor(numberOfTests) {
+          this.numberOfTests = numberOfTests;
+          this.history = new History();
+          this.testsGenerated = 0;
+          this.timer = null;
+        }
+
+        start() {
+          this.timer = setInterval(() => {
+            const isMultiplicationTest = Math.random() < 0.5;
+            const test = isMultiplicationTest
+              ? MultChecker.generateTest()
+              : AddChecker.generateTest();
+            this.history.addTest(test);
+            this.testsGenerated++;
+            if (this.testsGenerated === this.numberOfTests) {
+              clearInterval(this.timer);
+              this.history.print();
+            }
+          }, 1000);
+        }
+      }
+
+      const testManager = new TestManager(5);
+      testManager.start();
+    </script>
+  </body>
+</html>

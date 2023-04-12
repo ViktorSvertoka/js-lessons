@@ -33,6 +33,95 @@
       Зробити так, щоб об'єкт такого класу можна було створити тільки один. Коли
       зроблено ці N задач вивести усю історію на екран.
     </p>
-    <script></script>
+    <script>
+      class MultChecker {
+        static generateRandomNumber() {
+          return Math.floor(Math.random() * 10) + 1;
+        }
+
+        static generateTest() {
+          const firstNum = this.generateRandomNumber();
+          const secondNum = this.generateRandomNumber();
+          const correctAnswer = firstNum * secondNum;
+          return new TestData(firstNum, secondNum, '*', correctAnswer);
+        }
+      }
+
+      class AddChecker {
+        static generateRandomNumber(min, max) {
+          return Math.floor(Math.random() * (max - min + 1) + min);
+        }
+
+        static generateTest() {
+          const firstNum = this.generateRandomNumber(1, 10);
+          const secondNum = this.generateRandomNumber(1, 10);
+          const correctAnswer = firstNum + secondNum;
+          return new TestData(firstNum, secondNum, '+', correctAnswer);
+        }
+      }
+
+      class TestData {
+        constructor(firstNum, secondNum, operation, correctAnswer) {
+          this.firstNum = firstNum;
+          this.secondNum = secondNum;
+          this.operation = operation;
+          this.correctAnswer = correctAnswer;
+          this.userAnswer = null;
+        }
+
+        setUserAnswer(userAnswer) {
+          this.userAnswer = userAnswer;
+        }
+
+        isCorrect() {
+          return this.userAnswer === this.correctAnswer;
+        }
+      }
+
+      class History {
+        constructor() {
+          if (History.instance) {
+            return History.instance;
+          }
+          this.testsList = [];
+          History.instance = this;
+        }
+
+        addTest(testData) {
+          this.testsList.push(testData);
+        }
+
+        print() {
+          console.log(this.testsList);
+        }
+      }
+
+      class TestManager {
+        constructor(numberOfTests) {
+          this.numberOfTests = numberOfTests;
+          this.history = new History();
+          this.testsGenerated = 0;
+          this.timer = null;
+        }
+
+        start() {
+          this.timer = setInterval(() => {
+            const isMultiplicationTest = Math.random() < 0.5;
+            const test = isMultiplicationTest
+              ? MultChecker.generateTest()
+              : AddChecker.generateTest();
+            this.history.addTest(test);
+            this.testsGenerated++;
+            if (this.testsGenerated === this.numberOfTests) {
+              clearInterval(this.timer);
+              this.history.print();
+            }
+          }, 1000);
+        }
+      }
+
+      const testManager = new TestManager(5);
+      testManager.start();
+    </script>
   </body>
 </html>

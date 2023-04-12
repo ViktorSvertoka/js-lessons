@@ -24,7 +24,7 @@
       товару, фільтрація за назвою фірми
     </p>
     <script>
-      class Sklad {
+      class Stock {
         constructor() {
           this.goods = [];
         }
@@ -47,30 +47,30 @@
           };
           this.goods.push(good);
           console.log(
-            `Товар "${name}" от фирмы "${manufacturerName}" успешно зарегистрирован на складе.`,
+            `Товар "${name}" від фірми "${manufacturerName}" успішно зареестрованний на складі.`,
           );
         }
 
         shipGoods(name, quantity) {
           const goodIndex = this.goods.findIndex(good => good.name === name);
           if (goodIndex === -1) {
-            console.log(`Товар "${name}" не найден на складе.`);
+            console.log(`Товар "${name}" не знайдено на складі.`);
             return;
           }
           const good = this.goods[goodIndex];
           if (good.quantity < quantity) {
             console.log(
-              `На складе недостаточно товара "${name}" для отгрузки.`,
+              `На складі не достатньо товару "${name}" для відвантаження.`,
             );
             return;
           }
           good.quantity -= quantity;
-          console.log(`Товар "${name}" успешно отгружен со склада.`);
+          console.log(`Товар "${name}" успішно відвантажен зі складу.`);
         }
 
         filterGoodsByName(name) {
           const filteredGoods = this.goods.filter(good => good.name === name);
-          console.log(`Список товаров "${name}":`);
+          console.log(`Список товарів "${name}":`);
           console.log(filteredGoods);
         }
 
@@ -78,25 +78,26 @@
           const filteredGoods = this.goods.filter(
             good => good.manufacturer.name === manufacturerName,
           );
-          console.log(`Список товаров от фирмы "${manufacturerName}":`);
+          console.log(`Спісок товарів від фірми "${manufacturerName}":`);
           console.log(filteredGoods);
         }
       }
 
-      const sklad = new Sklad();
+      const stock = new Stock();
 
-      // Регистрация товаров на складе
-      sklad.registerGoods('Книга', 'шт.', 100, 'Издательство А', '001');
-      sklad.registerGoods('Книга', 'шт.', 50, 'Издательство Б', '002');
-      sklad.registerGoods('Ручка', 'шт.', 500, 'Фабрика X', '003');
+      // Реєстрація товарів на складі
+      stock.registerGoods('MacBook', 'шт.', 100, 'Apple', '001122');
+      stock.registerGoods('Lenovo', 'шт.', 50, 'IBM', '003344');
+      stock.registerGoods('Galaxy', 'шт.', 500, 'Samsung', '007788');
 
-      // Отгрузка товаров со склада
-      sklad.shipGoods('Книга', 20);
-      sklad.shipGoods('Ручка', 600);
+      // Відвантаження товарів зі складу
+      stock.shipGoods('MacBook', 20);
+      stock.shipGoods('Lenovo', 40);
+      stock.shipGoods('Galaxy', 600);
 
-      // Фильтрация товаров по названию и производителю
-      sklad.filterGoodsByName('Книга');
-      sklad.filterGoodsByManufacturer('Фабрика X');
+      // Фільтрація за назвою товару, фільтрація за назвою фірми
+      stock.filterGoodsByName('MacBook');
+      stock.filterGoodsByManufacturer('IBM');
     </script>
   </body>
 </html>

@@ -10,63 +10,14 @@
   </head>
   <body>
     <p>
-      <a href="../index-15.html"
+      <a href="../index-16.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 1</h1>
-    <p>
-      Створити клас, що дозволяє виконувати такі операції над масивами:
-      знаходження кількості додатних, кількості від’ємних, кількість входжень
-      деякого числа (статичні методи)
-    </p>
-    <script>
-      class ArrayOperations {
-        static countPositive(arr) {
-          let count = 0;
-          for (let i = 0; i < arr.length; i++) {
-            if (arr[i] > 0) {
-              count++;
-            }
-          }
-          return count;
-        }
-
-        static countNegative(arr) {
-          let count = 0;
-          for (let i = 0; i < arr.length; i++) {
-            if (arr[i] < 0) {
-              count++;
-            }
-          }
-          return count;
-        }
-
-        static countOccurrences(arr, num) {
-          let count = 0;
-          for (let i = 0; i < arr.length; i++) {
-            if (arr[i] === num) {
-              count++;
-            }
-          }
-          return count;
-        }
-      }
-
-      const arr = [1, -2, 3, 4, -5, 6, -7, 8, 9, -10, 4, 4];
-
-      const num = 4;
-
-      const positiveCount = ArrayOperations.countPositive(arr);
-      console.log('Кількість додатніх:', positiveCount);
-
-      const negativeCount = ArrayOperations.countNegative(arr);
-      console.log('Кількість від’ємних:', negativeCount);
-
-      const numOccurrences = ArrayOperations.countOccurrences(arr, num);
-      console.log(`Кількість входжень деякого числа ${num}:`, numOccurrences);
-    </script>
+    <p></p>
+    <script></script>
   </body>
 </html>

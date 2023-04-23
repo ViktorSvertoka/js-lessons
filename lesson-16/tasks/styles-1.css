@@ -30,3 +30,14 @@
   margin-right: 5px;
   margin-bottom: 20px;
 }
+
+td {
+  width: 70px;
+  height: 70px;
+  background-color: yellow;
+  color: #00aced;
+  font-weight: 700;
+  font-size: 24px;
+  text-align: center;
+  border-radius: 50%;
+}

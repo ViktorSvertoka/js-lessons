@@ -22,6 +22,30 @@
       сторінки випадковим чином вибираються 3 і відображаються у окремих div (їх
       треба створити і додати на сторінку)
     </p>
-    <script></script>
+    <script>
+      const wishList = [
+        'JavaScript',
+        'Python',
+        'PHP',
+        'Java',
+        'TypeScript',
+        'HTML',
+        'CSS',
+      ];
+
+      function randomWish(wishList) {
+        return wishList[Math.trunc(Math.random() * (wishList.length - 1) + 1)];
+      }
+
+      function createDiv(element, wishList) {
+        for (let i = 0; i < element; i++) {
+          let divTag = document.createElement('div');
+          divTag.innerText = randomWish(wishList);
+          document.body.append(divTag);
+        }
+      }
+
+      createDiv(3, wishList);
+    </script>
   </body>
 </html>

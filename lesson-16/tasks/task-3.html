@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="shortcut icon" href="../../assets/js.png" />
+    <link rel="stylesheet" href="./styles-1.css" />
     <title>Document</title>
   </head>
   <body>
@@ -20,6 +21,39 @@
     <p>
       Користувач задає рік народження. Визначити кількість років користувача.
     </p>
-    <script></script>
+    <br />
+    <br />
+    <form class="feedback-form" action="">
+      <label>
+        Рік народження
+        <input
+          class="year"
+          type="number"
+          placeholder="Введіть ваш рік народження"
+        />
+      </label>
+      <div class="btn-wrap">
+        <button class="submit-btn convert" type="button">
+          Визначити ваш вік
+        </button>
+      </div>
+      <label>
+        Вам виповнилося
+        <input class="result" type="number" placeholder="Тут буде результат" />
+      </label>
+    </form>
+    <script>
+      function getBirthYear() {
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const birthYear = Math.trunc(document.querySelector('.year').value);
+        const age = currentYear - birthYear;
+        document.querySelector('.result').value = age;
+      }
+
+      window.onload = () => {
+        document.querySelector('.convert').onclick = getBirthYear;
+      };
+    </script>
   </body>
 </html>

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="shortcut icon" href="../../assets/js.png" />
+    <link rel="stylesheet" href="./styles-1.css" />
     <title>Document</title>
   </head>
   <body>
@@ -18,7 +19,27 @@
     </p>
     <h1>Задача № 2</h1>
     <p>Зробити конвертер валют (курси валют – константи у скрипті)</p>
-    <img src="./image02.png" alt="" />
-    <script></script>
+    <img src="./image02.png" alt="Конвертер" />
+
+    <br />
+    <br />
+    <form class="feedback-form" action="">
+      <label>
+        Сумма у гривнях
+        <input class="uhy" type="number" placeholder="Введіть число" />
+      </label>
+      <div class="btn-wrap">
+        <button class="submit-btn convert" type="button">Конвертувати</button>
+      </div>
+      <label>
+        Сумма у Доларах
+        <input class="usd" type="number" placeholder="Тут буде результат" />
+      </label>
+      <label>
+        Сумма у Євро
+        <input class="euro" type="number" placeholder="Введіть число" />
+      </label>
+    </form>
+    <script src="./script-2.js"></script>
   </body>
 </html>

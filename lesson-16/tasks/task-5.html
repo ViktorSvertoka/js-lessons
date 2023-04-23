@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../../css/styles.css" />
     <link rel="shortcut icon" href="../../assets/js.png" />
+    <link rel="stylesheet" href="./styles-1.css" />
     <title>Document</title>
   </head>
   <body>
@@ -21,6 +22,23 @@
       Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити
       і вставити на сторінку)
     </p>
-    <script></script>
+    <script>
+      function getTable() {
+        const table = document.createElement('table');
+        const tableRow = 4;
+        const tableColumn = 3;
+        for (let i = 0; i < tableRow; i++) {
+          const rowTr = document.createElement('tr');
+          for (let j = 0; j < tableColumn; j++) {
+            const columnTd = document.createElement('td');
+            columnTd.innerHTML = Math.trunc(Math.random() * 100) + 1;
+            rowTr.append(columnTd);
+          }
+          table.append(rowTr);
+        }
+        document.body.append(table);
+      }
+      window.onload = getTable;
+    </script>
   </body>
 </html>

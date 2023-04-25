@@ -24,6 +24,100 @@
       гідів(використати - radio buttons). Ціни визначте самі. Підрахувати
       загальну вартість.
     </p>
-    <script></script>
+
+    <div class="page__container task">
+      <h2>
+        Задача 7. Подорож складається з 3 етапів. На кожному етапі користувач
+        може вибрати один з видів транспорту (авто, автобус, літак - випадаючий
+        список), харчування (сніданок, обід, вечеря – checkbоx) та одного з 3-х
+        гідів(використати - radio buttons). Ціни визначте самі. Підрахувати
+        загальну вартість.
+      </h2>
+      <div class="task__body">
+        <div class="task__line">
+          <h3>Вид транспорту</h3>
+          <select id="transport">
+            <option value="1000" selected>Авто.</option>
+            <option value="1500">Автобус.</option>
+            <option value="3500">Літак.</option>
+          </select>
+        </div>
+        <h3>Харчування</h3>
+        <div class="task__line">
+          <label for="breakfast">
+            Сніданок
+            <input
+              id="breakfast"
+              value="100"
+              checked
+              type="checkbox"
+              class="input"
+            />
+          </label>
+          <label for="dinner">
+            Обід
+            <input id="dinner" value="150" type="checkbox" class="input" />
+          </label>
+          <label for="supper">
+            Вечеря
+            <input id="supper" value="200" type="checkbox" class="input" />
+          </label>
+        </div>
+        <h3>Вибір гіда</h3>
+        <div class="task__line">
+          <label for="guide1">
+            Ivan
+            <input
+              id="guide1"
+              checked
+              value="500"
+              type="radio"
+              name="guide"
+              class="input"
+            />
+          </label>
+          <label for="guide2">
+            Olga
+            <input
+              id="guide2"
+              value="1050"
+              type="radio"
+              name="guide"
+              class="input"
+            />
+          </label>
+          <label for="guide3">
+            John
+            <input
+              id="guide3"
+              value="2000"
+              type="radio"
+              name="guide"
+              class="input"
+            />
+          </label>
+        </div>
+        <div>
+          <button class="button">Загальна вартість</button>
+        </div>
+        <div>Загальна вартість : <span id="result"></span></div>
+      </div>
+    </div>
+    <script>
+      function trip() {
+        const transport = parseFloat(
+          document.getElementById('transport').value,
+        );
+        const inputs = document.querySelectorAll('input');
+        let sum = transport;
+        for (let i = 0; i < inputs.length; i++) {
+          if (inputs[i].checked) sum += parseFloat(inputs[i].value);
+        }
+        document.getElementById('result').innerText = sum;
+      }
+      window.onload = function () {
+        document.querySelector('.button').onclick = trip;
+      };
+    </script>
   </body>
 </html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-16.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 4</h1>
+    <p>
+      Наперед задано у скрипті масив зі списком бажань. Після завантаження
+      сторінки випадковим чином вибираються 3 і відображаються у окремих div (їх
+      треба створити і додати на сторінку)
+    </p>
+    <script>
+      const wishList = [
+        'JavaScript',
+        'Python',
+        'PHP',
+        'Java',
+        'TypeScript',
+        'HTML',
+        'CSS',
+      ];
+
+      function randomWish(wishList) {
+        return wishList[Math.trunc(Math.random() * (wishList.length - 1) + 1)];
+      }
+
+      function createDiv(element, wishList) {
+        for (let i = 0; i < element; i++) {
+          let divTag = document.createElement('div');
+          divTag.innerText = randomWish(wishList);
+          document.body.append(divTag);
+        }
+      }
+
+      createDiv(3, wishList);
+    </script>
+  </body>
+</html>

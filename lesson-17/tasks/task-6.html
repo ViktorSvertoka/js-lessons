@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-16.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 6</h1>
+    <p>
+      Користувач задає кількість оцінок і натискає на кнопку «get table». В
+      результаті формується таблиця з input, куди користувач вводить оцінки.
+      Після цього натискає на кнопку “get sum” і знаходить середнє значення.
+    </p>
+    <img src="./image03.png" alt="" />
+    <br />
+    <br />
+    <br />
+
+    <label>
+      <div>
+        Price number<input type="number" class="price_number" value="" />
+      </div>
+      <button class="get_table">Get table</button>
+    </label>
+    <div><button class="get_sum">Get sum</button></div>
+
+    <br />
+    <script>
+      function getTable() {
+        const priceNum = parseInt(
+          document.querySelector('.price_number').value,
+        );
+        const table = document.createElement('table');
+        table.style.border = '1px solid black';
+        document.querySelector('.get_table').after(table);
+        for (let i = 0; i < priceNum; i++) {
+          const row = document.createElement('tr');
+          table.append(row);
+          const column = document.createElement('td');
+          column.style.border = '1px solid black';
+          row.append(column);
+          const input1 = document.createElement('input');
+          input1.classList.add('input_table');
+          column.append(input1);
+        }
+      }
+
+      function getSum() {
+        if (document.querySelector('.sum'))
+          document.querySelector('.sum').remove();
+        const inputList = document.querySelectorAll('.input_table');
+        let sum = 0;
+        for (const input of inputList) {
+          sum += parseInt(input.value);
+        }
+        sum = sum / inputList.length;
+        let div = document.createElement('div');
+        div.className = 'sum';
+        div.innerHTML = `Average sum = ${sum.toFixed(2)}`;
+        document.body.append(div);
+      }
+
+      window.onload = function () {
+        document.querySelector('.get_table').onclick = getTable;
+        document.querySelector('.get_sum').onclick = getSum;
+      };
+    </script>
+  </body>
+</html>

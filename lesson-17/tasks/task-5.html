@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <link rel="stylesheet" href="./styles-1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-16.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 5</h1>
+    <p>
+      Відобразити таблицю 3*4 з випадковими числами (її треба динамічно створити
+      і вставити на сторінку)
+    </p>
+    <script>
+      function getTable() {
+        const table = document.createElement('table');
+        const tableRow = 4;
+        const tableColumn = 3;
+        for (let i = 0; i < tableRow; i++) {
+          const rowTr = document.createElement('tr');
+          for (let j = 0; j < tableColumn; j++) {
+            const columnTd = document.createElement('td');
+            columnTd.innerHTML = Math.trunc(Math.random() * 100) + 1;
+            rowTr.append(columnTd);
+          }
+          table.append(rowTr);
+        }
+        document.body.append(table);
+      }
+      window.onload = getTable;
+    </script>
+  </body>
+</html>

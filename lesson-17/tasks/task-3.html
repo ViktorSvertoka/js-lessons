@@ -11,49 +11,13 @@
   </head>
   <body>
     <p>
-      <a href="../index-16.html"
+      <a href="../index-17.html"
         ><button class="btn-go-back custom-btn btn-1" type="button">
           Go back
         </button></a
       >
     </p>
     <h1>Задача № 3</h1>
-    <p>
-      Користувач задає рік народження. Визначити кількість років користувача.
-    </p>
-    <br />
-    <br />
-    <form class="feedback-form" action="">
-      <label>
-        Рік народження
-        <input
-          class="year"
-          type="number"
-          placeholder="Введіть ваш рік народження"
-        />
-      </label>
-      <div class="btn-wrap">
-        <button class="submit-btn convert" type="button">
-          Визначити ваш вік
-        </button>
-      </div>
-      <label>
-        Вам виповнилося
-        <input class="result" type="number" placeholder="Тут буде результат" />
-      </label>
-    </form>
-    <script>
-      function getBirthYear() {
-        const today = new Date();
-        const currentYear = today.getFullYear();
-        const birthYear = Math.trunc(document.querySelector('.year').value);
-        const age = currentYear - birthYear;
-        document.querySelector('.result').value = age;
-      }
-
-      window.onload = () => {
-        document.querySelector('.convert').onclick = getBirthYear;
-      };
-    </script>
+    <p></p>
   </body>
 </html>

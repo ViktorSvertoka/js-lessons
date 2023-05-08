@@ -1,43 +1,63 @@
-.feedback-form {
+body {
+  width: 100vw;
   display: flex;
   flex-direction: column;
-  width: 480px;
-  padding: 12px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border: 3px solid #00aced;
-  border-radius: 4px;
+}
+p {
+  margin: 0;
 }
 
-.feedback-form label {
+.mainBlock {
+  display: flex;
+  padding: 5px;
+  gap: 5px;
+}
+
+.blockProduct {
+  background-color: aliceblue;
+  border: 1px solid #80808033;
+  padding: 20px 10px;
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
-  color: #00aced;
+  gap: 10px;
 }
 
-.feedback-form input {
-  height: 30px;
+.blockProduct:hover {
+  border: 5px solid green;
 }
 
-.feedback-form button {
-  padding: 8px 12px;
-  font: inherit;
-  cursor: pointer;
+.conditionGoogsBlock {
+  width: max-content;
+  padding: 5px;
+  border-radius: 20px;
 }
 
-.btn-wrap button {
-  display: inline-block;
-  margin-right: 5px;
-  margin-bottom: 20px;
+.notSaleProduct {
+  background-color: rgb(236, 182, 33);
 }
 
-td {
-  width: 70px;
-  height: 70px;
-  background-color: yellow;
-  color: #00aced;
-  font-weight: 700;
-  font-size: 24px;
+.saleProduct {
+  background-color: red;
+}
+
+.conditionGoogs {
+  font-size: 10px;
   text-align: center;
-  border-radius: 50%;
+  color: white;
+  text-transform: uppercase;
+}
+
+.productImage {
+  width: 200px;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceProduct {
+  font-size: 30px;
+  color: red;
 }

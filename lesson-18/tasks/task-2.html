@@ -25,5 +25,111 @@
       користувач має можливість поставити пастку у іншій клітинці клікнувши на
       неї.
     </p>
+
+    <style>
+      .game {
+        display: inline-block;
+        margin: 10px;
+      }
+
+      .cell {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      .rabbit {
+        background-color: #f7ca18;
+      }
+
+      .trap {
+        background-color: #e74c3c;
+      }
+
+      .won {
+        background-color: #2ecc71;
+      }
+    </style>
+
+    <div class="game">
+      <h1>Rabbit Game</h1>
+      <div id="board"></div>
+      <button id="resetBtn">Reset</button>
+    </div>
+
+    <script>
+      const boardSize = 2;
+      const board = document.getElementById('board');
+      const resetBtn = document.getElementById('resetBtn');
+      let rabbitPosition;
+      let trapPosition;
+
+      resetBtn.addEventListener('click', resetGame);
+
+      function createBoard() {
+        for (let i = 0; i < boardSize; i++) {
+          for (let j = 0; j < boardSize; j++) {
+            const cell = document.createElement('div');
+            cell.className = 'cell';
+            cell.dataset.row = i;
+            cell.dataset.col = j;
+            cell.addEventListener('click', placeTrap);
+            board.appendChild(cell);
+          }
+        }
+      }
+
+      function resetGame() {
+        board.innerHTML = '';
+        rabbitPosition = getRandomPosition();
+        trapPosition = null;
+        createBoard();
+      }
+
+      function getRandomPosition() {
+        const row = Math.floor(Math.random() * boardSize);
+        const col = Math.floor(Math.random() * boardSize);
+        return { row, col };
+      }
+
+      function isAdjacent(position1, position2) {
+        const rowDiff = Math.abs(position1.row - position2.row);
+        const colDiff = Math.abs(position1.col - position2.col);
+        return (
+          (rowDiff === 0 && colDiff === 1) || (rowDiff === 1 && colDiff === 0)
+        );
+      }
+
+      function placeTrap(event) {
+        const cell = event.target;
+        const row = parseInt(cell.dataset.row);
+        const col = parseInt(cell.dataset.col);
+
+        if (trapPosition) {
+          const prevTrapCell = document.querySelector(
+            `.cell[data-row="${trapPosition.row}"][data-col="${trapPosition.col}"]`,
+          );
+          prevTrapCell.classList.remove('trap');
+        }
+
+        cell.classList.add('trap');
+        trapPosition = { row, col };
+
+        if (isAdjacent(rabbitPosition, trapPosition)) {
+          const rabbitCell = document.querySelector(
+            `.cell[data-row="${rabbitPosition.row}"][data-col="${rabbitPosition.col}"]`,
+          );
+          rabbitCell.classList.add('won');
+          alert('Game over! You caught the rabbit!');
+        }
+      }
+
+      createBoard();
+    </script>
   </body>
 </html>

@@ -24,5 +24,124 @@
       картки їх зображення відриваються. Якщо зображення однакові, то залишаємо
       їх відкритими. Інакше через 1 секунду знову приховуємо.
     </p>
+
+    <style>
+      .game {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card {
+        width: 100px;
+        height: 100px;
+        background-color: #f1f1f1;
+        margin: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        cursor: pointer;
+        background-size: cover;
+      }
+    </style>
+
+    <div class="game">
+      <div class="card" onclick="revealCard(0)"></div>
+      <div class="card" onclick="revealCard(1)"></div>
+      <div class="card" onclick="revealCard(2)"></div>
+      <div class="card" onclick="revealCard(3)"></div>
+      <div class="card" onclick="revealCard(4)"></div>
+      <div class="card" onclick="revealCard(5)"></div>
+    </div>
+
+    <button class="btn-reset" onclick="resetGame()">Скинути гру</button>
+
+    <script>
+      const images = [
+        './emotion-original.png',
+        './svg-original.png',
+        './terminal-original.png',
+      ];
+
+      let cards = [];
+      let revealedCards = [];
+      let matchedCards = [];
+
+      function createCards() {
+        for (let i = 0; i < images.length; i++) {
+          for (let j = 0; j < 2; j++) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.style.backgroundImage = 'none';
+            card.dataset.index = i;
+            card.addEventListener('click', handleClick);
+            cards.push(card);
+          }
+        }
+        shuffleCards();
+        renderCards();
+      }
+
+      function shuffleCards() {
+        for (let i = cards.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [cards[i], cards[j]] = [cards[j], cards[i]];
+        }
+      }
+
+      function renderCards() {
+        const gameContainer = document.querySelector('.game');
+        gameContainer.innerHTML = '';
+        cards.forEach(card => {
+          gameContainer.appendChild(card);
+        });
+      }
+
+      function handleClick(event) {
+        const card = event.target;
+        const index = parseInt(card.dataset.index);
+
+        if (
+          revealedCards.length < 2 &&
+          !revealedCards.includes(card) &&
+          !matchedCards.includes(card)
+        ) {
+          card.style.backgroundImage = `url(${images[index]})`;
+          revealedCards.push(card);
+
+          if (revealedCards.length === 2) {
+            const card1 = revealedCards[0];
+            const card2 = revealedCards[1];
+
+            if (card1.dataset.index === card2.dataset.index) {
+              matchedCards.push(card1, card2);
+              revealedCards = [];
+
+              if (matchedCards.length === images.length * 2) {
+                setTimeout(() => {
+                  alert('Щиро вітаю! Ви знайшли всі пари!');
+                }, 500);
+              }
+            } else {
+              setTimeout(() => {
+                card1.style.backgroundImage = '';
+                card2.style.backgroundImage = '';
+                revealedCards = [];
+              }, 1000);
+            }
+          }
+        }
+      }
+
+      function resetGame() {
+        cards = [];
+        revealedCards = [];
+        matchedCards = [];
+        createCards();
+      }
+
+      createCards();
+    </script>
   </body>
 </html>

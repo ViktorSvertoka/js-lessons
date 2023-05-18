@@ -24,5 +24,59 @@
       досягає нижньої частини екрану вона знову повинна з’явитись у верхній
       частині екрану.
     </p>
+
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #snowflake {
+        position: absolute;
+        top: -20px;
+        font-size: 20px;
+      }
+    </style>
+
+    <div id="snowflake">❄</div>
+
+    <script>
+      function startSnowfall() {
+        let snowflake = document.getElementById('snowflake');
+        let windowHeight = window.innerHeight;
+        let windowWidth = window.innerWidth;
+        let snowflakeSize = 30;
+
+        function snowfall() {
+          let startTop = -snowflakeSize;
+          let startLeft = Math.random() * windowWidth;
+          let endTop = windowHeight;
+          let endLeft = Math.random() * windowWidth;
+
+          snowflake.style.top = startTop + 'px';
+          snowflake.style.left = startLeft + 'px';
+          snowflake.style.opacity = '1';
+
+          snowflake.animate(
+            [
+              { top: startTop + 'px', left: startLeft + 'px' },
+              { top: endTop + 'px', left: endLeft + 'px' },
+            ],
+            {
+              duration: Math.random() * 3000 + 2000,
+              easing: 'ease-in-out',
+              iterations: Infinity,
+              complete: function () {
+                snowflake.style.opacity = '0';
+              },
+            },
+          );
+        }
+
+        snowfall();
+      }
+
+      startSnowfall();
+    </script>
   </body>
 </html>

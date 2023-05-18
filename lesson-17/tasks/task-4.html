@@ -24,6 +24,64 @@
       досягнути максимального розміру зірочка повинна з’являтися у іншій
       випадковій позиції.
     </p>
-    <script></script>
+
+    <title>Сяючі зорі</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .star {
+        position: absolute;
+        color: yellow;
+        font-size: 1px;
+      }
+    </style>
+
+    <h2>Сяючі зорі</h2>
+
+    <script>
+      function createStar() {
+        let star = document.createElement('div');
+        star.classList.add('star');
+        star.innerHTML = '★';
+
+        let windowWidth = window.innerWidth;
+        let windowHeight = window.innerHeight;
+        let minSize = 1;
+        let maxSize = 10;
+        let minDelay = 500;
+        let maxDelay = 3000;
+        let minOpacity = 0.2;
+        let maxOpacity = 1;
+
+        function updateStar() {
+          let left = Math.random() * windowWidth;
+          let top = Math.random() * windowHeight;
+          let size = Math.random() * (maxSize - minSize) + minSize;
+          let delay = Math.random() * (maxDelay - minDelay) + minDelay;
+          let opacity = Math.random() * (maxOpacity - minOpacity) + minOpacity;
+
+          star.style.left = left + 'px';
+          star.style.top = top + 'px';
+          star.style.fontSize = size + 'px';
+          star.style.transitionDuration = delay + 'ms';
+          star.style.opacity = opacity;
+
+          setTimeout(updateStar, delay);
+        }
+
+        updateStar();
+
+        document.body.appendChild(star);
+      }
+
+      let numStars = 50;
+
+      for (let i = 0; i < numStars; i++) {
+        createStar();
+      }
+    </script>
   </body>
 </html>

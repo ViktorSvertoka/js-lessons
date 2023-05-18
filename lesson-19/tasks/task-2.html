@@ -24,5 +24,49 @@
       порядку(кожен попередній має значення на 1 менше за наступний), усі
       наступні на 1 більше (кожен наступне на 1 більше за попереднього)
     </p>
+
+    <style>
+      .input {
+        display: block;
+        margin-bottom: 5px;
+      }
+    </style>
+
+    <label for="input1">Value 1:</label>
+    <input type="text" id="input1" class="input" oninput="updateInputs(1)" />
+    <br />
+    <label for="input2">Value 2:</label>
+    <input type="text" id="input2" class="input" oninput="updateInputs(2)" />
+    <br />
+    <label for="input3">Value 3:</label>
+    <input type="text" id="input3" class="input" oninput="updateInputs(3)" />
+    <br />
+    <label for="input4">Value 4:</label>
+    <input type="text" id="input4" class="input" oninput="updateInputs(4)" />
+    <br />
+    <label for="input5">Value 5:</label>
+    <input type="text" id="input5" class="input" oninput="updateInputs(5)" />
+
+    <script>
+      function updateInputs(inputNumber) {
+        let currentValue = parseInt(
+          document.getElementById('input' + inputNumber).value,
+        );
+
+        for (let i = inputNumber - 1; i >= 1; i--) {
+          currentValue--;
+          document.getElementById('input' + i).value = currentValue;
+        }
+
+        currentValue = parseInt(
+          document.getElementById('input' + inputNumber).value,
+        );
+
+        for (let i = inputNumber + 1; i <= 5; i++) {
+          currentValue++;
+          document.getElementById('input' + i).value = currentValue;
+        }
+      }
+    </script>
   </body>
 </html>

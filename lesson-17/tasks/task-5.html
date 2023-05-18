@@ -23,6 +23,86 @@
       горизонталі з’являються танки, які їдуть вниз. При кліку на танк він
       вибухає і зникає з екрану.
     </p>
-    <script></script>
+    <title>Байрактар</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      .tank {
+        position: absolute;
+        top: -50px;
+        font-size: 50px;
+        cursor: pointer;
+      }
+
+      .explosion {
+        position: absolute;
+        font-size: 100px;
+        pointer-events: none;
+      }
+    </style>
+
+    <h2>Байрактар</h2>
+
+    <script>
+      function createTank() {
+        let tank = document.createElement('div');
+        tank.classList.add('tank');
+        tank.innerHTML = '🚜';
+
+        let windowWidth = window.innerWidth;
+        let startLeft = Math.random() * windowWidth;
+        let speed = Math.random() * 2 + 1;
+
+        tank.style.left = startLeft + 'px';
+
+        function moveTank() {
+          let windowHeight = window.innerHeight;
+          let tankTop = tank.offsetTop;
+
+          if (tankTop >= windowHeight) {
+            document.body.removeChild(tank);
+            return;
+          }
+
+          tank.style.top = tankTop + speed + 'px';
+
+          requestAnimationFrame(moveTank);
+        }
+
+        tank.addEventListener('click', function () {
+          explodeTank(this);
+        });
+
+        document.body.appendChild(tank);
+
+        moveTank();
+      }
+
+      function explodeTank(tank) {
+        let explosion = document.createElement('div');
+        explosion.classList.add('explosion');
+        explosion.innerHTML = '💥';
+
+        explosion.style.left = tank.offsetLeft + 'px';
+        explosion.style.top = tank.offsetTop + 'px';
+
+        tank.style.display = 'none';
+
+        document.body.appendChild(explosion);
+
+        setTimeout(function () {
+          document.body.removeChild(explosion);
+        }, 1000);
+      }
+
+      let numTanks = 20;
+
+      for (let i = 0; i < numTanks; i++) {
+        createTank();
+      }
+    </script>
   </body>
 </html>

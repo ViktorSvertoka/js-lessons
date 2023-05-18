@@ -25,5 +25,98 @@
       кількості кліків біля назви таблиці з використанням відповідно доданого
       для цього атрибута).
     </p>
+
+    <style>
+      .selected {
+        border: 2px solid red;
+      }
+
+      h3 {
+        width: 250px;
+      }
+    </style>
+
+    <h3 id="table1">Таблиця 1</h3>
+    <table id="table1">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+      </tr>
+    </table>
+
+    <h3 id="table2">Таблиця 2</h3>
+    <table id="table2">
+      <tr>
+        <td>10</td>
+        <td>11</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>14</td>
+        <td>15</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>17</td>
+        <td>18</td>
+      </tr>
+    </table>
+
+    <h3 id="table3">Таблиця 3</h3>
+    <table id="table3">
+      <tr>
+        <td>19</td>
+        <td>20</td>
+        <td>21</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>23</td>
+        <td>24</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>26</td>
+        <td>27</td>
+      </tr>
+    </table>
+
+    <script>
+      let clickCounts = {
+        table1: 0,
+        table2: 0,
+        table3: 0,
+      };
+
+      function handleClick(tableId) {
+        let table = document.getElementById(tableId);
+        table.classList.toggle('selected');
+        clickCounts[tableId]++;
+
+        let clickCountElement = document.getElementById(tableId);
+        clickCountElement.innerText =
+          'Таблиця ' + tableId + ' (' + clickCounts[tableId] + ' кліків)';
+      }
+
+      let tables = document.getElementsByTagName('table');
+      for (let i = 0; i < tables.length; i++) {
+        tables[i].addEventListener('click', function () {
+          let tableId = this.getAttribute('id');
+          handleClick(tableId);
+        });
+      }
+    </script>
   </body>
 </html>

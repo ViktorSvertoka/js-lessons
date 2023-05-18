@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <link rel="stylesheet" href="./styles-1.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-18.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      Задача. Ловля тараканів. Зображення тараканів з’являються в центрі
+      контейнера і випадковим чином «розбігаються» у випадкових напрямках. При
+      кліку на зображенні таракана його рух припиняється і виводиться зображення
+      сплячого таракана.
+    </p>
+
+    <title>Ловля тараканів</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+
+      #container {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        cursor: crosshair;
+      }
+
+      .roach {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 100px;
+        height: 100px;
+        background-image: url('1.jpeg');
+        background-size: cover;
+        transition: transform 0.5s;
+        cursor: pointer;
+      }
+
+      .asleep {
+        background-image: url('2.jpeg');
+      }
+    </style>
+
+    <h2>Ловля тараканів</h2>
+
+    <div id="container">
+      <div class="roach"></div>
+    </div>
+
+    <script>
+      let container = document.getElementById('container');
+      let roach = document.querySelector('.roach');
+      let isRoachMoving = true;
+
+      roach.addEventListener('click', function (event) {
+        event.stopPropagation();
+        isRoachMoving = false;
+        roach.classList.add('asleep');
+      });
+
+      function getRandomDirection() {
+        let directions = ['top', 'right', 'bottom', 'left'];
+        let randomIndex = Math.floor(Math.random() * directions.length);
+        return directions[randomIndex];
+      }
+
+      function moveRoach() {
+        if (!isRoachMoving) {
+          return;
+        }
+
+        let containerWidth = container.clientWidth;
+        let containerHeight = container.clientHeight;
+        let roachWidth = roach.offsetWidth;
+        let roachHeight = roach.offsetHeight;
+        let maxLeft = containerWidth - roachWidth;
+        let maxTop = containerHeight - roachHeight;
+
+        let direction = getRandomDirection();
+        let left = parseInt(roach.style.left || '0', 10);
+        let top = parseInt(roach.style.top || '0', 10);
+
+        switch (direction) {
+          case 'top':
+            top -= 50;
+            if (top < 0) {
+              top = 0;
+            }
+            break;
+          case 'right':
+            left += 50;
+            if (left > maxLeft) {
+              left = maxLeft;
+            }
+            break;
+          case 'bottom':
+            top += 50;
+            if (top > maxTop) {
+              top = maxTop;
+            }
+            break;
+          case 'left':
+            left -= 50;
+            if (left < 0) {
+              left = 0;
+            }
+            break;
+        }
+
+        roach.style.left = left + 'px';
+        roach.style.top = top + 'px';
+
+        setTimeout(moveRoach, 1000);
+      }
+
+      moveRoach();
+    </script>
+  </body>
+</html>

@@ -25,5 +25,67 @@
       списки з парною кількістю елементів зафарбувати у зелений колір, інші у
       червоний.
     </p>
+
+    <ul id="list1" class="list"></ul>
+    <ul id="list2" class="list"></ul>
+    <ul id="list3" class="list"></ul>
+    <ul id="list4" class="list"></ul>
+    <ul id="list5" class="list"></ul>
+
+    <button onclick="colorizeLists()">Colorize Lists</button>
+
+    <style>
+      .list {
+        display: inline-block;
+        margin-right: 10px;
+        padding: 10px;
+        border: 1px solid black;
+      }
+
+      .green {
+        background-color: green;
+      }
+
+      .red {
+        background-color: red;
+      }
+    </style>
+
+    <script>
+      function colorizeLists() {
+        let lists = document.getElementsByClassName('list');
+
+        for (let i = 0; i < lists.length; i++) {
+          let list = lists[i];
+
+          if (list.children.length % 2 === 0) {
+            list.classList.add('green');
+            list.classList.remove('red');
+          } else {
+            list.classList.add('red');
+            list.classList.remove('green');
+          }
+        }
+      }
+
+      function generateRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      function generateRandomLists() {
+        for (let i = 1; i <= 5; i++) {
+          let list = document.getElementById('list' + i);
+          let itemCount = generateRandomNumber(1, 10);
+
+          for (let j = 0; j < itemCount; j++) {
+            let listItem = document.createElement('li');
+            listItem.textContent = generateRandomNumber(1, 100);
+            list.appendChild(listItem);
+          }
+        }
+      }
+
+      generateRandomLists();
+    </script>
   </body>
 </html>

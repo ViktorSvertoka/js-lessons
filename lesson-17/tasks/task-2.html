@@ -27,44 +27,108 @@
       список.
     </p>
     <img src="./img2.png" alt="image" />
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 600px;
+      }
 
-    <div class="slider-container">
-      <div class="slider">
-        <img
-          class="slider-img"
-          src="./slide1.png"
-          alt="Slide 1"
-          width="100px"
-        />
-        <img class="slider-img" src="./asus.webp" alt="Slide 2" width="100px" />
-        <img
-          class="slider-img"
-          src="./slide3.png"
-          alt="Slide 3"
-          width="100px"
-        />
-        <img
-          class="slider-img"
-          src="./lenovo.webp"
-          alt="Slide 4"
-          width="100px"
-        />
-        <img
-          class="slider-img"
-          src="./slide5.png"
-          alt="Slide 5"
-          width="100px"
-        />
-      </div>
-      <div class="slider-nav">
-        <button class="slider-nav-btn" type="button" data-slide="1">1</button>
-        <button class="slider-nav-btn" type="button" data-slide="2">2</button>
-        <button class="slider-nav-btn" type="button" data-slide="3">3</button>
-        <button class="slider-nav-btn" type="button" data-slide="4">4</button>
-        <button class="slider-nav-btn" type="button" data-slide="5">5</button>
-      </div>
-    </div>
+      th,
+      td {
+        padding: 10px;
+        text-align: left;
+      }
 
-    <script src="./script-2.js"></script>
+      th {
+        background-color: #f2f2f2;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      li {
+        margin-bottom: 5px;
+      }
+
+      button {
+        width: 90%;
+      }
+    </style>
+
+    <h2>Список спортсменів</h2>
+
+    <table>
+      <tr>
+        <th style="width: 300px">Загальний список</th>
+        <th style="width: 300px">Обрані для змагань</th>
+      </tr>
+      <tr>
+        <td>
+          <ul id="allAthletesList">
+            <li>
+              Тарас Шевченко <button onclick="moveToSelected(this)">➡</button>
+            </li>
+            <li>
+              Григорій Сковорода
+              <button onclick="moveToSelected(this)">➡</button>
+            </li>
+            <li>
+              Михайло Грушевській
+              <button onclick="moveToSelected(this)">➡</button>
+            </li>
+            <li>
+              Леся Українка <button onclick="moveToSelected(this)">➡</button>
+            </li>
+            <li>
+              Богдан Хмельницький
+              <button onclick="moveToSelected(this)">➡</button>
+            </li>
+            <li>
+              Іван Франко <button onclick="moveToSelected(this)">➡</button>
+            </li>
+          </ul>
+        </td>
+        <td>
+          <ul id="selectedAthletesList"></ul>
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function moveToSelected(button) {
+        let listItem = button.parentNode;
+        let selectedList = document.getElementById('selectedAthletesList');
+
+        selectedList.appendChild(listItem);
+        button.innerHTML = '⬅';
+        button.onclick = function () {
+          moveBackToAll(this);
+        };
+      }
+
+      function moveBackToAll(button) {
+        let listItem = button.parentNode;
+        let allList = document.getElementById('allAthletesList');
+
+        allList.appendChild(listItem);
+        button.innerHTML = '➡';
+        button.onclick = function () {
+          moveToSelected(this);
+        };
+      }
+    </script>
+    <script>
+      window.onload = function () {
+        let selectedList = document.getElementById('selectedAthletesList');
+        let allList = document.getElementById('allAthletesList');
+
+        while (selectedList.firstChild) {
+          allList.appendChild(selectedList.firstChild);
+        }
+      };
+    </script>
   </body>
 </html>

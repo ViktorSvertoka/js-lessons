@@ -26,6 +26,78 @@
       відповідних класів.
     </p>
 
-    <script></script>
+    <script>
+      class InvalidMonthError extends Error {
+        constructor(message) {
+          super(message);
+          this.name = 'InvalidMonthError';
+        }
+      }
+
+      class InvalidGradeError extends Error {
+        constructor(message) {
+          super(message);
+          this.name = 'InvalidGradeError';
+        }
+      }
+
+      class Student {
+        constructor(month, grade) {
+          this.month = month;
+          this.grade = grade;
+        }
+
+        checkGrade() {
+          // Перевірка чи введений місяць є числом в діапазоні від 1 до 12
+          if (
+            typeof this.month !== 'number' ||
+            this.month < 1 ||
+            this.month > 12
+          ) {
+            throw new InvalidMonthError(
+              'Невірний місяць. Місяць повинен бути числом від 1 до 12.',
+            );
+          }
+
+          // Перевірка чи введена оцінка є числом в діапазоні від 1 до 100
+          if (
+            typeof this.grade !== 'number' ||
+            this.grade < 1 ||
+            this.grade > 100
+          ) {
+            throw new InvalidGradeError(
+              'Невірна оцінка. Оцінка повинна бути числом від 1 до 100.',
+            );
+          }
+
+          // Перевірка чи можливе виправлення оцінки (якщо оцінка незадовільна і не останній місяць семестру)
+          if (this.grade < 60 && this.month !== 12) {
+            return 'Ви можете покращити свою оцінку.';
+          }
+
+          return 'Ваша оцінка задовільна.';
+        }
+      }
+
+      // Приклад використання
+      try {
+        const month = parseInt(prompt('Введіть місяць навчання (1-12):'), 10);
+        const grade = parseInt(prompt('Введіть оцінку (1-100):'), 10);
+
+        const student = new Student(month, grade);
+        const result = student.checkGrade();
+
+        console.log(result);
+      } catch (error) {
+        if (
+          error instanceof InvalidMonthError ||
+          error instanceof InvalidGradeError
+        ) {
+          console.log('Помилка:', error.message);
+        } else {
+          console.log('Сталася непередбачувана помилка:', error);
+        }
+      }
+    </script>
   </body>
 </html>

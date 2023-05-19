@@ -17,13 +17,25 @@
 
 ```
 
-- `JavaScript course📚`[**Урок №1 (Вступ)**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
+- `JavaScript course📚`[**Урок №1**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
   `Home task`
   [**Домашнє завдання №1**](https://drive.google.com/drive/folders/1-luVq8_1syEQ-QTTdRruHWxvd0eNGtVJ?usp=sharing)
 
-  - `JavaScript course📚`[**Урок №1 (Вступ)**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
-    `Home task`
-    [**Домашнє завдання №1**](https://drive.google.com/drive/folders/1-luVq8_1syEQ-QTTdRruHWxvd0eNGtVJ?usp=sharing)
+- `JavaScript course📚`[**Урок №2**](https://youtube.com/live/Fr-f5VtJaY0?feature=share)
+  `Home task`
+  [**Домашнє завдання №2**](https://drive.google.com/drive/folders/1Y1mfIt9QB4xfoF0VFbijz-7Z3oIH677E?usp=sharing)
+
+- `JavaScript course📚`[**Урок №3**](https://youtube.com/live/uLhGTWkupbk?feature=share)
+  `Home task`
+  [**Домашнє завдання №3**](https://drive.google.com/drive/folders/1M5igFN6XDvV5EHXSLBdRw4vB_Ninb-pJ?usp=sharing)
+
+- `JavaScript course📚`[**Урок №4**](https://youtube.com/live/w6_Qs2D068w?feature=share)
+  `Home task`
+  [**Домашнє завдання №4**](https://drive.google.com/drive/folders/1M5igFN6XDvV5EHXSLBdRw4vB_Ninb-pJ?usp=sharing)
+
+- `JavaScript course📚`[**Урок №5**](https://youtube.com/live/mlW62Jeu3vE?feature=share)
+  `Home task`
+  [**Домашнє завдання №5**](https://drive.google.com/drive/folders/1vwqQHDAyxGO5F-nyS1mPRH1phm9DcMlo?usp=sharing)
 
 # Javascript Basics For Beginners
 

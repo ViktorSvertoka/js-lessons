@@ -18,6 +18,7 @@
 ```
 
 - `JavaScript course📚`[**Урок №1 (Вступ)**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
+  `Home task`
   [**Домашнє завдання №1**](https://drive.google.com/drive/folders/1-luVq8_1syEQ-QTTdRruHWxvd0eNGtVJ?usp=sharing)
 
 # Javascript Basics For Beginners

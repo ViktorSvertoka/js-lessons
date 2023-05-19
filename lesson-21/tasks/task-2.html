@@ -17,8 +17,36 @@
       >
     </p>
     <h1>Задача № 2</h1>
-    <p></p>
+    <p>
+      Задача 2 . Дано дата виробництва йогурта (вводимо рік, місяць, день) та
+      кількість днів придатності. Визначити чи є він придатним на даний момент.
+    </p>
 
-    <script></script>
+    <script>
+      // Введення даних з клавіатури
+      let year = parseInt(prompt('Введіть рік виробництва:'));
+      let month =
+        parseInt(prompt('Введіть місяць виробництва (від 1 до 12):')) - 1;
+      let day = parseInt(prompt('Введіть день виробництва:'));
+      let shelfLife = parseInt(prompt('Введіть кількість днів придатності:'));
+
+      // Створюємо об'єкт Date з введеними даними
+      let productionDate = new Date(year, month, day);
+
+      // Отримуємо поточну дату
+      let currentDate = new Date();
+
+      // Додаємо кількість днів придатності до дати виробництва
+      let expirationDate = new Date(
+        productionDate.getTime() + shelfLife * 24 * 60 * 60 * 1000,
+      );
+
+      // Перевіряємо, чи поточна дата менше або рівна даті закінчення придатності
+      if (currentDate <= expirationDate) {
+        console.log('Йогурт є придатним на даний момент.');
+      } else {
+        console.log('Йогурт не є придатним на даний момент.');
+      }
+    </script>
   </body>
 </html>

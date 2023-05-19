@@ -17,6 +17,9 @@
 
 ```
 
+- `JavaScript course📚`
+  [**Урок №1 (Вступ)**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
+
 # Javascript Basics For Beginners
 
 - Here what ever is thought is the very basics of Javascript. Which is very is

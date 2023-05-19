@@ -17,8 +17,42 @@
       >
     </p>
     <h1>Задача № 1</h1>
-    <p></p>
+    <p>
+      Задача 1. Дано клас PhoneNumber. Створити функцію перетворення до string,
+      при якому на основі номера виводиться оператор (050…. 🡪 MTC, 096… 🡪
+      Kyivstar, ….)
+    </p>
 
-    <script></script>
+    <script>
+      class PhoneNumber {
+        constructor(number) {
+          this.number = number;
+        }
+
+        toString() {
+          const operatorCode = this.number.substring(0, 3);
+          let operator = '';
+
+          switch (operatorCode) {
+            case '050':
+              operator = 'MTC';
+              break;
+            case '096':
+              operator = 'Kyivstar';
+              break;
+            // Додайте інші оператори за необхідністю
+            default:
+              operator = 'Невідомий оператор';
+              break;
+          }
+
+          return `${this.number} (${operator})`;
+        }
+      }
+
+      // Приклад використання
+      const phoneNumber = new PhoneNumber('0501234567');
+      console.log(phoneNumber.toString()); // Виведе: 0501234567 (MTC)
+    </script>
   </body>
 </html>

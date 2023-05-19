@@ -17,8 +17,36 @@
       >
     </p>
     <h1>Задача № 4</h1>
-    <p></p>
+    <p>
+      Задача 4. Використовуючи один з АРІ
+      https://github.com/public-apis/public-apis#animals та функцію fetch
+      організувати завантаження та відображення даних
+    </p>
 
-    <script></script>
+  <!-- HTML-код -->
+<div id="dogImageContainer"></div>
+
+<script>
+  async function loadAnimalData() {
+    try {
+      const response = await fetch('https://dog.ceo/api/breeds/image/random');
+      const data = await response.json();
+
+      const dogImageContainer = document.getElementById('dogImageContainer');
+      const dogImage = document.createElement('img');
+      dogImage.src = data.message;
+      dogImage.alt = 'Random Dog Image';
+      dogImage.style.width = '300px'; 
+
+      dogImageContainer.appendChild(dogImage);
+    } catch (error) {
+      console.error('Помилка при завантаженні даних:', error);
+    }
+  }
+
+  loadAnimalData();
+</script>
+
+    </script>
   </body>
 </html>

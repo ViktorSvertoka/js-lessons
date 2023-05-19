@@ -17,8 +17,31 @@
       >
     </p>
     <h1>Задача № 3</h1>
-    <p></p>
+    <p>
+      Задача 3. Створити генератор, який би випадковим чином поступово генерував
+      вказану кількість парних чисел.
+    </p>
 
-    <script></script>
+    <script>
+      function* generateRandomEvenNumbers(count) {
+        let generatedCount = 0;
+
+        while (generatedCount < count) {
+          const randomNumber = Math.floor(Math.random() * 100) + 1; // Генеруємо випадкове число від 1 до 100
+
+          if (randomNumber % 2 === 0) {
+            yield randomNumber;
+            generatedCount++;
+          }
+        }
+      }
+
+      // Приклад використання
+      const generator = generateRandomEvenNumbers(5);
+
+      for (const number of generator) {
+        console.log(number);
+      }
+    </script>
   </body>
 </html>

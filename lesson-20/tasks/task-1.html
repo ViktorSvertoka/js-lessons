@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../css/styles.css" />
+    <link rel="shortcut icon" href="../../assets/js.png" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>
+      <a href="../index-20.html"
+        ><button class="btn-go-back custom-btn btn-1" type="button">
+          Go back
+        </button></a
+      >
+    </p>
+    <h1>Задача № 1</h1>
+    <p>
+      Задача. Створити клас Client Властивості ID ПІБ Кількість грошей на
+      рахунку Методи Додавання грошей Зняття грошей ToString На основі цього
+      класу створити клас GoldenClient Властивості ID ПІБ Кількість грошей на
+      рахунку Ліміт кредитних коштів Відсоток за використання кредитних коштів
+      Методи Додавання грошей Зняття грошей Визначення пені за використання
+      кредитних коштів ToString Створити клас Bank, у якому зберігається масив
+      клієнтів. Виконати такі операції Вивести усіх простих клієнтів; Вивести
+      усіх клієнтів GoldenClient; Знати сумарну кількість грошей на рахунку;
+    </p>
+
+    <script>
+      class Client {
+        constructor(id, name, balance) {
+          this.id = id;
+          this.name = name;
+          this.balance = balance;
+        }
+
+        deposit(amount) {
+          this.balance += amount;
+        }
+
+        withdraw(amount) {
+          if (this.balance >= amount) {
+            this.balance -= amount;
+          } else {
+            console.log('Insufficient funds');
+          }
+        }
+
+        toString() {
+          return `ID: ${this.id}, Name: ${this.name}, Balance: ${this.balance}`;
+        }
+      }
+
+      class GoldenClient extends Client {
+        constructor(id, name, balance, creditLimit, interestRate) {
+          super(id, name, balance);
+          this.creditLimit = creditLimit;
+          this.interestRate = interestRate;
+        }
+
+        calculatePenalty() {
+          return this.balance > this.creditLimit
+            ? (this.balance - this.creditLimit) * this.interestRate
+            : 0;
+        }
+
+        toString() {
+          return `${super.toString()}, Credit Limit: ${
+            this.creditLimit
+          }, Interest Rate: ${this.interestRate}`;
+        }
+      }
+
+      class Bank {
+        constructor() {
+          this.clients = [];
+        }
+
+        addClient(client) {
+          this.clients.push(client);
+        }
+
+        getAllClients() {
+          return this.clients;
+        }
+
+        getRegularClients() {
+          return this.clients.filter(
+            client => !(client instanceof GoldenClient),
+          );
+        }
+
+        getGoldenClients() {
+          return this.clients.filter(client => client instanceof GoldenClient);
+        }
+
+        getTotalBalance() {
+          let total = 0;
+          for (const client of this.clients) {
+            total += client.balance;
+          }
+          return total;
+        }
+      }
+
+      // Приклад використання
+      const bank = new Bank();
+
+      const client1 = new Client(1, 'John Doe', 5000);
+      const client2 = new Client(2, 'Jane Smith', 3000);
+      const goldenClient1 = new GoldenClient(
+        3,
+        'Alice Johnson',
+        10000,
+        5000,
+        0.1,
+      );
+      const goldenClient2 = new GoldenClient(
+        4,
+        'Bob Williams',
+        15000,
+        10000,
+        0.2,
+      );
+
+      bank.addClient(client1);
+      bank.addClient(client2);
+      bank.addClient(goldenClient1);
+      bank.addClient(goldenClient2);
+
+      console.log('All clients:');
+      console.log(bank.getAllClients());
+
+      console.log('Regular clients:');
+      console.log(bank.getRegularClients());
+
+      console.log('Golden clients:');
+      console.log(bank.getGoldenClients());
+
+      console.log('Total balance:');
+      console.log(bank.getTotalBalance());
+    </script>
+  </body>
+</html>

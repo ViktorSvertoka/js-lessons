@@ -31,7 +31,82 @@
       (випадкове переміщення у довільному напрямку) Подумайте яким має бути
       спільний клас предок.
     </p>
+    <div id="container"></div>
 
-    <script></script>
+    <style>
+      img {
+        max-width: 100px;
+      }
+
+      img:first-child {
+        min-width: 200px;
+      }
+    </style>
+
+    <script>
+      class Animal {
+        constructor(x, y, imagePath, updateInterval) {
+          this.x = x;
+          this.y = y;
+          this.imagePath = imagePath;
+          this.updateInterval = updateInterval;
+        }
+
+        generateMarkup() {
+          return `<img src="${this.imagePath}" style="position: absolute; left: ${this.x}px; top: ${this.y}px;">`;
+        }
+
+        updatePosition() {
+          // Реалізація оновлення позиції може бути різною для кожного підкласу
+          // Залежно від конкретної поведінки
+          // В цьому загальному класі просто повертаємо пусту реалізацію
+        }
+      }
+
+      class House extends Animal {
+        constructor(x, y, imagePath, updateInterval) {
+          super(x, y, imagePath, updateInterval);
+        }
+      }
+
+      class Dog extends Animal {
+        constructor(x, y, imagePath, updateInterval) {
+          super(x, y, imagePath, updateInterval);
+        }
+
+        updatePosition() {
+          // Зміна координати X для собаки
+          this.x += Math.random() * 15 - 5; // Випадкове зміщення на [-5, 5]
+        }
+      }
+
+      class Bird extends Animal {
+        constructor(x, y, imagePath, updateInterval) {
+          super(x, y, imagePath, updateInterval);
+        }
+
+        updatePosition() {
+          // Випадкове переміщення у довільному напрямку для птаха
+          this.x += Math.random() * 10 - 5; // Випадкове зміщення на [-5, 5]
+          this.y += Math.random() * 15 - 5; // Випадкове зміщення на [-5, 5]
+        }
+      }
+
+      // Приклад використання
+      const house = new House(200, 300, './house.png', 1000);
+      const dog = new Dog(200, 200, './dog.png', 500);
+      const bird = new Bird(300, 300, './bird.png', 750);
+
+      // Генерування розмітки через вказаний інтервал
+      setInterval(() => {
+        const container = document.getElementById('container');
+        container.innerHTML =
+          house.generateMarkup() + dog.generateMarkup() + bird.generateMarkup();
+
+        house.updatePosition();
+        dog.updatePosition();
+        bird.updatePosition();
+      }, 100);
+    </script>
   </body>
 </html>

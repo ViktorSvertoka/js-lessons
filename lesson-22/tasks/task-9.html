@@ -17,8 +17,36 @@
       >
     </p>
     <h1>Задача № 9</h1>
-    <p></p>
+    <p>
+      Задача 9. Дано масив показів температур. Підрахувати кількість входжень
+      кожного із показів let temperatures = [12.4, 24.9, 10.6, 12.4, 24.9, 12.4,
+      10.6, 11.9] Заокруглити вверх значення та підрахувати кількість різних
+      показів.
+    </p>
 
-    <script></script>
+    <script>
+      let temperatures = [12.4, 24.9, 10.6, 12.4, 24.9, 12.4, 10.6, 11.9];
+
+      const roundedTemperatures = temperatures.map(temp => Math.ceil(temp));
+      const temperatureCount = {};
+      let uniqueCount = 0;
+
+      // Підрахунок кількості входжень кожного з показів температур
+      for (let i = 0; i < roundedTemperatures.length; i++) {
+        const temperature = roundedTemperatures[i];
+        if (temperatureCount[temperature]) {
+          temperatureCount[temperature]++;
+        } else {
+          temperatureCount[temperature] = 1;
+          uniqueCount++;
+        }
+      }
+
+      console.log(
+        'Кількість входжень кожного показу температури:',
+        temperatureCount,
+      );
+      console.log('Кількість різних показів температури:', uniqueCount);
+    </script>
   </body>
 </html>

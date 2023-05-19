@@ -17,8 +17,24 @@
       >
     </p>
     <h1>Задача № 7</h1>
-    <p></p>
+    <p>
+      Задача 7. Дано інформацію про відвідувачів деякого сайту (для кожного
+      відвідувача зберігається логін). Підрахувати для кожного клієнта кількість
+      відвідувань.
+    </p>
 
-    <script></script>
+    <script>
+      const visitors = ['user1', 'user2', 'user1', 'user3', 'user2', 'user2'];
+
+      const visitCount = {};
+
+      // Підрахунок кількості відвідувань для кожного клієнта
+      for (let i = 0; i < visitors.length; i++) {
+        const visitor = visitors[i];
+        visitCount[visitor] = (visitCount[visitor] || 0) + 1;
+      }
+
+      console.log(visitCount);
+    </script>
   </body>
 </html>

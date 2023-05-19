@@ -17,8 +17,30 @@
       >
     </p>
     <h1>Задача № 6</h1>
-    <p></p>
+    <p>
+      Задача 6. Дано масив книг (назва, рік видання, автор). Підрахувати
+      кількість книг для кожного автора.
+    </p>
 
-    <script></script>
+    <script>
+      const books = [
+        { title: 'Кобзар', year: 1840, author: 'Тарас Шевченко' },
+        { title: 'Тигролови', year: 1924, author: 'Іван Багряний' },
+        { title: 'Повість минулих літ', year: 1833, author: 'Микола Гоголь' },
+        { title: 'Диверсант', year: 1947, author: 'Микола Вороний' },
+        { title: 'Сад Гетсиманський', year: 1928, author: 'Олесь Гончар' },
+      ];
+
+      const count = {};
+
+      // Підрахунок кількості книг для кожного автора
+      for (let i = 0; i < books.length; i++) {
+        const book = books[i];
+        const author = book.author;
+        count[author] = (count[author] || 0) + 1;
+      }
+
+      console.log(count);
+    </script>
   </body>
 </html>

@@ -17,8 +17,38 @@
       >
     </p>
     <h1>Задача № 8</h1>
-    <p></p>
+    <p>
+      Задача 8. Дано масив студентів (піб, курс, факультет). Підрахувати
+      кількість різних факультетів, та кількість студентів кожного з курсів.
+    </p>
 
-    <script></script>
+    <script>
+      const students = [
+        { name: 'Марічка', course: 1, faculty: 'Хімії' },
+        { name: 'Стефанія', course: 2, faculty: 'Фізики' },
+        { name: 'Оленка', course: 1, faculty: 'Хімії' },
+        { name: 'Міланка', course: 3, faculty: 'Фізики' },
+        { name: 'Наталка', course: 2, faculty: 'Математики' },
+      ];
+
+      const facultyCount = {};
+      const courseCount = {};
+
+      // Підрахунок кількості різних факультетів та кількості студентів на кожному курсі
+      for (let i = 0; i < students.length; i++) {
+        const student = students[i];
+        const faculty = student.faculty;
+        const course = student.course;
+
+        facultyCount[faculty] = (facultyCount[faculty] || 0) + 1;
+        courseCount[course] = (courseCount[course] || 0) + 1;
+      }
+
+      console.log(
+        'Кількість різних факультетів:',
+        Object.keys(facultyCount).length,
+      );
+      console.log('Кількість студентів на кожному курсі:', courseCount);
+    </script>
   </body>
 </html>

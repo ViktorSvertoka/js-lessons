@@ -17,8 +17,46 @@
       >
     </p>
     <h1>Задача № 11</h1>
-    <p></p>
+    <p>
+      Задача 11. Користувач може змінювати колір фону, що вибирає користувач з
+      використанням
+      <!-- <input type="color" />. Зберігати цей колір і відновлювати при наступному -->
+      відкритті. Також зберігати і відображати кількість змін протягом одного
+      сеансу.
+    </p>
 
-    <script></script>
+    <input type="color" id="colorPicker" />
+    <p id="changeCount">Кількість змін: 0</p>
+
+    <script>
+      // Отримуємо посилання на елементи з HTML
+      const colorPicker = document.getElementById('colorPicker');
+      const changeCountElement = document.getElementById('changeCount');
+
+      // Отримуємо збережену кількість змін з localStorage або встановлюємо значення 0, якщо воно не було збережено раніше
+      let changeCount = parseInt(localStorage.getItem('changeCount')) || 0;
+      changeCountElement.textContent = `Кількість змін: ${changeCount}`;
+
+      // Встановлюємо початковий колір фону з localStorage або встановлюємо білий колір за замовчуванням
+      const initialColor = localStorage.getItem('backgroundColor') || '#ffffff';
+      document.body.style.backgroundColor = initialColor;
+
+      // Обробник події при зміні кольору
+      colorPicker.addEventListener('change', function () {
+        // Отримуємо вибраний колір
+        const selectedColor = colorPicker.value;
+
+        // Змінюємо колір фону
+        document.body.style.backgroundColor = selectedColor;
+
+        // Збільшуємо кількість змін та оновлюємо текстовий вивід
+        changeCount++;
+        changeCountElement.textContent = `Кількість змін: ${changeCount}`;
+
+        // Зберігаємо колір та кількість змін у localStorage
+        localStorage.setItem('backgroundColor', selectedColor);
+        localStorage.setItem('changeCount', changeCount);
+      });
+    </script>
   </body>
 </html>

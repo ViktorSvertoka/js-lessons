@@ -17,8 +17,43 @@
       >
     </p>
     <h1>Задача № 10</h1>
-    <p></p>
+    <p>
+      Задача 10 Дано два списки прізвищ студентів, що відвідують гуртки з
+      математики і історії. Підрахувати скільки студентів з гуртка з історії
+      також відвідують гурток з математики. Також підрахувати скільки всього
+      студентів відвідують хоча б один гурток.
+    </p>
 
-    <script></script>
+    <script>
+      const mathClubStudents = [
+        'Пантелеймон Куліш',
+        'Тарас Шевченко',
+        'Олесь Гончар',
+        'Леся Українка',
+      ];
+      const historyClubStudents = [
+        'Тарас Шевченко',
+        'Леся Українка',
+        'Іван Франко',
+        'Пантелеймон Куліш',
+      ];
+
+      const historyAndMathStudents = historyClubStudents.filter(student =>
+        mathClubStudents.includes(student),
+      );
+      const totalStudents = new Set([
+        ...mathClubStudents,
+        ...historyClubStudents,
+      ]);
+
+      console.log(
+        'Кількість студентів з гуртка з історії, які також відвідують гурток з математики:',
+        historyAndMathStudents.length,
+      );
+      console.log(
+        'Загальна кількість студентів, які відвідують хоча б один гурток:',
+        totalStudents.size,
+      );
+    </script>
   </body>
 </html>

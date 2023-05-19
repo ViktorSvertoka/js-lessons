@@ -17,8 +17,206 @@
       >
     </p>
     <h1>Задача № 5</h1>
-    <p></p>
+    <p>
+      Задача 1. Дано масив рядків. Вивести ті, у яких є цифри (використати метод
+      test та регулярні вирази). Задача 2. Дано масив рядків. Вивести ті, у яких
+      немає цифр. Задача 3. Дано масив рядків. Вивести ті, у яких є голосні
+      літери. Задача 4. Дано масив рядків. Вивести ті, у яких немає голосних
+      літер. Задача 5. Дано масив рядків. Вивести ті, у яких є або цифра 1 або
+      цифра 3. Задача 6. Дано рядок тексту, вивести усі числа, які є у тексті.
+      Задача 7. Дано рядок тексту. Знайти усі знаки пунктуації, які були
+      використано. Задача 8. Дано рядок тексту. Вивести усі складові, які
+      розділені розділовими знаками. Задача 9. Дано рядок тексту. Перевірити, чи
+      містить він дату у форматі dd.mm.yyyy (dd- день, mm- місяць, yyyy- рік).
+      Задача 10. Дано рядок тексту. Підрахувати кількість двоцифрових чисел у
+      рядку. Задача 11. Визначити чи може бути рядок тексту номером банківської
+      картки (приклад: «4142-3433-2323-3434»). Знайти усі такі номери. Задача
+      12. Дано адресу сайту. Визначити, чи є він урядовим (містить домен “gov”)
+      Задача 13. Вибрати усі роки після 2021 року з отриманого повідомлення
+      Задача 14. Дано номер телефону. Перевірити, чи є цей телефон телефоном з
+      України (починаєтсья на «+38») Задача 15. Користувач вводить прізвище та
+      ім’я в одному рядку через пробіл. Замінити пробіл на дефіс. Задача 16.
+      Користувач вводить дату у форматі «день.місяць.рік». Отримати рядкове
+      представлення дати у форматі «день/місяць/рік» Задача 17. Користувач
+      вводить день (номер дня (0-6) або «sun,mon,tue,wed,thu,fri,sat»).
+      Визначити, чи є це день вихідним
+    </p>
 
-    <script></script>
+    <script>
+      // Задача 1. Дано масив рядків. Вивести ті, у яких є цифри.
+      function stringsWithDigits(strings) {
+        let regex = /\d/;
+        let result = strings.filter(function (string) {
+          return regex.test(string);
+        });
+        return result;
+      }
+
+      // Задача 2. Дано масив рядків. Вивести ті, у яких немає цифр.
+      function stringsWithoutDigits(strings) {
+        let regex = /\d/;
+        let result = strings.filter(function (string) {
+          return !regex.test(string);
+        });
+        return result;
+      }
+
+      // Задача 3. Дано масив рядків. Вивести ті, у яких є голосні літери.
+      function stringsWithVowels(strings) {
+        let regex = /[aeiou]/i;
+        let result = strings.filter(function (string) {
+          return regex.test(string);
+        });
+        return result;
+      }
+
+      // Задача 4. Дано масив рядків. Вивести ті, у яких немає голосних літер.
+      function stringsWithoutVowels(strings) {
+        let regex = /[aeiou]/i;
+        let result = strings.filter(function (string) {
+          return !regex.test(string);
+        });
+        return result;
+      }
+
+      // Задача 5. Дано масив рядків. Вивести ті, у яких є або цифра 1 або цифра 3.
+      function stringsWithOneOrThree(strings) {
+        let regex = /[13]/;
+        let result = strings.filter(function (string) {
+          return regex.test(string);
+        });
+        return result;
+      }
+
+      // Задача 6. Дано рядок тексту, вивести усі числа, які є у тексті.
+      function extractNumbers(text) {
+        let regex = /\d+/g;
+        let result = text.match(regex);
+        return result;
+      }
+
+      // Задача 7. Дано рядок тексту. Знайти усі знаки пунктуації, які були використано.
+      function extractPunctuationMarks(text) {
+        let regex = /[^\w\s]/g;
+        let result = text.match(regex);
+        return result;
+      }
+
+      // Задача 8. Дано рядок тексту. Вивести усі складові, які розділені розділовими знаками.
+      function extractComponents(text) {
+        let regex = /[\s.,;:?!-]+/g;
+        let result = text.split(regex);
+        return result;
+      }
+
+      // Задача 9. Дано рядок тексту. Перевірити, чи містить він дату у форматі dd.mm.yyyy (dd- день, mm- місяць, yyyy- рік).
+      function containsDate(text) {
+        let regex = /\b\d{2}\.\d{2}\.\d{4}\b/;
+        let result = regex.test(text);
+        return result;
+      }
+
+      // Задача 10. Дано рядок тексту. Підрахувати кількість двоцифрових чисел у рядку.
+      function countTwoDigitNumbers(text) {
+        let regex = /\b\d{2}\b/g;
+        let result = text.match(regex);
+        return result ? result.length : 0;
+      }
+
+      // Задача 11. Визначити чи може бути рядок тексту номером банківської картки (приклад: «4142-3433-2323-3434»). Знайти усі такі номери.
+      function findCreditCardNumbers(text) {
+        let regex = /\b\d{4}-\d{4}-\d{4}-\d{4}\b/g;
+        let result = text.match(regex);
+        return result;
+      }
+
+      // Задача 12. Дано адресу сайту. Визначити, чи є він урядовим (містить домен “gov”)
+      function isGovernmentWebsite(url) {
+        let regex = /\.gov\b/;
+        let result = regex.test(url);
+        return result;
+      }
+
+      // Задача 13. Вибрати усі роки після 2021 року з отриманого повідомлення.
+      function extractYears(text) {
+        let regex = /20[2-9]\d\b/g;
+        let result = text.match(regex);
+        return result;
+      }
+
+      // Задача 14. Дано номер телефону. Перевірити, чи є цей телефон телефоном з України (починається на «+38»).
+      function isUkrainianPhoneNumber(phoneNumber) {
+        let regex = /^\+38\d{10}$/;
+        let result = regex.test(phoneNumber);
+        return result;
+      }
+
+      // Задача 15. Користувач вводить прізвище та ім’я в одному рядку через пробіл. Замінити пробіл на дефіс.
+      function replaceSpaceWithDash(fullName) {
+        let result = fullName.replace(/\s/g, '-');
+        return result;
+      }
+
+      // Задача 16. Користувач вводить дату у форматі «день.місяць.рік». Отримати рядкове представлення дати у форматі «день/місяць/рік».
+      function formatDateString(dateString) {
+        let regex = /(\d{2})\.(\d{2})\.(\d{4})/;
+        let result = dateString.replace(regex, '$1/$2/$3');
+        return result;
+      }
+
+      // Задача 17. Користувач вводить день (номер дня (0-6) або «sun,mon,tue,wed,thu,fri,sat»). Визначити, чи  є це день вихідним.
+      function isWeekend(day) {
+        let regex = /^(6|sun|sat)$/i;
+        let result = regex.test(day);
+        return result;
+      }
+
+      let strings = ['Hello', '123', 'World', 'abc123', '456xyz'];
+      console.log(stringsWithDigits(strings)); // Виводить: ["123", "abc123", "456xyz"]
+
+      console.log(stringsWithoutDigits(strings)); // Виводить: ["Hello", "World"]
+
+      console.log(stringsWithVowels(strings)); // Виводить: ["Hello", "World"]
+
+      console.log(stringsWithoutVowels(strings)); // Виводить: ["123", "456xyz"]
+
+      console.log(stringsWithOneOrThree(strings)); // Виводить: ["123", "456xyz"]
+
+      let text = 'There are 3 apples and 2 oranges.';
+      console.log(extractNumbers(text)); // Виводить: ["3", "2"]
+
+      console.log(extractPunctuationMarks(text)); // Виводить: [",", "."]
+
+      console.log(extractComponents(text)); // Виводить: ["There", "are", "3", "apples", "and", "2", "oranges"]
+
+      console.log(containsDate(text)); // Виводить: false
+
+      let textWithDate = 'Today is 25.05.2023.';
+      console.log(containsDate(textWithDate)); // Виводить: true
+
+      console.log(countTwoDigitNumbers(text)); // Виводить: 2
+
+      let creditCardText =
+        'My credit card numbers are: 1234-5678-9012-3456 and 9876-5432-1098-7654.';
+      console.log(findCreditCardNumbers(creditCardText)); // Виводить: ["1234-5678-9012-3456", "9876-5432-1098-7654"]
+
+      let websiteUrl = 'https://www.linkedin.com/in/viktorsvertoka/';
+      console.log(isGovernmentWebsite(websiteUrl)); // Виводить: true
+
+      let messageWithYears = 'I will attend the conference in 2022 and 2023.';
+      console.log(extractYears(messageWithYears)); // Виводить: ["2022", "2023"]
+
+      let phoneNumber = '+380981234567';
+      console.log(isUkrainianPhoneNumber(phoneNumber)); // Виводить: true
+
+      let fullName = 'John Doe';
+      console.log(replaceSpaceWithDash(fullName)); // Виводить: "John-Doe"
+
+      let dateString = '15.05.2023';
+      console.log(formatDateString(dateString)); // Виводить: "15/05/2023"
+
+      let day = 'sun';
+      console.log(isWeekend(day)); // Виводить: true
+    </script>
   </body>
 </html>

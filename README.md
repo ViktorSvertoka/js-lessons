@@ -21,6 +21,10 @@
   `Home task`
   [**Домашнє завдання №1**](https://drive.google.com/drive/folders/1-luVq8_1syEQ-QTTdRruHWxvd0eNGtVJ?usp=sharing)
 
+  - `JavaScript course📚`[**Урок №1 (Вступ)**](https://youtube.com/live/fnJfUNaDpEc?feature=share)
+    `Home task`
+    [**Домашнє завдання №1**](https://drive.google.com/drive/folders/1-luVq8_1syEQ-QTTdRruHWxvd0eNGtVJ?usp=sharing)
+
 # Javascript Basics For Beginners
 
 - Here what ever is thought is the very basics of Javascript. Which is very is

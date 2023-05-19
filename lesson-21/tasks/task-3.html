@@ -17,8 +17,61 @@
       >
     </p>
     <h1>Задача № 3</h1>
-    <p></p>
+    <p>
+      Задача 3. Сформувати масив з 1000 елементів від 1 до 800. Порівняти час
+      сортування бульбашкою і вставкою.
+    </p>
 
-    <script></script>
+    <script>
+      // Функція для сортування бульбашкою
+      function bubbleSort(arr) {
+        let len = arr.length;
+        for (let i = 0; i < len - 1; i++) {
+          for (let j = 0; j < len - 1 - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+              let temp = arr[j];
+              arr[j] = arr[j + 1];
+              arr[j + 1] = temp;
+            }
+          }
+        }
+        return arr;
+      }
+
+      // Функція для сортування вставкою
+      function insertionSort(arr) {
+        let len = arr.length;
+        for (let i = 1; i < len; i++) {
+          let key = arr[i];
+          let j = i - 1;
+          while (j >= 0 && arr[j] > key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+          }
+          arr[j + 1] = key;
+        }
+        return arr;
+      }
+
+      // Створення масиву з 1000 елементів від 1 до 800
+      let arr = [];
+      for (let i = 1; i <= 1000; i++) {
+        arr.push(i);
+      }
+
+      // Копіюємо масив для кожного з методів сортування
+      let arrBubbleSort = arr.slice();
+      let arrInsertionSort = arr.slice();
+
+      // Вимірюємо час сортування бульбашкою
+      console.time('Bubble Sort');
+      bubbleSort(arrBubbleSort);
+      console.timeEnd('Bubble Sort');
+
+      // Вимірюємо час сортування вставкою
+      console.time('Insertion Sort');
+      insertionSort(arrInsertionSort);
+      console.timeEnd('Insertion Sort');
+    </script>
   </body>
 </html>

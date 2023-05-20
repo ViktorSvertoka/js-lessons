@@ -121,6 +121,8 @@
   `Home task`
   [**Домашнє завдання №26**](https://drive.google.com/drive/folders/1l7NpNAV7DKT7Rdqy-uSShhRXUbsZDizg?usp=sharing)
 
+![my-certificate](./assets/javascript-en.png)
+
 # Javascript Basics For Beginners
 
 - Here what ever is thought is the very basics of Javascript. Which is very is

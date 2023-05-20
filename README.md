@@ -7,7 +7,7 @@
 
 ```
 
-![](./assets/js-gif.gif)
+![my-certificate](./assets/javascript-en.png)
 
 ```
 
@@ -121,7 +121,7 @@
   `Home task`
   [**Домашнє завдання №26**](https://drive.google.com/drive/folders/1l7NpNAV7DKT7Rdqy-uSShhRXUbsZDizg?usp=sharing)
 
-![my-certificate](./assets/javascript-en.png)
+![gif](./assets/js-gif.gif)
 
 # Javascript Basics For Beginners
 

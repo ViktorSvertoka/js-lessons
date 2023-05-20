@@ -7,13 +7,13 @@
 
 ```
 
-![](./assets/testing.gif)
+![](./assets/js-gif.gif)
 
 ```
 
-1. use strict; //file js
+1. use strict; ---> use file js
 
-2. type="module" //file html
+2. type="module" ---> use file html
 
 ```
 
@@ -36,6 +36,90 @@
 - `JavaScript course📚`[**Урок №5**](https://youtube.com/live/mlW62Jeu3vE?feature=share)
   `Home task`
   [**Домашнє завдання №5**](https://drive.google.com/drive/folders/1vwqQHDAyxGO5F-nyS1mPRH1phm9DcMlo?usp=sharing)
+
+- `JavaScript course📚`[**Урок №6**](https://youtube.com/live/pNgSVCs3B8A?feature=share)
+  `Home task`
+  [**Домашнє завдання №6**](https://drive.google.com/drive/folders/1PEyUn2NUAJJBnDGfWRvzpfRtM_Li62Mg?usp=sharing)
+
+- `JavaScript course📚`[**Урок №7**](https://youtube.com/live/T8kNXv0vcGU?feature=share)
+  `Home task`
+  [**Домашнє завдання №7**](https://drive.google.com/drive/folders/1BTab-oGw_5NyR3_bon4bNA2i5PHm6f95?usp=sharing)
+
+- `JavaScript course📚`[**Урок №8**](https://youtube.com/live/TnLFK4HZaBw?feature=share)
+  `Home task`
+  [**Домашнє завдання №8**](https://drive.google.com/drive/folders/1OdsYzG9vPNstvC_E3CUKlbn43OMDRWM0?usp=sharing)
+
+- `JavaScript course📚`[**Урок №9**](https://youtube.com/live/N2WZ5HFZv1I?feature=share)
+  `Home task`
+  [**Домашнє завдання №9**](https://drive.google.com/drive/folders/1bahD2w-_yltZzZX7CB0gIK0fWQ61Kpxq?usp=sharing)
+
+- `JavaScript course📚`[**Урок №10**](https://youtube.com/live/XVvvDQ0awVU?feature=share)
+  `Home task`
+  [**Домашнє завдання №10**](https://drive.google.com/drive/folders/1jrF3QMvOmJXJ-Jx5J5NLx7W5RadFc7XA?usp=sharing)
+
+- `JavaScript course📚`[**Урок №11**](https://youtube.com/live/F8RJBDEv9fw?feature=share)
+  `Home task`
+  [**Домашнє завдання №11**](https://drive.google.com/drive/folders/1XX65wtZYh4sgV9CksbgKOkrwIruE7D6x?usp=sharing)
+
+- `JavaScript course📚`[**Урок №12**](https://youtube.com/live/zzDhh4KD6JY?feature=share)
+  `Home task`
+  [**Домашнє завдання №12**](https://drive.google.com/drive/folders/11vAB2pTZzggFEm8qTCT2-K4jKYz0RKor?usp=sharing)
+
+- `JavaScript course📚`[**Урок №13**](https://youtube.com/live/Vd81WLht5I4?feature=share)
+  `Home task`
+  [**Домашнє завдання №13**](https://drive.google.com/drive/folders/1Z4B1XXR3rmCPdj4p2dNcAPVcLbEqByXs?usp=sharing)
+
+- `JavaScript course📚`[**Урок №14**](https://youtube.com/live/T33CJSxXixw?feature=share)
+  `Home task`
+  [**Домашнє завдання №14**](https://drive.google.com/drive/folders/1owpDMqP7Pu7jK55QbIQcCnhk46PAlghM?usp=sharing)
+
+- `JavaScript course📚`[**Урок №15**](https://youtube.com/live/9crtAifIjW4?feature=share)
+  `Home task`
+  [**Домашнє завдання №15**](https://drive.google.com/drive/folders/10LTwkUxS3OLy54zsfVsUs80Oq8fkr-JK?usp=sharing)
+
+- `JavaScript course📚`[**Урок №16**](https://youtube.com/live/JNl-fb6uGbg?feature=share)
+  `Home task`
+  [**Домашнє завдання №16**](https://drive.google.com/drive/folders/1Xjg6wDPi0NwPlxofNCQqi00dPWRMFepd?usp=sharing)
+
+- `JavaScript course📚`[**Урок №17**](https://youtube.com/live/2aYIcTsYETY?feature=share)
+  `Home task`
+  [**Домашнє завдання №17**](https://drive.google.com/drive/folders/1CJAEmljvNc0iqJrOnvC0IMBe_uAnFD06?usp=sharing)
+
+- `JavaScript course📚`[**Урок №18**](https://youtube.com/live/eTBvKzhPDEE?feature=share)
+  `Home task`
+  [**Домашнє завдання №18**](https://drive.google.com/drive/folders/127AwfXRs-6F4_RTLx4bNX5fghZyK2ZZk?usp=sharing)
+
+- `JavaScript course📚`[**Урок №19**](https://youtube.com/live/F0QCqsT9uZg?feature=share)
+  `Home task`
+  [**Домашнє завдання №19**](https://drive.google.com/drive/folders/10NEcU--OV5XWM4U5Bo14OBOPYNjsiz4b?usp=sharing)
+
+- `JavaScript course📚`[**Урок №20**](https://youtube.com/live/RO4MoX6Ad_E?feature=share)
+  `Home task`
+  [**Домашнє завдання №20**](https://drive.google.com/drive/folders/1lDq70ZFzCNGwYSfDLPhY39PvINQP4GWJ?usp=sharing)
+
+- `JavaScript course📚`[**Урок №21**](https://youtube.com/live/igIIF5RYuhk?feature=share)
+  `Home task`
+  [**Домашнє завдання №21**](https://drive.google.com/drive/folders/1WRTZJPkD2BfOssavP-t6pKggiX_jfxS3?usp=sharing)
+
+- `JavaScript course📚`[**Урок №22**](https://youtube.com/live/JT12lzOGXsI?feature=share)
+  `Home task`
+  [**Домашнє завдання №22**](https://drive.google.com/drive/folders/1vQotcNUp278W0ZVYw_8WCdAmneNg3nL4?usp=sharing)
+
+- `JavaScript course📚`[**Урок №23**](https://youtube.com/live/XDNxqWF4klc?feature=share)
+  `Home task`
+  [**Домашнє завдання №23**](https://drive.google.com/drive/folders/1Qe0uP8ifI73xARlFVKIQGvY2byQO-N7f?usp=sharing)
+
+- `JavaScript course📚`[**Урок №24**](https://youtube.com/live/rJ3Hdku0uRw?feature=share)
+  `Home task`
+  [**Домашнє завдання №24**](https://drive.google.com/drive/folders/11yvzRV5LM2JuTtE_XjdTGp8mlZQUL_xE?usp=sharing)
+
+- `JavaScript course📚`[**Урок №25**](https://youtube.com/live/ThdnraoowXI?feature=share)
+  `Home task`
+  [**Домашнє завдання №25**](https://drive.google.com/drive/folders/1UrgANCnsrKotyrRfHiK_b0KfTCa2GMV_?usp=sharing)
+
+- `JavaScript course📚`[**Урок №26**](https://youtube.com/live/w1sWgfnT1bY?feature=share)
+  `Home task`
+  [**Домашнє завдання №26**](https://drive.google.com/drive/folders/1l7NpNAV7DKT7Rdqy-uSShhRXUbsZDizg?usp=sharing)
 
 # Javascript Basics For Beginners
 

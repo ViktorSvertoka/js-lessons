@@ -135,34 +135,3 @@
 // link.addEventListener('click', event => {
 //   event.preventDefault();
 // });
-
-//?=======================================================================================
-
-// let listOfObjs = [
-//   {
-//     price: 2000,
-//     quantity: 3,
-//     name: 'Audi',
-//     year: 1978,
-//   },
-//   {
-//     price: 6000,
-//     quantity: 4,
-//     name: 'Skoda',
-//     year: 1992,
-//   },
-//   {
-//     name: 'Renault',
-//     year: 1932,
-//     quantity: 7,
-//     price: 4522,
-//   },
-// ];
-
-// let totalCost = 0;
-
-// for (const listOfObj of listOfObjs) {
-//   totalCost += listOfObj.price * listOfObj.quantity;
-// }
-
-// console.log(totalCost);

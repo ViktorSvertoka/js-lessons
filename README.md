@@ -233,3 +233,13 @@ What are these frameworks used for?
 - **Electron.js** : is used to create dynamic, robust desktop apps for MacOs,
   Windows and Linux
 - **Node.js** : Is used to create efficient server side applications
+
+---
+
+myMainColor //Camel case
+
+my_main_color //Snake case
+
+my-main-color //Kebab case
+
+MyMainColor //Pascal case
